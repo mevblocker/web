@@ -1,24 +1,23 @@
-const API_BASE_URL = "https://www.mevblocker.com"
-
-export const CONFIG = {
-  title: 'MEV Blcoker',
-  description: 'CoW Protocol finds the lowest prices from all decentralized exchanges and DEX aggregators & saves you more with p2p trading and protection from MEV ',
-  descriptionShort: 'The smartest way to trade',
+export const siteConfig = {
+  title: 'CoW Grants Program',
+  titleShort: 'CoW Grants',
+  description: 'The mission of the CoW Grants Program is to fund growth of the CoW Protocol ecosystem.',
+  descriptionShort: 'CoW Grants Program',
+  googleAnalyticsID: 'G-WRW3B01KY5',
   url: {
-    root: "https://cow.fi",
-    swap: "https://swap.cow.fi",
-    docs: "https://docs.cow.fi",
-    api: API_BASE_URL + "/mainnet",
-    apiDocs: API_BASE_URL + "/docs",
-    analytics: "https://dune.com/cowprotocol/cowswap",
-    explorer: "https://explorer.cow.fi",
-    securityPortal: "https://app.chainpatrol.io/cow",
-    grants: "https://grants.cow.fi",
+    root: "https://grants.cow.fi",
+    home: "/",
+    faq: "/faq",
+    programOverview: "/overview",
+    apply: "/apply",
+    airtableApply: 'https://airtable.com/shrt7Rmd5XMYooRsu',
+    airtableTracker: 'https://airtable.com/shrfR2hI0JBMdPfTt',
+    cowLanding: 'https://cow.fi/'
   },
   social: {
-    twitter: { label: 'Twitter', account: '@CoWSwap', url: 'https://twitter.com/CoWSwap' },
+    twitter: { label: 'Twitter', account: '@MEVprotection', url: 'https://twitter.com/CoWSwap' },
     discord: { label: 'Discord', url: 'https://discord.com/invite/cowprotocol' },
-    github: { label: 'GitHub', url: 'https://github.com/cowprotocol/' },
+    github: { label: 'GitHub', url: 'https://github.com/cowprotocol/contracts' },
     forum: { label: 'Forum', url: 'https://forum.cow.fi/' },
   }
 }
