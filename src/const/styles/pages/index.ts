@@ -149,8 +149,11 @@ export const SectionContent = styled.div`
   }
 
   details {
+    display: flex;
+    flex-flow: column wrap;
     width: 100%;
     margin: 0 auto;
+    line-height: 1;
   }
 
   details > summary {
