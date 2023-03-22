@@ -3,6 +3,7 @@ import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
 
 export const SectionWrapper = styled.div<{ fixed?: boolean }>`
+  --sectionMaxWidth: 64rem;
   display: flex;
   flex-flow: row wrap;
   position: relative;
@@ -56,7 +57,7 @@ export const SectionContent = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  max-width: 64rem;
+  max-width: var(--sectionMaxWidth);
   height: auto;
   padding: 0;
   margin: 9rem 0;
@@ -145,7 +146,8 @@ export const SectionContent = styled.div`
     flex-flow: column wrap;
     align-items: flex-start;
     margin: 2.4rem 0;
-    width: 100%;
+    width: var(--sectionMaxWidth);
+    gap: 1.2rem;
   }
 
   details {
@@ -160,13 +162,13 @@ export const SectionContent = styled.div`
     font-size: 1.8rem;
     font-weight: bold;
     cursor: pointer;
-    margin: 0 0 1.6rem;
+    margin: 0;
   }
 
   details > div {
     font-size: 1.6rem;
-    line-height: 1.2;
-    margin: 0 auto 2.4rem;
+    line-height: 1.3;
+    margin: 1.2rem auto;
   }
 `
 
