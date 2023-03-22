@@ -23,8 +23,11 @@ export const SectionWrapper = styled.div<{ fixed?: boolean }>`
   }
 `
 
-export const Section = styled.section<{ split?: boolean, hasImage?: boolean, bgColor?: string, imageMaxHeight?: number, imageMaxWidth?: number }>`
+export const Section = styled.section<{bgColor?: string, imageMaxHeight?: number, imageMaxWidth?: number }>`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5.6rem;
   width: 100%;
   min-height: 100%;
   flex-flow: row wrap;
@@ -38,16 +41,6 @@ export const Section = styled.section<{ split?: boolean, hasImage?: boolean, bgC
     flex-flow: column wrap;
   }
 
-  ${({ split }) => (split && `
-    width: 50%;
-    flex: 0 1 50%;
-
-    ${Media.desktopDown} {
-      width: 100%;
-      flex: 1 1 100%;
-    }
-  `)}
-
   img {
     margin: auto;
     object-fit: contain;
@@ -55,33 +48,7 @@ export const Section = styled.section<{ split?: boolean, hasImage?: boolean, bgC
     height: 100%;
     max-width: 100%;
     max-height: auto
-
-    ${({ split, hasImage }) => (split && hasImage && `
-        max-width: 40%;
-        max-height: 40%;
-    `)}
-
-    ${Media.desktopDown} {
-
-      ${({ split, hasImage }) => (split && hasImage && `
-        max-width: 60%;
-        max-height: 60%;
-      `)}
-    }
   }
-
-  ${({ split, hasImage }) => (split && hasImage && `
-    ${Media.desktopDown} {
-      width: 100%;
-      order: 2;
-    }
-  `)}
-
-  ${({ split }) => (split && `
-    ${Media.desktopDown} {
-      max-width: 100%;
-    }
-  `)}
 `
 
 export const Anchor = styled.span`
@@ -91,27 +58,22 @@ export const Anchor = styled.span`
   visibility: hidden;
 `
 
-export const SectionContent = styled.div<{ split?: boolean }>`
+export const SectionContent = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  max-width: 77rem;
+  max-width: 64rem;
   height: auto;
-  padding: 0 9rem;
-  margin: 9rem auto;
+  padding: 0;
+  margin: 9rem 0;
   justify-content: center;
+  align-items: flex-start;
 
   ${Media.desktopDown} {
     max-width: 100%;
     height: auto;
     padding: 3rem 3rem 0;
   }
-
-  ${({ split, hasImage }) => (split && !hasImage && `
-    ${Media.desktopDown} {
-      max-width: 86rem;
-    }
-  `)}
 
   > hr {
     width: 100%;
@@ -126,16 +88,16 @@ export const SectionContent = styled.div<{ split?: boolean }>`
   > h1,
   > h2,
   > h3 {
-    text-align: ${({ split }) => split ? 'center' : 'left'};
-    font-size: 5rem;
-    line-height: 1.3;
-    color: ${Color.darkBlue};
-    font-weight: ${({ split }) => split ? Font.weightLight : Font.weightBold};
-    margin: ${({ split }) => split ? '0 0 5.6rem' : '0 0 2.4rem'};
+    text-align: left;
+    font-size: 7rem;
+    line-height: 1.1;
+    color: ${Color.text1};
+    font-weight: ${Font.weightBold};
+    margin: 0 0 2.4rem;
 
-    ${Media.desktopSmallHeight} {
+    /* ${Media.desktopSmallHeight} {
       font-size: 3rem;
-    }
+    } */
 
     > b {
       font-weight: ${Font.weightBold};
@@ -173,19 +135,16 @@ export const SectionContent = styled.div<{ split?: boolean }>`
   > ul,
   > ol {
     font-size: 1.8rem;
-    text-align: ${({ split }) => split ? 'center' : 'left'};
+    text-align: left;
     font-weight: ${Font.weightNormal};
     line-height: 1.6;
-    margin: ${({ split }) => split ? '0 0 5.6rem' : '0 0 2.4rem'};
+    margin: 0 0 2.4rem;
     word-break: break-word;
   }
 
-  > p > strong,
-  > small {
-    color: ${Color.darkBlue};
+  .large-text {
+    font-size: 2.8rem;
   }
-
-
 `
 
 export const Content = styled.main`

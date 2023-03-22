@@ -4,38 +4,6 @@ import { transparentize } from "polished";
 
 const GlobalStyles = createGlobalStyle`
 
-@font-face {
-      font-family: 'Averta';
-      src: url('fonts/averta-regular-webfont.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-  }
-
-  @font-face {
-      font-family: 'Averta';
-      src: url('fonts/averta-semibold-webfont.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-  }
-
-  @font-face {
-      font-family: 'Averta';
-      src: url('fonts/averta-bold-webfont.woff2') format('woff2');
-      font-weight: bold;
-      font-style: normal;
-      font-display: swap;
-  }
-
-  @font-face {
-      font-family: 'Averta';
-      src: url('fonts/averta-extrabold-webfont.woff2') format('woff2');
-      font-weight: 900;
-      font-style: normal;
-      font-display: swap;
-  }
-
   html, body {  
     width: 100%;
     height: 100%;
@@ -47,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${Font.default};
     font-display: fallback;
     color: ${Color.text1};
-    background-image: ${Color.gradient};
+    background: ${Color.pink};
     background-attachment: fixed;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -57,33 +25,33 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
-    scrollbar-color: ${Color.darkBlue} ${Color.lightBlue};
+    scrollbar-color: ${Color.text1} ${Color.text1};
 
     &::-webkit-scrollbar {
       width: 2.4rem;
     }
 
     &::-webkit-scrollbar-track {
-      background-color: ${Color.lightBlue};
+      background-color: ${Color.text1};
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: ${Color.darkBlue};
+      background-color: ${Color.text1};
       border-radius: 10rem;
     }
   }
 
   *::selection {
-    background: ${Color.lightBlue};
-    color: ${Color.darkBlue};
+    background: ${Color.text1};
+    color: ${Color.text1};
   }
 
   *::-moz-selection {
-    background: ${Color.lightBlue};
+    background: ${Color.text1};
   }
 
   *::-webkit-selection {
-    background: ${Color.lightBlue};
+    background: ${Color.text1};
   }
 
   *::-moz-placeholder {
@@ -117,7 +85,26 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1;
   }
 
-  ul, ol {
+  ul {
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style-position: inside;
+    list-style: none;
+
+    > li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    > li::before {
+      --size: 1.6rem;
+      content: "";
+      display: inline-block;
+      width: var(--size);
+      height: var(--size);
+      background: url('check.svg') no-repeat center/contain;
+    }
   }
 
   button {
@@ -154,7 +141,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     &:focus {
-      border-color: ${Color.darkBlue};
+      border-color: ${Color.text1};
     }
 
     &:disabled {
@@ -187,7 +174,7 @@ const GlobalStyles = createGlobalStyle`
 
 export const ExternalLink = styled.a`
   display: inline-block;
-  color: ${Color.darkBlue};
+  color: ${Color.text1};
   font-size: inherit;
   white-space: nowrap;
 
@@ -201,12 +188,12 @@ export const ExternalLink = styled.a`
 `
 
 export const DropDown = styled.div`
-  border: 0.1rem solid ${transparentize(0.9, Color.lightBlue)};
+  border: 0.1rem solid ${transparentize(0.9, Color.text1)};
   border-radius: 0.6rem;
   width: 100%;
   padding: 0;
-  background: ${Color.darkBlue4};
-  color: ${Color.lightBlue};
+  background: ${Color.text1};
+  color: ${Color.text1};
   font-size: 1.8rem;
   margin: 0 0 2.4rem;
   display: flex;
@@ -243,7 +230,7 @@ export const DropDown = styled.div`
     font-size: inherit;
     border: 0;
     border-radius: inherit;
-    background: ${transparentize(0.9, Color.darkBlue)};
+    background: ${transparentize(0.9, Color.text1)};
 
       &:focus {
         outline: none;
@@ -251,7 +238,7 @@ export const DropDown = styled.div`
 
       > option {
         background-color: ${Color.black};
-        color: ${Color.darkBlue};
+        color: ${Color.text1};
       }
   }
 `

@@ -49,13 +49,13 @@ const Content = styled.main`
     
       &:link, 
       &:visited {
-        color: ${Color.darkBlue};
+        color: ${Color.text1};
       }
   }
 `
 
 export default function Layout({ children, route, pageTitle }: LayoutProps) {
-  const isSplitted = route === '/' ? true : false
+  // const isSplitted = route === '/' ? true : false
   const { title } = siteConfig
   const headTitle = pageTitle ? `${pageTitle} - ${title}` : `${title}` // Must use a single (text) node to prevent Next.js Title warnings
 
@@ -66,9 +66,9 @@ export default function Layout({ children, route, pageTitle }: LayoutProps) {
       </Head>}
 
       <Wrapper>
-        <Header menu={mainMenu} siteConfig={siteConfig} split={isSplitted} />
+        <Header menu={mainMenu} siteConfig={siteConfig} />
         <Content>{children ? children : 'No content found'}</Content>
-        <Footer menu={footerMenu} siteConfig={siteConfig} split={isSplitted} />
+        <Footer menu={footerMenu} siteConfig={siteConfig} />
         <Analytics />
       </Wrapper>
     </>

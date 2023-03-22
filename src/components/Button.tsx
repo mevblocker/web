@@ -17,10 +17,10 @@ type ButtonProps = {
 
 const Wrapper = styled.a<Omit<ButtonProps, "href" | "label" | "target" | "rel">>`
   display: flex;
-  background: ${({ variant }) => variant === 'white' ? 'transparent' : Color.darkBlue};
+  background: ${({ variant }) => variant === 'white' ? 'transparent' : Color.black};
   flex-flow: row;
   border: 0.1rem solid ${({ variant }) => variant === 'white' ? transparentize(0.6, Color.border) : 'transparent'};
-  color: ${({ variant }) => variant === 'white' ? Color.darkBlue : Color.lightBlue};
+  color: ${({ variant }) => variant === 'white' ? Color.text1 : Color.white};
   padding: ${({ paddingLR }) => paddingLR ? `0 ${paddingLR}rem` : '0 6rem'};
   margin: ${({ marginTB }) => marginTB ? `${marginTB}rem 0` : '0'};
   box-sizing: border-box;
@@ -44,8 +44,8 @@ const Wrapper = styled.a<Omit<ButtonProps, "href" | "label" | "target" | "rel">>
   }
 
   &:hover {
-    background: ${({ variant }) => variant === 'white' ? Color.darkBlue : Color.darkBlue2};
-    color: ${Color.lightBlue};
+    /* background: ${({ variant }) => variant === 'white' ? Color.text1 : Color.black};
+    color: ${Color.text1}; */
   }
 `
 
@@ -65,7 +65,39 @@ export const ButtonWrapper = styled.div`
   }
 `
 
-export default function Button({
+type BigButtonProps = {
+  fontSize?: number
+  href?: string
+  label: string
+  target?: string
+  rel?: string
+}
+
+const BigButtonWrapper = styled.a`
+  line-height: 1;
+  border: 0.2rem solid ${Color.black};
+  padding: 2rem 4.5rem;
+  font-weight: bold;
+  font-size: 2.4rem;
+  text-decoration: none;
+  box-shadow: 0.3rem 0.3rem 0 ${Color.black};
+  border-radius: 5px;
+  background: ${Color.orange};
+  color: ${Color.black};
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    top: 0.4rem;
+    left: 0.4rem;
+    box-shadow: 0.1rem 0.1rem 0 ${Color.black};
+    transition-property: box-shadow,top,left;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+  }
+`
+
+export function Button({
   wrapText,
   borderRadius,
   fontSize,
@@ -81,5 +113,11 @@ export default function Button({
     <Wrapper {...{ wrapText, borderRadius, fontSize, paddingLR, marginTB, variant }} href={href} target={target} rel={rel}>
       {label}
     </Wrapper>
+  )
+}
+
+export function BigButton({ label, href, target, rel, fontSize }: BigButtonProps) {
+  return (
+    <BigButtonWrapper {...{ href, label, target, rel, fontSize }}>{label}</BigButtonWrapper>
   )
 }

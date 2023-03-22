@@ -16,7 +16,7 @@ type TextLinkProps = {
 
 export const Wrapper = styled.a`
   display: block;
-  color: ${Color.darkBlue};
+  color: ${Color.text1};
   text-decoration: none;
 
     &:hover {

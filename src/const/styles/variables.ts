@@ -6,17 +6,14 @@ export const Defaults = {
 }
 
 export const Color = {
-  white: '#F6F6F6',
+  white: '#FFFFFF',
   black: '#000000',
-  orange: '#ED6834',
+  orange: '#F35534',
   border: transparentize(0.75, '#979797'),
   borderGradient: `linear-gradient(to bottom, ${transparentize(0.75, '#979797')}, ${transparentize(1, '#979797')})`,
-  darkBlue: '#052B65',
-  darkBlue2: '#0D3673',
-  darkBlue3: '#042a63',
-  darkBlue4: '#042456',
-  lightBlue: '#CAE9FF',
-  text1: '#405A82',
+  pink: '#F3C1E7',
+  background1: '#ffffff',
+  text1: '#000000',
   text2: '#95BAEF',
   gradient: "linear-gradient(45deg,#FFE7E0 0%,#F8DBF4 20%,#C4DDFF 60%,#CAE9FF 100%)",
   gradientMesh: css`
@@ -33,7 +30,7 @@ export const Color = {
 }
 
 export const Font = {
-  default: "'Averta', 'Helvetica Neue', Helvetica, sans-serif",
+  default: "Helvetica, sans-serif",
   arial: "Arial, Helvetica, sans-serif",
   sizeDefault: '1.8rem',
   weightLight: 300,

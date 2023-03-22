@@ -21,7 +21,7 @@ const Pixel = styled.div`
   background: transparent;
 `
 
-const Wrapper = styled.header<{ menuVisibile: boolean, split: boolean }>`
+const Wrapper = styled.header<{ menuVisible: boolean }>`
   z-index: ${({ menuVisible }) => menuVisible ? '100' : '10'};
   width: 100%;
   position: relative;
@@ -42,7 +42,7 @@ const Wrapper = styled.header<{ menuVisibile: boolean, split: boolean }>`
     padding: 0 1.6rem;
     width: 100%;
     height: ${({ menuVisible }) => menuVisible ? '100%' : mobileHeaderHeight};
-    background: ${transparentize(0.1, Color.lightBlue)};
+    background: ${transparentize(0.1, Color.text1)};
     justify-content: center;
     backdrop-filter: blur(0.2rem);
   }
@@ -54,7 +54,7 @@ const Wrapper = styled.header<{ menuVisibile: boolean, split: boolean }>`
   }
 
   &.sticky {
-    background: ${transparentize(0.1, Color.lightBlue)};);
+    background: ${transparentize(0.1, Color.pink)};);
     backdrop-filter: blur(5px);
   }
 `
@@ -63,7 +63,7 @@ const Menu = styled.ol`
   display: flex;
   list-style: none;
   font-size: 1.6rem;
-  color: ${Color.darkBlue};
+  color: ${Color.text1};
   padding: 0;
   margin: 0;
 
@@ -73,7 +73,7 @@ const Menu = styled.ol`
     left: 0;
     width: 100%;
     height: 100%;
-    background: ${Color.darkBlue};
+    background: ${Color.background1};
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
@@ -97,10 +97,13 @@ const Menu = styled.ol`
 
 const MenuItem = styled.li<{ isActive: boolean }>`
   opacity: ${({ isActive }) =>  isActive ? 1 : 0.8};
-  font-weight: ${({ isActive }) =>  isActive ? 'bold' : 'normal'};
+  font-weight: bold;
+  text-decoration: ${({ isActive }) =>  isActive ? 'underline' : 'none'};
+  text-underline-offset: 0.6rem;
 
   &:hover {
     opacity: 1;
+    text-decoration: underline;
   }
 
   &:not(:last-of-type) {
@@ -125,14 +128,14 @@ const MenuItem = styled.li<{ isActive: boolean }>`
     text-decoration: none;
 
     ${Media.desktopDown} {
-      color: ${Color.lightBlue};
+      color: ${Color.text1};
     }
 
     &:hover {
       text-decoration: underline;
 
       ${Media.desktopDown} {
-        color: ${Color.lightBlue};
+        color: ${Color.text1};
       }
     }
   }
@@ -143,12 +146,12 @@ const CloseIcon = styled.button`
   position: fixed;
   right: 1.6rem;
   top: 1.6rem;
-  color: ${Color.lightBlue};
+  color: ${Color.text1};
   background: transparent;
   border: 0;
 
   &:hover {
-    color: ${Color.lightBlue};
+    color: ${Color.text1};
   }
 
   &::before {
@@ -200,15 +203,15 @@ const MenuToggle = styled.button`
   }
 `
 
-const Logo = styled.div<{ menuVisible: boolean, alternateColor: boolean }>`
+const Logo = styled.div<{ menuVisible: boolean }>`
   cursor: pointer;
   font-size: 1.2rem;
   line-height: 1;
   font-weight: ${Font.weightBold};
-  color: ${({ menuVisible, alternateColor }) => menuVisible || alternateColor ? Color.lightBlue : Color.darkBlue};
+  color: ${({ menuVisible }) => menuVisible ? Color.text1 : Color.text1};
   z-index: 15;
-  height: 3.8rem;
-  width: 11.9rem;
+  height: 4rem;
+  width: 20rem;
 
   > img {
     width: 100%;
@@ -222,11 +225,11 @@ const Logo = styled.div<{ menuVisible: boolean, alternateColor: boolean }>`
     height: ${mobileHeaderHeight};
     align-items: center;
     display: flex;
-    color: ${({ menuVisible }) => menuVisible ? Color.lightBlue : Color.darkBlue};
+    color: ${({ menuVisible }) => menuVisible ? Color.text1 : Color.text1};
   }
 `
 
-export default function Header({ siteConfig, menu, split }) {
+export default function Header({ siteConfig, menu}) {
   const router = useRouter();
   const currentRoute = router.pathname;
 
@@ -246,10 +249,11 @@ export default function Header({ siteConfig, menu, split }) {
       {({ inView, ref }) => (
         <>
           <Pixel ref={ref} />
-          <Wrapper menuVisible={menuVisible} split={split} className={!inView && 'sticky'}>
+          <Wrapper menuVisible={menuVisible} className={!inView && 'sticky'}>
             <Link href={siteConfig.url.home}>
-              <Logo menuVisible={menuVisible} alternateColor={split}>
-                <img src={`images/logo${(!isDesktopDown && split && inView) ? '-light' : ''}.svg`} alt="CoW Grants Program" />
+              <Logo menuVisible={menuVisible}>
+                {/* <img src={`images/mevblocker-logo${(!isDesktopDown && inView) ? '' : ''}.svg`} alt="MEVBlocker.io" /> */}
+                <img src={'mevblocker-logo.svg'} alt="MEVBlocker.io" />
               </Logo>
             </Link>
             <Menu className={menuVisible ? 'visible' : ""}>

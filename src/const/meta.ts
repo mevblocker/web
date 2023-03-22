@@ -1,11 +1,11 @@
 export const siteConfig = {
-  title: 'CoW Grants Program',
-  titleShort: 'CoW Grants',
-  description: 'The mission of the CoW Grants Program is to fund growth of the CoW Protocol ecosystem.',
-  descriptionShort: 'CoW Grants Program',
+  title: 'MEVBlocker.io',
+  titleShort: 'MEVBlocker.io',
+  description: 'MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.',
+  descriptionShort: 'MEV Blocker is an RPC that shields all your transactions from MEV.',
   googleAnalyticsID: 'G-WRW3B01KY5',
   url: {
-    root: "https://grants.cow.fi",
+    root: "https://mevblocker.io",
     home: "/",
     faq: "/faq",
     programOverview: "/overview",

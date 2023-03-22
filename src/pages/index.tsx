@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 
 import Layout from '@src/components/Layout'
 import { Section, SectionContent, SectionWrapper } from '@src/const/styles/pages/index'
-import Button from '@src/components/Button'
+import {Button, BigButton} from '@src/components/Button'
 import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
 
@@ -20,22 +20,68 @@ export default function Home() {
     <Layout route={router.pathname}>
 
       <SectionWrapper>
-        <Section split hasImage bgColor={Color.darkBlue}>
-          <img src="/images/grants-carton.svg" alt="COW Grants Program" />
-        </Section>
+        <Section>
+          <SectionContent>
+            <h1>The best MEV protection under the sun</h1>
+            <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
+            <p>
+              <ul>
+                <li>Add the RPC endpoint directly to your wallet</li>
+                <li>No more failed transactions</li>
+                <li>Install once, use anywhere on Ethereum</li>
+              </ul>
+            </p>
+            <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
+          </SectionContent>
 
-        <Section split>
-          <SectionContent split>
-            <h1>The mission of the <br></br><b>CoW Grants Program</b> is to fund growth of the CoW Protocol ecosystem.</h1>
-            <p>CoW Protocol&apos;s vision is a future where digital assets can be traded in a fair, efficient and reliable manner among people and communities around the world. The CoW Grants Program will help achieve this vision by attracting the brightest minds in trading and decentralized systems, diligently working to innovate and improve the CoW Protocol.</p>
-            <Button fontSize={2.2} label='Apply for a grant' href="/apply" />
-            <TextLink label="Grants program overview" href="/overview"/>
+          <SectionContent>
+            <img src="hero.jpg" alt="MEVBlocker.io" />
           </SectionContent>
         </Section>
-
       </SectionWrapper>
 
-    </Layout >
+      <SectionWrapper>
+        <Section>
+          <SectionContent>
+            <h1>The best MEV protection under the sun</h1>
+            <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
+            <p>
+              <ul>
+                <li>Add the RPC endpoint directly to your wallet</li>
+                <li>No more failed transactions</li>
+                <li>Install once, use anywhere on Ethereum</li>
+              </ul>
+            </p>
+            <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
+          </SectionContent>
+
+          <SectionContent>
+            <img src="hero2.svg" alt="MEVBlocker.io" />
+          </SectionContent>
+        </Section>
+      </SectionWrapper>
+
+      <SectionWrapper>
+        <Section>
+          <SectionContent>
+            <h1>The best MEV protection under the sun</h1>
+            <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
+            <p>
+              <ul>
+                <li>Add the RPC endpoint directly to your wallet</li>
+                <li>No more failed transactions</li>
+                <li>Install once, use anywhere on Ethereum</li>
+              </ul>
+            </p>
+            <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
+          </SectionContent>
+
+          <SectionContent>
+            <img src="hero3.svg" alt="MEVBlocker.io" />
+          </SectionContent>
+        </Section>
+      </SectionWrapper>
+    </Layout>
   )
 }
 

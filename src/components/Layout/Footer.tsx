@@ -2,23 +2,13 @@ import styled from 'styled-components';
 import Link from 'next/link'
 import { Color, Media } from '@src/const/styles/variables'
 
-const Wrapper = styled.footer<{ split: boolean }>`
+const Wrapper = styled.footer`
   display: flex;
-  justify-content: ${({ split }) => split ? 'center' : 'flex-end'};
+  justify-content: flex-end;
   z-index: 1;
-  width: ${({ split }) => split ? '50%' : '100%'};
+  width: 100%;
   padding: 0;
-  position: ${({ split }) => split ? 'fixed' : 'relative'};
-  bottom: 0;
-  right: 0;
-
-  ${Media.desktopDown} {
-    width: 100%;
-    position: relative;
-    background: ${Color.darkBlue};
-    color: ${Color.text2};
-    padding: 3.2rem 0;
-  }
+  position: relative;
 `
 
 const Menu = styled.ol`
@@ -49,21 +39,21 @@ const Menu = styled.ol`
 
     &:hover {
       text-decoration: underline;
-      color: ${Color.darkBlue};
+      color: ${Color.text1};
 
       ${Media.desktopDown} {
-        color: ${Color.lightBlue};
+        color: ${Color.text1};
       {
     }
   }
 `
 
-export default function Footer({ siteConfig, menu, split }) {
+export default function Footer({ siteConfig, menu }) {
   const { social } = siteConfig
   const currentYear = new Date().getFullYear()
 
   return (
-    <Wrapper split={split}>
+    <Wrapper>
       <Menu>
         {menu.length > 0 && <>{menu.map(({ id, title, url, target }) => (
           <li key={id}>
