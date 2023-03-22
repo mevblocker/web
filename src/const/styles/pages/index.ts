@@ -104,7 +104,6 @@ export const SectionContent = styled.div`
   }
 
   > h2 {
-    font-size: 4rem;
     margin: 2.4rem 0;
     font-weight: ${Font.weightBold};
 
@@ -115,7 +114,6 @@ export const SectionContent = styled.div`
   }
 
   > h3 {
-    font-size: 4rem;
     margin: 0;
     font-weight: ${Font.weightBold};
 
@@ -159,16 +157,31 @@ export const SectionContent = styled.div`
   }
 
   details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     font-size: 1.8rem;
     font-weight: bold;
     cursor: pointer;
     margin: 0;
+    list-style-type: none;
+
+    &::before {
+      content: '+';
+      display: inline-block;
+      margin: 0 1rem 0 0;
+      width: 1rem;
+    }
+  }
+
+  details[open] > summary::before {
+    content: '-';
   }
 
   details > div {
     font-size: 1.6rem;
     line-height: 1.3;
-    margin: 1.2rem auto;
+    margin: 1.2rem 0 1.2rem 2rem;
   }
 `
 
