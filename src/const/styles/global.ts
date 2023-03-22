@@ -7,7 +7,6 @@ const GlobalStyles = createGlobalStyle`
   html, body {  
     width: 100%;
     height: 100%;
-    min-height: 100vh;
     min-width: 300px;
     margin: 0;
     font-size: 62.5%;
@@ -98,7 +97,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     > li::before {
-      --size: 1.6rem;
+      --size: 1.8rem;
       content: "";
       display: inline-block;
       width: var(--size);

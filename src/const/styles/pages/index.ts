@@ -5,14 +5,8 @@ import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
 export const SectionWrapper = styled.div<{ fixed?: boolean }>`
   display: flex;
   flex-flow: row wrap;
-  position: ${({ fixed }) => fixed ? 'fixed' : 'relative'};
-  top: ${({ fixed }) => fixed ? '0' : 'initial'};
-  height: 100vh;
-
-  ${Media.desktopDown} {
-    position: relative;
-    height: auto;
-  }
+  position: relative;
+  margin: 5.6rem auto;
 
   ${TextLinkWrapper} {
     width: 100%;
@@ -109,7 +103,7 @@ export const SectionContent = styled.div`
   }
 
   > h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 2.4rem 0;
     font-weight: ${Font.weightBold};
 
@@ -120,7 +114,7 @@ export const SectionContent = styled.div`
   }
 
   > h3 {
-    font-size: 2rem;
+    font-size: 4rem;
     margin: 0;
     font-weight: ${Font.weightBold};
 
@@ -144,6 +138,32 @@ export const SectionContent = styled.div`
 
   .large-text {
     font-size: 2.8rem;
+  }
+
+  .section_FAQ {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    margin: 2.4rem 0;
+    width: 100%;
+  }
+
+  details {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  details > summary {
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 0 1.6rem;
+  }
+
+  details > div {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin: 0 auto 2.4rem;
   }
 `
 

@@ -3,7 +3,7 @@ export const siteConfig = {
   titleShort: 'MEVBlocker.io',
   description: 'MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.',
   descriptionShort: 'MEV Blocker is an RPC that shields all your transactions from MEV.',
-  googleAnalyticsID: 'G-WRW3B01KY5',
+  googleAnalyticsID: 'G-JV2Q6SXRNR',
   url: {
     root: "https://mevblocker.io",
     home: "/",
