@@ -57,6 +57,7 @@ export default function Home() {
       <SectionWrapper>
         <Section>
           <SectionContent>
+            <a id="rpc" className={'anchor'}/>
             <h3>RPC Details</h3>
 
             <p>- content TBD -</p>
@@ -66,9 +67,10 @@ export default function Home() {
       </SectionWrapper>
 
       {/* FAQ section */}
-      <SectionWrapper>
+      <SectionWrapper backgroundColor={Color.white}>
         <Section>
           <SectionContent>
+            <a id="faq" className={'anchor'} />
             <h3>FAQ</h3>
             <div className={'section_FAQ'}>
             {FAQ_CONTENT.map(({question, answer}, index) => (
@@ -80,27 +82,6 @@ export default function Home() {
             </div>
           </SectionContent>
 
-        </Section>
-      </SectionWrapper>
-
-      <SectionWrapper>
-        <Section>
-          <SectionContent>
-            <h1>The best MEV protection under the sun</h1>
-            <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
-            <p>
-              <ul>
-                <li>Add the RPC endpoint directly to your wallet</li>
-                <li>No more failed transactions</li>
-                <li>Install once, use anywhere on Ethereum</li>
-              </ul>
-            </p>
-            <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
-          </SectionContent>
-
-          <SectionContent>
-            <img src="hero.jpg" alt="MEVBlocker.io" />
-          </SectionContent>
         </Section>
       </SectionWrapper>
 

@@ -79,6 +79,13 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -15rem;
+    visibility: hidden;
+  }
+
   h1, h2, h3, p, b, i, strong {
     margin: 0;
     line-height: 1;

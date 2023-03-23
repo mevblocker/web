@@ -2,8 +2,8 @@ import { CONFIG } from '@src/const/meta'
 const {url, social} = CONFIG
 
 export const mainMenu = [
-  { id: 0, title: 'RPC', url: '#'},
-  { id: 1, title: 'FAQ', url: '#'},
+  { id: 0, title: 'RPC', url: '#rpc'},
+  { id: 1, title: 'FAQ', url: '#faq'},
   { id: 2, title: 'Support', url: '#' }
 ]
 
