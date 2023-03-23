@@ -2,14 +2,16 @@ import styled from 'styled-components';
 import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
 
-export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: string }>`
+export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: string, borderDown?: boolean }>`
   --sectionMaxWidth: 64rem;
   display: flex;
   flex-flow: row wrap;
   position: relative;
-  margin: 5.6rem auto;
+  margin: 0 auto;
+  padding: 5.6rem 0;
   width: 100%;
   background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : 'transparent'};
+  border-bottom: ${({ borderDown }) => borderDown ? `0.2rem solid ${Color.black}` : 'none'};
 
   ${TextLinkWrapper} {
     width: 100%;
@@ -26,7 +28,7 @@ export const Section = styled.section<{bgColor?: string, imageMaxHeight?: number
   justify-content: center;
   gap: 5.6rem;
   width: 100%;
-  min-height: 100%;
+  min-height: 50vh;
   flex-flow: row wrap;
   background: ${({ bgColor }) => bgColor ? bgColor : 'transparent'};
 
@@ -55,16 +57,16 @@ export const Anchor = styled.span`
   visibility: hidden;
 `
 
-export const SectionContent = styled.div`
+export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  max-width: var(--sectionMaxWidth);
+  max-width: ${({ maxWidth }) => maxWidth ? `${maxWidth}rem` : 'var(--sectionMaxWidth)'};
   height: auto;
   padding: 0;
   margin: 9rem 0;
   justify-content: center;
-  align-items: flex-start;
+  align-items: ${({ align }) => align === 'center' ? 'center' : 'flex-start'};
 
   ${Media.desktopDown} {
     max-width: 100%;
@@ -84,8 +86,10 @@ export const SectionContent = styled.div`
 
   > h1,
   > h2,
-  > h3 {
-    text-align: left;
+  > h3,
+  > h4,
+  > h5 {
+    text-align: ${({ align }) => align === 'center' ? 'center' : 'left'};
     font-size: 7rem;
     line-height: 1.1;
     color: ${Color.text1};
@@ -123,6 +127,11 @@ export const SectionContent = styled.div`
       font-size: 2rem;
       margin: 2rem 0;
     }
+  }
+
+  > h5 {
+    font-size: 2.8rem;
+    font-weight: normal;
   }
 
   > p,
@@ -209,5 +218,73 @@ export const Content = styled.main`
     font-size: ${Font.sizeDefault}rem;
     color: ${Color.text1};
     line-height: 1.4;
+  }
+`
+
+export const CardWrapper = styled.div<{count?: number}>`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  display: grid;
+  grid-template-columns: ${({ count }) => count ? `repeat(${count}, 1fr)` : 'unset'};
+  gap: 2.4rem;
+  align-items: stretch;
+`
+
+export const CardItem = styled.div<{ backgroundColor?: string }>`
+  font-size: 1.5rem;
+  line-height: 1.1;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: stretch;
+  border: 0.2rem solid ${Color.black};
+  box-shadow: 0.3rem 0.3rem 0 ${Color.black};
+  background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : Color.white};
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  padding: 2.4rem;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+
+  h4 {
+    width: 100%;
+    font-size: 2.1rem;
+    text-align: center;
+    margin: 1.6rem auto 2.4rem;;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table td > span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+`
+
+export const USPWrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+`
+
+export const USPItem = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  width: calc(100% / 3);
+  padding: 0 1.4rem;
+
+  > h4 {
+    font-size: 1.8rem;
+    width: 100%;
+    line-height: 1.1;
+  }
+
+  > p {
+    font-size: 1.3rem;
   }
 `

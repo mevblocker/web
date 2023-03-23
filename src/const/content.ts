@@ -1,3 +1,24 @@
+export const USP_CONTENT = [
+  {
+    title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
+    description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+    image: "usp-1.svg",
+    imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+  },
+  {
+    title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
+    description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+    image: "usp-1.svg",
+    imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+  },
+  {
+    title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
+    description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+    image: "usp-1.svg",
+    imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+  }
+]
+
 export const FAQ_CONTENT = [
   {
     question: "What is MEV",
@@ -41,5 +62,28 @@ export const FAQ_CONTENT = [
   {
     question: "I have a question or need to contact support",
     answer: "If you need to contact us, please get in touch by emailing [email].",
+  },
+]
+
+export const RPC_DETAILS = [
+  {
+    title: "Network Name",
+    value: "MEV Blocker",
+  },
+  {
+    title: "New RPC URL",
+    value: "https://http.wonderfulrpc.com",
+  },
+  {
+    title: "Chain ID",
+    value: "1",
+  },
+  {
+    title: "Currency Symbol",
+    value: "ETH",
+  },
+  {
+    title: "Block Explorer URL",
+    value: "https://etherscan.io",
   },
 ]
