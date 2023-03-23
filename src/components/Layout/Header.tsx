@@ -30,7 +30,7 @@ const Wrapper = styled.header<{ menuVisible: boolean }>`
   justify-content: space-between;
   align-items: center;
   background: ${Color.white};
-  border-bottom: 0.1rem solid ${Color.black};
+  border-bottom: 0.2rem solid ${Color.black};
   padding: 0 2.4rem;
   margin: 0 auto;
   position: fixed;
@@ -63,7 +63,7 @@ const Wrapper = styled.header<{ menuVisible: boolean }>`
 const Menu = styled.ol`
   display: flex;
   list-style: none;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: ${Color.text1};
   padding: 0;
   margin: 0;

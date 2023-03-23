@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${Font.default};
     font-display: fallback;
     color: ${Color.text1};
-    background: ${Color.yellow};
+    background: ${Color.white};
     background-attachment: fixed;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -41,7 +41,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   *::selection {
-    background: ${Color.text1};
+    background: ${Color.orange};
     color: ${Color.text1};
   }
 
@@ -179,6 +179,17 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .copied {
+    color: ${Color.orange};
+    font-weight: bold;
+    width: 100%;
+    margin: 2.4rem 0 0;
+    background: ${transparentize(0.9, Color.orange)};
+    padding: 1rem;
+    border-radius: 1.2rem;
+    text-align: center;
+  }
+
   .container {
     margin: 0 auto;
   }
@@ -253,6 +264,21 @@ export const DropDown = styled.div`
         color: ${Color.text1};
       }
   }
+`
+
+export const CopyIcon = styled.div<{size?: number}>`
+  --size: ${({ size }) => size ? `${size}rem` : '1.6rem'};
+  cursor: pointer;
+  display: inline-block;
+  height: var(--size);
+  width: var(--size);
+  background: url('copy.svg') no-repeat center/contain;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
 `
 
 export default GlobalStyles

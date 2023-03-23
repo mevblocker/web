@@ -10,7 +10,7 @@ export const Color = {
   black: '#000000',
   orange: '#F35534',
   mint: '#8ED6D1',
-  yellow: '#FBC641',
+  yellow: 'gold',
   pink: '#F3C1E7',
   blue: '#0B4D9D',
   border: transparentize(0.75, '#979797'),
