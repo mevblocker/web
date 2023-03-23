@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${Font.default};
     font-display: fallback;
     color: ${Color.text1};
-    background: ${Color.pink};
+    background: ${Color.yellow};
     background-attachment: fixed;
     box-sizing: border-box;
     scroll-behavior: smooth;

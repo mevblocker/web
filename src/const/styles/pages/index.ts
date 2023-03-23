@@ -7,7 +7,8 @@ export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: st
   display: flex;
   flex-flow: row wrap;
   position: relative;
-  margin: 5.6rem auto;
+  margin: 0 auto;
+  padding: 5.6rem 0;
   width: 100%;
   background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : 'transparent'};
   border-bottom: ${({ borderDown }) => borderDown ? `0.2rem solid ${Color.black}` : 'none'};

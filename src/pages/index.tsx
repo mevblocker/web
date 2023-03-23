@@ -36,13 +36,13 @@ export default function Home() {
           </SectionContent>
 
           <SectionContent>
-            <img src="hero3.svg" alt="MEVBlocker.io" />
+            <img src="hero.svg" alt="MEVBlocker.io" />
           </SectionContent>
         </Section>
       </SectionWrapper>
 
       {/* Features section */}
-      <SectionWrapper>
+      <SectionWrapper backgroundColor={Color.mint} borderDown>
         <Section>
           <SectionContent>
             <h3>Broad Spectrum MEV Defense</h3>
@@ -54,7 +54,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* RPC Details section */}
-      <SectionWrapper>
+      <SectionWrapper borderDown>
         <Section>
           <SectionContent>
             <a id="rpc" className={'anchor'}/>
