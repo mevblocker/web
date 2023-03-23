@@ -41,6 +41,30 @@ export default function Home() {
         </Section>
       </SectionWrapper>
 
+      {/* Features section */}
+      <SectionWrapper>
+        <Section>
+          <SectionContent>
+            <h3>Broad Spectrum MEV Defense</h3>
+
+            <p>- content TBD -</p>
+          </SectionContent>
+
+        </Section>
+      </SectionWrapper>
+
+      {/* RPC Details section */}
+      <SectionWrapper>
+        <Section>
+          <SectionContent>
+            <h3>RPC Details</h3>
+
+            <p>- content TBD -</p>
+          </SectionContent>
+
+        </Section>
+      </SectionWrapper>
+
       {/* FAQ section */}
       <SectionWrapper>
         <Section>
@@ -77,27 +101,6 @@ export default function Home() {
 
           <SectionContent>
             <img src="hero.jpg" alt="MEVBlocker.io" />
-          </SectionContent>
-        </Section>
-      </SectionWrapper>
-
-      <SectionWrapper>
-        <Section>
-          <SectionContent>
-            <h1>The best MEV protection under the sun</h1>
-            <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
-            <p>
-              <ul>
-                <li>Add the RPC endpoint directly to your wallet</li>
-                <li>No more failed transactions</li>
-                <li>Install once, use anywhere on Ethereum</li>
-              </ul>
-            </p>
-            <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
-          </SectionContent>
-
-          <SectionContent>
-            <img src="hero2.svg" alt="MEVBlocker.io" />
           </SectionContent>
         </Section>
       </SectionWrapper>

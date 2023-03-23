@@ -23,13 +23,13 @@ export default function App(props: AppProps) {
         <meta property="og:title" content={siteConfig.title} />
 
         <meta property="og:description" content={siteConfig.description} />
-        <meta property="og:image" content={siteConfig.url.root + "/og-meta-cowgrantsprogram.png"} />
+        <meta property="og:image" content={siteConfig.url.root + "/og-meta-mevblocker.png"} />
         <meta property="og:url" content={siteConfig.url.root} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={siteConfig.social.twitter.account} />
         <meta name="twitter:title" content={siteConfig.title} />
-        <meta name="twitter:image" content={siteConfig.url.root + "/og-meta-cowgrantsprogram.png"} />
+        <meta name="twitter:image" content={siteConfig.url.root + "/og-meta-mevblocker.png"} />
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"></meta>
 
         <title>{title} - {descriptionShort}</title>

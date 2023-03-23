@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import Layout from '@src/components/Layout/index'
-import { Section, SectionContent } from '@src/const/styles/pages/index'
+import { Section, SectionContent, SectionWrapper } from '@src/const/styles/pages/index'
 
 export default function Terms() {
   return (
     <Layout pageTitle="Terms & Conditions">
+      <SectionWrapper>
       <Section>
         <SectionContent>
 
@@ -12,6 +13,7 @@ export default function Terms() {
           <p>- Terms content -</p>
         </SectionContent>
       </Section>
+      </SectionWrapper>
     </Layout>
   )
 }

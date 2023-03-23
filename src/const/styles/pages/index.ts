@@ -154,34 +154,35 @@ export const SectionContent = styled.div`
     width: 100%;
     margin: 0 auto;
     line-height: 1;
+    font-size: 2rem;
   }
 
   details > summary {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    font-size: 1.8rem;
     font-weight: bold;
     cursor: pointer;
     margin: 0;
     list-style-type: none;
+    line-height: 1;
 
     &::before {
       content: '+';
       display: inline-block;
+      text-align: center;
       margin: 0 1rem 0 0;
       width: 1rem;
     }
   }
 
   details[open] > summary::before {
-    content: '-';
+    content: '−';
   }
 
   details > div {
-    font-size: 1.6rem;
-    line-height: 1.3;
-    margin: 1.2rem 0 1.2rem 2rem;
+    line-height: 1.5;
+    margin: 1.2rem 0 2.4rem 2rem;
   }
 `
 
