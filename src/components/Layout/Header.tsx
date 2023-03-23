@@ -17,7 +17,7 @@ const Pixel = styled.div`
   left: 0;
   width: 1px;
   height: 1px;
-  display:block;
+  display: block;
   background: transparent;
 `
 
@@ -29,7 +29,8 @@ const Wrapper = styled.header<{ menuVisible: boolean }>`
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background: ${Color.white};
+  border-bottom: 0.1rem solid ${Color.black};
   padding: 0 2.4rem;
   margin: 0 auto;
   position: fixed;
@@ -54,7 +55,7 @@ const Wrapper = styled.header<{ menuVisible: boolean }>`
   }
 
   &.sticky {
-    background: ${transparentize(0.1, Color.pink)};);
+    background: ${transparentize(0.1, Color.white)};
     backdrop-filter: blur(5px);
   }
 `

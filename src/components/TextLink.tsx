@@ -36,6 +36,10 @@ export default function TextLink({
   target,
   rel
 }: TextLinkProps) {
+  if (!label) {
+    throw new Error('Label is required')
+  }
+
   return (
     <Wrapper {...{ wrapText, borderRadius, fontSize, paddingLR, marginTB, variant }} href={href} target={target} rel={rel}>
       {label}

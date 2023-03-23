@@ -28,8 +28,8 @@ export default function Home() {
             <p>
               <ul>
                 <li>Add the RPC endpoint directly to your wallet</li>
-                <li>No more failed transactions</li>
-                <li>Install once, use anywhere on Ethereum</li>
+                <li>Buy, sell, trade, and swap on any dApp</li>
+                <li>MEV Blocker auto-protects all transactions</li>
               </ul>
             </p>
             <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
@@ -70,7 +70,6 @@ export default function Home() {
         <Section>
           <SectionContent>
             <h3>FAQ</h3>
-
             <div className={'section_FAQ'}>
             {FAQ_CONTENT.map(({question, answer}, index) => (
               <details key={index}>
