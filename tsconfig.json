@@ -1,24 +1,40 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"]
+    },
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
+    "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "noUnusedLocals": false,
+    // "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "paths": {
-      "@/src/*": ["src/*"]
-    }
+    "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "lib/i18n.bak", "pages/terms.bak"  ],
+  "exclude": [
+    "node_modules"
+  ],
+    "typeRoots": [ "./types", "./node_modules/@types"],
 }
