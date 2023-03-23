@@ -1,5 +1,5 @@
-import { siteConfig } from '@src/const/meta'
-const {url, social} = siteConfig
+import { CONFIG } from '@src/const/meta'
+const {url, social} = CONFIG
 
 export const mainMenu = [
   { id: 0, title: 'RPC', url: '#'},

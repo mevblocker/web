@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { UaEventOptions } from "react-ga4/types/ga4";
 import { isMobile } from "react-device-detect";
-import { CONFIG } from "@/src/const/meta";
+import { CONFIG } from "@src/const/meta";
 
 import GoogleAnalyticsProvider from "./GoogleAnalyticsProvider";
 
