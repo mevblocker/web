@@ -20,17 +20,17 @@ export default function Home() {
     // get page route from next.js router and pass it to Layout component as props
     <Layout route={router.pathname}>
 
-      <SectionWrapper>
+      <SectionWrapper borderDown>
         <Section>
           <SectionContent>
             <h1>The best MEV protection under the sun</h1>
             <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
             <p>
-              <ul>
+              <ol>
                 <li>Add the RPC endpoint directly to your wallet</li>
                 <li>Buy, sell, trade, and swap on any dApp</li>
                 <li>MEV Blocker auto-protects all transactions</li>
-              </ul>
+              </ol>
             </p>
             <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
           </SectionContent>

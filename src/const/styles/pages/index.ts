@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
 
-export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: string }>`
+export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: string, borderDown?: boolean }>`
   --sectionMaxWidth: 64rem;
   display: flex;
   flex-flow: row wrap;
@@ -10,6 +10,7 @@ export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: st
   margin: 5.6rem auto;
   width: 100%;
   background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : 'transparent'};
+  border-bottom: ${({ borderDown }) => borderDown ? `0.2rem solid ${Color.black}` : 'none'};
 
   ${TextLinkWrapper} {
     width: 100%;

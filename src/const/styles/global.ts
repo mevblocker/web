@@ -91,11 +91,11 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1;
   }
 
-  ul {
+  ul, ol {
     margin: 0 0 1rem;
     padding: 0;
-    list-style-position: inside;
-    list-style: none;
+    /* list-style-position: inside; */
+    /* list-style: none; */
 
     > li {
       display: flex;
@@ -103,14 +103,20 @@ const GlobalStyles = createGlobalStyle`
       gap: 0.7rem;
     }
 
-    > li::before {
+    /* > li::before {
       --size: 1.8rem;
-      content: "";
-      display: inline-block;
+      content: "+";
+      font-size: 3rem;
+      margin: -0.4rem 0 0;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
       width: var(--size);
       height: var(--size);
       background: url('check.svg') no-repeat center/contain;
-    }
+    } */
   }
 
   button {
