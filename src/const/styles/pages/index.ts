@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
 
-export const SectionWrapper = styled.div<{ fixed?: boolean }>`
+export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: string }>`
   --sectionMaxWidth: 64rem;
   display: flex;
   flex-flow: row wrap;
   position: relative;
   margin: 5.6rem auto;
+  width: 100%;
+  background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : 'transparent'};
 
   ${TextLinkWrapper} {
     width: 100%;
