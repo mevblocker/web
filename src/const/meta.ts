@@ -1,4 +1,6 @@
-export const siteConfig = {
+const API_BASE_URL = "https://www.mevblocker.com";
+
+export const CONFIG = {
   title: 'MEVBlocker.io',
   titleShort: 'MEVBlocker.io',
   description: 'MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.',
