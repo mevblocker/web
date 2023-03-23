@@ -34,6 +34,7 @@ const Wrapper = styled.a<Omit<ButtonProps, "href" | "label" | "target" | "rel">>
   white-space: ${({ wrapText }) => wrapText ? 'initial' : 'nowrap'};
   font-weight: ${Font.weightMedium};
   text-decoration: none;
+  text-align: center;
   cursor: pointer;
 
   ${Media.desktopDown} {
@@ -74,6 +75,7 @@ type BigButtonProps = {
 }
 
 const BigButtonWrapper = styled.a`
+  text-align: center;
   line-height: 1;
   border: 0.2rem solid ${Color.black};
   padding: 2rem 4.5rem;

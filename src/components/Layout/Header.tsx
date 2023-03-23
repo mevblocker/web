@@ -63,7 +63,7 @@ const Wrapper = styled.header<{ menuVisible: boolean }>`
 const Menu = styled.ol`
   display: flex;
   list-style: none;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: ${Color.text1};
   padding: 0;
   margin: 0;

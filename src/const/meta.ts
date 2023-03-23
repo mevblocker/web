@@ -8,6 +8,7 @@ export const CONFIG = {
   descriptionShort:
     "MEV Blocker is an RPC that shields all your transactions from MEV.",
   googleAnalyticsID: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
+  RPCUrl: 'https://http.wonderfulrpc.com',
   url: {
     root: "https://mevblocker.io",
     home: "/",

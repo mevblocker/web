@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${Font.default};
     font-display: fallback;
     color: ${Color.text1};
-    background: ${Color.pink};
+    background: ${Color.white};
     background-attachment: fixed;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -41,7 +41,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   *::selection {
-    background: ${Color.text1};
+    background: ${Color.orange};
     color: ${Color.text1};
   }
 
@@ -91,11 +91,11 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1;
   }
 
-  ul {
+  ul, ol {
     margin: 0 0 1rem;
     padding: 0;
-    list-style-position: inside;
-    list-style: none;
+    /* list-style-position: inside; */
+    /* list-style: none; */
 
     > li {
       display: flex;
@@ -103,14 +103,20 @@ const GlobalStyles = createGlobalStyle`
       gap: 0.7rem;
     }
 
-    > li::before {
+    /* > li::before {
       --size: 1.8rem;
-      content: "";
-      display: inline-block;
+      content: "+";
+      font-size: 3rem;
+      margin: -0.4rem 0 0;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
       width: var(--size);
       height: var(--size);
       background: url('check.svg') no-repeat center/contain;
-    }
+    } */
   }
 
   button {
@@ -171,6 +177,17 @@ const GlobalStyles = createGlobalStyle`
     ${Media.mobile} {
       display: none;
     }
+  }
+
+  .copied {
+    color: ${Color.orange};
+    font-weight: bold;
+    width: 100%;
+    margin: 2.4rem 0 0;
+    background: ${transparentize(0.9, Color.orange)};
+    padding: 1rem;
+    border-radius: 1.2rem;
+    text-align: center;
   }
 
   .container {
@@ -247,6 +264,21 @@ export const DropDown = styled.div`
         color: ${Color.text1};
       }
   }
+`
+
+export const CopyIcon = styled.div<{size?: number}>`
+  --size: ${({ size }) => size ? `${size}rem` : '1.6rem'};
+  cursor: pointer;
+  display: inline-block;
+  height: var(--size);
+  width: var(--size);
+  background: url('copy.svg') no-repeat center/contain;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
 `
 
 export default GlobalStyles
