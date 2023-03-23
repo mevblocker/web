@@ -6,7 +6,8 @@ import { CONFIG } from "@/src/const/meta";
 import GoogleAnalyticsProvider from "./GoogleAnalyticsProvider";
 
 const GOOGLE_ANALYTICS_ID: string | undefined = CONFIG.googleAnalyticsID;
-export const GOOGLE_ANALYTICS_CLIENT_ID_STORAGE_KEY = "ga_client_id";
+const GOOGLE_ANALYTICS_CLIENT_ID_STORAGE_KEY = "ga_client_id";
+const IS_CLIENT = typeof window !== "undefined";
 
 const googleAnalytics = new GoogleAnalyticsProvider();
 
@@ -39,7 +40,7 @@ export function sendTiming(
   );
 }
 
-if (typeof window !== "undefined") {
+if (IS_CLIENT) {
   const storedClientId = window.localStorage.getItem(
     GOOGLE_ANALYTICS_CLIENT_ID_STORAGE_KEY
   );
@@ -67,13 +68,13 @@ if (typeof window !== "undefined") {
 
 // tracks web vitals and pageviews
 export function useAnalyticsReporter({ pathname }: { pathname: string }): void {
-  if (typeof window === "undefined") return;
-
   useEffect(() => {
     googleAnalytics.pageview(pathname);
   }, [pathname]);
 
   useEffect(() => {
+    if (!IS_CLIENT) return;
+
     // typed as 'any' in react-ga4 -.-
     googleAnalytics.ga((tracker: any) => {
       if (!tracker) return;

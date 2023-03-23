@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import ReactGA from "react-ga4";
 import { GaOptions, InitOptions, UaEventOptions } from "react-ga4/types/ga4";
 
