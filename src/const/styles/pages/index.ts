@@ -282,41 +282,65 @@ export const HeroImage = styled.div`
     height: 33rem;
   }
 
-  .sandwhich-1 {
-    right: 0;
-    bottom: 50%;
-    height: 20rem;
-    width: auto;
-    animation: moveIn 3s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
   .sandwhich-2 {
+    right: 4%;
+    bottom: 55%;
+    height: 20rem;
+    width: auto;
+    animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .sandwhich-1 {
+    left: 4%;
+    bottom: 55%;
+    height: 20rem;
+    width: auto;
+    animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .tomato-1 {
     left: 0;
-    bottom: 50%;
-    height: 20rem;
+    bottom: 45%;
+    height: 5rem;
     width: auto;
-    animation: moveIn 5s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: moveIn 6s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
-  .sandwhich-3 {
-    left: 30%;
-    bottom: 60%;
-    height: 20rem;
+  .tomato-2 {
+    right: 38%;
+    bottom: 62%;
+    height: 8rem;
     width: auto;
-    animation: moveIn 2s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: moveIn 6s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
-  .line {
-    right: 0;
-    bottom: 44%;
-    height: 6rem;
+  .leaf-1 {
+    left: -5%;
+    bottom: 65%;
+    height: 15rem;
     width: auto;
-    animation: moveIn 6s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: moveIn 1.5s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .leaf-2 {
+    right: -12%;
+    bottom: 42%;
+    height: 9rem;
+    width: auto;
+    animation: moveIn 3s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .line-1 {
+    left: 32%;
+    bottom: 59%;
+    height: 18rem;
+    width: auto;
+    animation: moveIn 1s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
   @keyframes moveIn {
     0% {
-      transform: translateY(-50%) rotate(-9deg);
+      transform: translateY(-70%) rotate(-5deg);
     }
     100% {
       transform: translateY(0) rotate(0);

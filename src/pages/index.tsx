@@ -49,8 +49,11 @@ const HandleOnCopy = useCallback(() => {
 
           <SectionContent>
             <HeroImage>
-              <img className="line" src="hero/line.svg" alt="MEVBlocker.io" />
-              <img className="sandwhich-3" src="hero/sandwhich-3.svg" alt="MEVBlocker.io" />
+              <img className="line-1" src="hero/line-1.svg" alt="MEVBlocker.io" />
+              <img className="leaf-1" src="hero/leaf-1.svg" alt="MEVBlocker.io" />
+              <img className="leaf-2" src="hero/leaf-2.svg" alt="MEVBlocker.io" />
+              <img className="tomato-1" src="hero/tomato-1.svg" alt="MEVBlocker.io" />
+              <img className="tomato-2" src="hero/tomato-2.svg" alt="MEVBlocker.io" />
               <img className="sandwhich-2" src="hero/sandwhich-2.svg" alt="MEVBlocker.io" />
               <img className="sandwhich-1" src="hero/sandwhich-1.svg" alt="MEVBlocker.io" />
               <img className="person" src="hero/person.svg" alt="MEVBlocker.io" />
