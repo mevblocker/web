@@ -8,7 +8,7 @@ import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrap
 import { Button, BigButton } from '@src/components/Button'
 // import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
-import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS } from '@src/const/content'
+import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE} from '@src/const/content'
 // import { CONFIG } from '@src/const/meta'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
@@ -135,10 +135,17 @@ const HandleOnCopy = useCallback(() => {
       {/* Built with love */}
       <SectionWrapper backgroundColor={Color.mint} borderDown>
         <Section>
-          <SectionContent>
-            
-            <h3>Built with love by</h3>
-            <p>(Logos for: CoW Protocol, Beaver, Agnostic)</p>
+          <SectionContent maxWidth={100} align={'center'}>            
+          <h3>Built with love by</h3>
+            <USPWrapper>
+              {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
+                <USPItem key={index}>
+                  <a href={link} target="_blank" rel="noopener noreferrer">
+                    <img src={logo} alt={title} />
+                  </a>
+                </USPItem>
+              ))}
+            </USPWrapper>
           </SectionContent>
 
         </Section>

@@ -108,7 +108,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
 
   > h1 {
     ${Media.desktopDown} {
-      font-size: 4.2rem;
+      font-size: 5rem;
     }
   }
 
@@ -117,13 +117,17 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-weight: ${Font.weightBold};
 
     ${Media.desktopDown} {
-      font-size: 2.4rem;
+      font-size: 4rem;
     }
   }
 
   > h3 {
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
+
+    ${Media.desktopDown} {
+      font-size: 4rem;
+    }
   }
 
   > h5 {
@@ -142,10 +146,18 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     line-height: 1.6;
     margin: 0 0 2.4rem;
     word-break: break-word;
+
+    ${Media.desktopDown} {
+      font-size: 1.6rem;
+    }
   }
 
   .large-text {
     font-size: 2.8rem;
+
+    ${Media.desktopDown} {
+      font-size: 2.4rem;
+    }
   }
 
   .section_FAQ {
@@ -302,5 +314,15 @@ export const USPItem = styled.div`
 
   > p {
     font-size: 1.3rem;
+  }
+
+  > img,
+  > a {
+    --size: 24rem;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    background: ${Color.white};
+    border: 0.2rem solid ${Color.black};
   }
 `
