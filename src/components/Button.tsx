@@ -1,54 +1,62 @@
-import styled from 'styled-components'
-import { transparentize } from 'polished'
-import { Defaults, Color, Font, Media } from '@src/const/styles/variables'
+import styled from "styled-components";
+import { transparentize } from "polished";
+import { Defaults, Color, Font, Media } from "@src/const/styles/variables";
 
 type ButtonProps = {
-  wrapText?: boolean
-  borderRadius?: number
-  fontSize?: number
-  paddingLR?: number
-  marginTB?: number
-  variant?: string
-  href?: string
-  label: string
-  target?: string
-  rel?: string
-}
+  wrapText?: boolean;
+  borderRadius?: number;
+  fontSize?: number;
+  paddingLR?: number;
+  marginTB?: number;
+  variant?: string;
+  href?: string;
+  label: string;
+  target?: string;
+  rel?: string;
+  onClick?: () => void;
+};
 
-const Wrapper = styled.a<Omit<ButtonProps, "href" | "label" | "target" | "rel">>`
+const Wrapper = styled.a<
+  Omit<ButtonProps, "href" | "label" | "target" | "rel">
+>`
   display: flex;
-  background: ${({ variant }) => variant === 'white' ? 'transparent' : Color.black};
+  background: ${({ variant }) =>
+    variant === "white" ? "transparent" : Color.black};
   flex-flow: row;
-  border: 0.1rem solid ${({ variant }) => variant === 'white' ? transparentize(0.6, Color.border) : 'transparent'};
-  color: ${({ variant }) => variant === 'white' ? Color.text1 : Color.white};
-  padding: ${({ paddingLR }) => paddingLR ? `0 ${paddingLR}rem` : '0 6rem'};
-  margin: ${({ marginTB }) => marginTB ? `${marginTB}rem 0` : '0'};
+  border: 0.1rem solid
+    ${({ variant }) =>
+      variant === "white" ? transparentize(0.6, Color.border) : "transparent"};
+  color: ${({ variant }) => (variant === "white" ? Color.text1 : Color.white)};
+  padding: ${({ paddingLR }) => (paddingLR ? `0 ${paddingLR}rem` : "0 6rem")};
+  margin: ${({ marginTB }) => (marginTB ? `${marginTB}rem 0` : "0")};
   box-sizing: border-box;
-  border-radius: ${({ borderRadius }) => borderRadius ? borderRadius : Defaults.borderRadius};
+  border-radius: ${({ borderRadius }) =>
+    borderRadius ? borderRadius : Defaults.borderRadius};
   min-height: 5.6rem;
   width: auto;
   align-items: center;
-  font-size: ${({ fontSize }) => fontSize ? `${fontSize}rem` : "2.2rem"};
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}rem` : "2.2rem")};
   justify-content: center;
   transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
-  white-space: ${({ wrapText }) => wrapText ? 'initial' : 'nowrap'};
+  white-space: ${({ wrapText }) => (wrapText ? "initial" : "nowrap")};
   font-weight: ${Font.weightMedium};
   text-decoration: none;
   text-align: center;
   cursor: pointer;
 
   ${Media.desktopDown} {
-    padding: ${({ paddingLR }) => paddingLR ? `0 ${paddingLR}rem` : '0 6rem'};
-    margin: ${({ marginTB }) => marginTB ? `${marginTB}rem 0` : '0'};
+    padding: ${({ paddingLR }) => (paddingLR ? `0 ${paddingLR}rem` : "0 6rem")};
+    margin: ${({ marginTB }) => (marginTB ? `${marginTB}rem 0` : "0")};
     min-height: 5.6rem;
     font-size: 1.8rem;
   }
 
   &:hover {
-    /* background: ${({ variant }) => variant === 'white' ? Color.text1 : Color.black};
+    /* background: ${({ variant }) =>
+      variant === "white" ? Color.text1 : Color.black};
     color: ${Color.text1}; */
   }
-`
+`;
 
 // General purpose multiple button wrapper
 export const ButtonWrapper = styled.div`
@@ -64,15 +72,16 @@ export const ButtonWrapper = styled.div`
       width: 100%;
     }
   }
-`
+`;
 
 type BigButtonProps = {
-  fontSize?: number
-  href?: string
-  label: string
-  target?: string
-  rel?: string
-}
+  fontSize?: number;
+  href?: string;
+  label: string;
+  target?: string;
+  rel?: string;
+  onClick?: () => void;
+};
 
 const BigButtonWrapper = styled.a`
   text-align: center;
@@ -93,11 +102,11 @@ const BigButtonWrapper = styled.a`
     top: 0.4rem;
     left: 0.4rem;
     box-shadow: 0.1rem 0.1rem 0 ${Color.black};
-    transition-property: box-shadow,top,left;
-    transition-duration: .3s;
+    transition-property: box-shadow, top, left;
+    transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
   }
-`
+`;
 
 export function Button({
   wrapText,
@@ -109,17 +118,36 @@ export function Button({
   href = "#",
   label,
   target,
-  rel
+  rel,
+  onClick,
 }: ButtonProps) {
   return (
-    <Wrapper {...{ wrapText, borderRadius, fontSize, paddingLR, marginTB, variant }} href={href} target={target} rel={rel}>
+    <Wrapper
+      onClick={onClick}
+      {...{ wrapText, borderRadius, fontSize, paddingLR, marginTB, variant }}
+      href={href}
+      target={target}
+      rel={rel}
+    >
       {label}
     </Wrapper>
-  )
+  );
 }
 
-export function BigButton({ label, href, target, rel, fontSize }: BigButtonProps) {
+export function BigButton({
+  label,
+  href,
+  target,
+  rel,
+  fontSize,
+  onClick,
+}: BigButtonProps) {
   return (
-    <BigButtonWrapper {...{ href, label, target, rel, fontSize }}>{label}</BigButtonWrapper>
-  )
+    <BigButtonWrapper
+      onClick={onClick}
+      {...{ href, label, target, rel, fontSize }}
+    >
+      {label}
+    </BigButtonWrapper>
+  );
 }
