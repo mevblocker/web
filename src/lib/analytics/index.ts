@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { UaEventOptions } from "react-ga4/types/ga4";
 import { isMobile } from "react-device-detect";
-import { CONFIG } from "@src/const/meta";
 
 import GoogleAnalyticsProvider from "./GoogleAnalyticsProvider";
 
-const GOOGLE_ANALYTICS_ID: string | undefined = CONFIG.googleAnalyticsID;
+const GOOGLE_ANALYTICS_ID: string | undefined =
+  process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
 const GOOGLE_ANALYTICS_CLIENT_ID_STORAGE_KEY = "ga_client_id";
 const IS_CLIENT = typeof window !== "undefined";
 
