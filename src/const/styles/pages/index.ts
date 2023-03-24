@@ -32,12 +32,13 @@ export const Section = styled.section<{bgColor?: string, imageMaxHeight?: number
   flex-flow: row wrap;
   background: ${({ bgColor }) => bgColor ? bgColor : 'transparent'};
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     height: auto;
     max-width: 86rem;
     margin: 0 auto;
     min-height: initial;
     flex-flow: column wrap;
+    gap: 0;
   }
 
   img {
@@ -68,7 +69,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   justify-content: center;
   align-items: ${({ align }) => align === 'center' ? 'center' : 'flex-start'};
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     max-width: 100%;
     height: auto;
     padding: 0 2.4rem 0;
@@ -97,7 +98,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-weight: ${Font.weightBold};
     margin: 0 0 2.4rem;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       margin: 2.4rem 0;
     }
 
@@ -107,7 +108,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   }
 
   > h1 {
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 5rem;
     }
   }
@@ -116,7 +117,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 2.4rem 0;
     font-weight: ${Font.weightBold};
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 4rem;
     }
   }
@@ -125,7 +126,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 4rem;
     }
   }
@@ -147,7 +148,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 0 0 2.4rem;
     word-break: break-word;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 1.6rem;
     }
   }
@@ -155,7 +156,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   .large-text {
     font-size: 2.8rem;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 2.4rem;
     }
   }
@@ -167,7 +168,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 2.4rem 0;
     width: var(--sectionMaxWidth);
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       width: 100%;
       gap: 2.4rem;
     }
@@ -183,7 +184,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-size: 2.4rem;
     position: relative;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 2rem;
     }
   }
@@ -245,7 +246,7 @@ export const Content = styled.main`
   flex-flow: column wrap;
   min-height: 80rem;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     height: auto;
     max-width: 100%;
     min-height: initial;
@@ -259,6 +260,94 @@ export const Content = styled.main`
   }
 `
 
+export const HeroImage = styled.div`
+  --size: 60rem;
+  display: flex;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+
+  ${Media.mediumDown} {
+    transform: scale(0.5);
+    max-width: 100%;
+  }
+
+  > img {
+    position: absolute;
+  }
+
+  .person {
+    right: 0;
+    bottom: 0;
+    height: 33rem;
+  }
+
+  .sandwhich-2 {
+    right: 4%;
+    bottom: 55%;
+    height: 20rem;
+    width: auto;
+    animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .sandwhich-1 {
+    left: 4%;
+    bottom: 55%;
+    height: 20rem;
+    width: auto;
+    animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .tomato-1 {
+    left: 0;
+    bottom: 45%;
+    height: 5rem;
+    width: auto;
+    animation: moveIn 6s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .tomato-2 {
+    right: 38%;
+    bottom: 62%;
+    height: 8rem;
+    width: auto;
+    animation: moveIn 6s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .leaf-1 {
+    left: -5%;
+    bottom: 65%;
+    height: 15rem;
+    width: auto;
+    animation: moveIn 1.5s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .leaf-2 {
+    right: -12%;
+    bottom: 42%;
+    height: 9rem;
+    width: auto;
+    animation: moveIn 3s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  .line-1 {
+    left: 32%;
+    bottom: 59%;
+    height: 18rem;
+    width: auto;
+    animation: moveIn 1s forwards cubic-bezier(.62,.16,.13,1.01);
+  }
+
+  @keyframes moveIn {
+    0% {
+      transform: translateY(-70%) rotate(-5deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+`
+
 export const CardWrapper = styled.div<{count?: number}>`
   display: flex;
   flex-flow: row wrap;
@@ -267,8 +356,9 @@ export const CardWrapper = styled.div<{count?: number}>`
   grid-template-columns: ${({ count }) => count ? `repeat(${count}, 1fr)` : 'unset'};
   gap: 2.4rem;
   align-items: stretch;
+  width: 100%;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     display: flex;
     flex-flow: column wrap;
   }
@@ -300,10 +390,36 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
   table {
     width: 100%;
     border-spacing: 0.5rem;
+
+    ${Media.mediumDown} {
+      border-spacing: 0;
+      display: flex;
+      flex-flow: column wrap;
+    }
+  }
+
+  table > tbody {
+    ${Media.mediumDown} {
+      display: flex;
+      flex-flow: column wrap;
+      gap: 2rem;
+    }
+  }
+
+  table tr {
+    ${Media.mediumDown} {
+      display: flex;
+      flex-flow: column wrap;
+      gap: 0.6rem;
+    }
   }
 
   table tr > td:last-of-type {
     padding: 0 0 0 1rem;
+
+    ${Media.mediumDown} {
+      padding: 0;
+    }
   }
 
   table td > span {
@@ -318,8 +434,9 @@ export const USPWrapper = styled.div`
   flex-flow: row wrap;
   align-items: flex-start;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     flex-flow: column wrap;
+    gap: 8rem;
   }
 `
 
@@ -329,30 +446,36 @@ export const USPItem = styled.div`
   align-items: center;
   width: calc(100% / 3);
   padding: 0 1.4rem;
+  gap: 2.4rem;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     width: 100%;
     padding: 0;
   }
 
-  > h4 {
+  > h4,
+  > a {
     font-size: 2.2rem;
     width: 100%;
     line-height: 1.4;
     text-align: center;
+    margin: 0;
+    display: block;
+    color: ${Color.text1};
   }
 
   > p {
     font-size: 1.3rem;
+    margin: 0;
   }
 
-  > img,
-  > a {
+  > img {
     --size: 24rem;
     width: var(--size);
     height: var(--size);
     border-radius: var(--size);
     background: ${Color.white};
     border: 0.2rem solid ${Color.black};
+    display: inline-block;
   }
 `

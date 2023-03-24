@@ -43,10 +43,9 @@ const Wrapper = styled.a<
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-
-  ${Media.desktopDown} {
-    padding: ${({ paddingLR }) => (paddingLR ? `0 ${paddingLR}rem` : "0 6rem")};
-    margin: ${({ marginTB }) => (marginTB ? `${marginTB}rem 0` : "0")};
+  ${Media.mediumDown} {
+    padding: ${({ paddingLR }) => paddingLR ? `0 ${paddingLR}rem` : '0 6rem'};
+    margin: ${({ marginTB }) => marginTB ? `${marginTB}rem 0` : '0'};
     min-height: 5.6rem;
     font-size: 1.8rem;
   }
@@ -64,7 +63,7 @@ export const ButtonWrapper = styled.div`
   gap: 1.6rem;
   width: 100%;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     justify-content: center;
     flex-flow: column wrap;
 

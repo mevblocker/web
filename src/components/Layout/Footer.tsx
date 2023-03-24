@@ -14,7 +14,7 @@ const Wrapper = styled.footer`
 const Menu = styled.ol`
   display: flex;
   list-style: none;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
@@ -24,11 +24,11 @@ const Menu = styled.ol`
   margin: 0;
   width: 100%;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     text-align: center;
     flex-flow: column wrap;
-    font-size: 1.4rem;
-    gap: 2.4rem;
+    gap: 3.2rem;
+    margin: 2.4rem;
   }
 
   > li > a {
@@ -41,7 +41,7 @@ const Menu = styled.ol`
       text-decoration: underline;
       color: ${Color.text1};
 
-      ${Media.desktopDown} {
+      ${Media.mediumDown} {
         color: ${Color.text1};
       {
     }
@@ -49,7 +49,7 @@ const Menu = styled.ol`
 `
 
 export default function Footer({ siteConfig, menu }) {
-  const { social } = siteConfig
+  const { titleShort } = siteConfig
   const currentYear = new Date().getFullYear()
 
   return (
@@ -60,7 +60,7 @@ export default function Footer({ siteConfig, menu }) {
             <Link href={url}>{title}</Link>
           </li>
         ))}</>}
-        <li>©{siteConfig.titleShort} {currentYear}</li>
+        <li>©{titleShort} {currentYear}</li>
       </Menu>
 
     </Wrapper >

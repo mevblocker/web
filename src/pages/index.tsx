@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useState, useCallback } from 'react'
 import Layout from '@src/components/Layout'
 import { CopyIcon } from '@src/const/styles/global'
-import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem } from '@src/const/styles/pages/index'
+import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem, HeroImage } from '@src/const/styles/pages/index'
 import { Button, BigButton } from '@src/components/Button'
 // import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
@@ -49,7 +49,16 @@ const HandleOnCopy = useCallback(() => {
           </SectionContent>
 
           <SectionContent>
-            <img src="hero.svg" alt="MEVBlocker.io" />
+            <HeroImage>
+              <img className="line-1" src="hero/line-1.svg" alt="MEVBlocker.io" />
+              <img className="leaf-1" src="hero/leaf-1.svg" alt="MEVBlocker.io" />
+              <img className="leaf-2" src="hero/leaf-2.svg" alt="MEVBlocker.io" />
+              <img className="tomato-1" src="hero/tomato-1.svg" alt="MEVBlocker.io" />
+              <img className="tomato-2" src="hero/tomato-2.svg" alt="MEVBlocker.io" />
+              <img className="sandwhich-2" src="hero/sandwhich-2.svg" alt="MEVBlocker.io" />
+              <img className="sandwhich-1" src="hero/sandwhich-1.svg" alt="MEVBlocker.io" />
+              <img className="person" src="hero/person.svg" alt="MEVBlocker.io" />
+            </HeroImage>
           </SectionContent>
         </Section>
       </SectionWrapper>
@@ -140,9 +149,8 @@ const HandleOnCopy = useCallback(() => {
             <USPWrapper>
               {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
                 <USPItem key={index}>
-                  <a href={link} target="_blank" rel="noopener noreferrer">
-                    <img src={logo} alt={title} />
-                  </a>
+                    <img src={logo} alt={title} loading="lazy" />
+                    <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
                 </USPItem>
               ))}
             </USPWrapper>
