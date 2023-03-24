@@ -5,7 +5,6 @@ export const CONFIG = {
   titleShort: 'MEVBlocker.io',
   description: 'MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.',
   descriptionShort: 'MEV Blocker is an RPC that shields all your transactions from MEV.',
-  googleAnalyticsID: 'G-JV2Q6SXRNR',
   RPC_URL: 'https://rpc.mevblocker.io/',
   url: {
     root: "https://mevblocker.io",
@@ -13,9 +12,13 @@ export const CONFIG = {
     faq: "/faq",
   },
   social: {
-    twitter: { label: 'Twitter', account: 'mevblocker', url: 'https://twitter.com/' },
-    discord: { label: 'Discord', url: 'https://discord.gg/4wCETCfpQu' },
-    forum: { label: 'Forum', url: 'https://mevblocker.discourse.group/' },
-    github: { label: 'GitHub', url: 'https://github.com/mevblocker' }
-  }
-}
+    twitter: {
+      label: "Twitter",
+      account: "mevblocker",
+      url: "https://twitter.com/",
+    },
+    discord: { label: "Discord", url: "https://discord.gg/4wCETCfpQu" },
+    forum: { label: "Forum", url: "https://mevblocker.discourse.group/" },
+    github: { label: "GitHub", url: "https://github.com/mevblocker" },
+  },
+};
