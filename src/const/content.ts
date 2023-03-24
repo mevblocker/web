@@ -6,15 +6,15 @@ export const USP_CONTENT: {
 }[] = [
     {
       title: "Keeps millions of dollars safe from harmful MEV rays, so you can trade worry-free",
-      image: "usp-1.svg",
+      image: "usp_1.svg",
     },
     {
       title: "Jointly developed by a network of protocols to guarantee neutrality ",
-      image: "usp-1.svg",
+      image: "usp_2.svg",
     },
     {
       title: "Formulated to cover every type of transaction including DeFi, NFTs, dApps and more",
-      image: "usp-1.svg",
+      image: "usp_3.svg",
     },
   ]
 
