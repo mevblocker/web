@@ -32,12 +32,13 @@ export const Section = styled.section<{bgColor?: string, imageMaxHeight?: number
   flex-flow: row wrap;
   background: ${({ bgColor }) => bgColor ? bgColor : 'transparent'};
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     height: auto;
     max-width: 86rem;
     margin: 0 auto;
     min-height: initial;
     flex-flow: column wrap;
+    gap: 0;
   }
 
   img {
@@ -68,7 +69,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   justify-content: center;
   align-items: ${({ align }) => align === 'center' ? 'center' : 'flex-start'};
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     max-width: 100%;
     height: auto;
     padding: 0 2.4rem 0;
@@ -97,7 +98,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-weight: ${Font.weightBold};
     margin: 0 0 2.4rem;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       margin: 2.4rem 0;
     }
 
@@ -107,7 +108,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   }
 
   > h1 {
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 5rem;
     }
   }
@@ -116,7 +117,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 2.4rem 0;
     font-weight: ${Font.weightBold};
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 4rem;
     }
   }
@@ -125,7 +126,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 4rem;
     }
   }
@@ -147,7 +148,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 0 0 2.4rem;
     word-break: break-word;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 1.6rem;
     }
   }
@@ -155,7 +156,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   .large-text {
     font-size: 2.8rem;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 2.4rem;
     }
   }
@@ -167,7 +168,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 2.4rem 0;
     width: var(--sectionMaxWidth);
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       width: 100%;
       gap: 2.4rem;
     }
@@ -183,7 +184,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-size: 2.4rem;
     position: relative;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 2rem;
     }
   }
@@ -245,7 +246,7 @@ export const Content = styled.main`
   flex-flow: column wrap;
   min-height: 80rem;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     height: auto;
     max-width: 100%;
     min-height: initial;
@@ -267,8 +268,9 @@ export const CardWrapper = styled.div<{count?: number}>`
   grid-template-columns: ${({ count }) => count ? `repeat(${count}, 1fr)` : 'unset'};
   gap: 2.4rem;
   align-items: stretch;
+  width: 100%;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     display: flex;
     flex-flow: column wrap;
   }
@@ -300,10 +302,36 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
   table {
     width: 100%;
     border-spacing: 0.5rem;
+
+    ${Media.mediumDown} {
+      border-spacing: 0;
+      display: flex;
+      flex-flow: column wrap;
+    }
+  }
+
+  table > tbody {
+    ${Media.mediumDown} {
+      display: flex;
+      flex-flow: column wrap;
+      gap: 2rem;
+    }
+  }
+
+  table tr {
+    ${Media.mediumDown} {
+      display: flex;
+      flex-flow: column wrap;
+      gap: 0.6rem;
+    }
   }
 
   table tr > td:last-of-type {
     padding: 0 0 0 1rem;
+
+    ${Media.mediumDown} {
+      padding: 0;
+    }
   }
 
   table td > span {
@@ -318,8 +346,9 @@ export const USPWrapper = styled.div`
   flex-flow: row wrap;
   align-items: flex-start;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     flex-flow: column wrap;
+    gap: 8rem;
   }
 `
 
@@ -331,7 +360,7 @@ export const USPItem = styled.div`
   padding: 0 1.4rem;
   gap: 2.4rem;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     width: 100%;
     padding: 0;
   }
