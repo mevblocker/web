@@ -3,18 +3,27 @@ import "@rainbow-me/rainbowkit/styles.css";
 
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum } from "wagmi/chains";
-import { alchemyProvider } from "wagmi/providers/alchemy";
+import { mainnet, gnosis, goerli } from "wagmi/chains";
+import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { publicProvider } from "wagmi/providers/public";
+import { CONFIG } from "@src/const/meta";
 
 export function WalletProvider({ children }: PropsWithChildren) {
   const { chains, provider } = configureChains(
-    [mainnet, polygon, optimism, arbitrum],
-    [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+    [mainnet, gnosis, goerli],
+    [
+      jsonRpcProvider({
+        rpc: () => ({
+          //http: "http://rpc.mevblocker.io",
+          http: "https://http.wonderfulrpc.com",
+        }),
+      }),
+      publicProvider(),
+    ]
   );
 
   const { connectors } = getDefaultWallets({
-    appName: "MEV Blocker",
+    appName: CONFIG.title,
     chains,
   });
 
@@ -26,7 +35,9 @@ export function WalletProvider({ children }: PropsWithChildren) {
 
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>{children}</RainbowKitProvider>
+      <RainbowKitProvider chains={chains} initialChain={mainnet}>
+        {children}
+      </RainbowKitProvider>
     </WagmiConfig>
   );
 }
