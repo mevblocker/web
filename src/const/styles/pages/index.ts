@@ -71,7 +71,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   ${Media.desktopDown} {
     max-width: 100%;
     height: auto;
-    padding: 3rem 3rem 0;
+    padding: 0 2.4rem 0;
+    margin: 2.4rem auto;
   }
 
   > hr {
@@ -96,16 +97,18 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-weight: ${Font.weightBold};
     margin: 0 0 2.4rem;
 
-    /* ${Media.desktopSmallHeight} {
-      font-size: 3rem;
-    } */
+    ${Media.desktopDown} {
+      margin: 2.4rem 0;
+    }
 
     > b {
       font-weight: ${Font.weightBold};
     }
+  }
 
+  > h1 {
     ${Media.desktopDown} {
-      font-size: 3.2rem;
+      font-size: 5rem;
     }
   }
 
@@ -114,23 +117,22 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-weight: ${Font.weightBold};
 
     ${Media.desktopDown} {
-      font-size: 2.4rem;
-      margin: 2.4rem 0;
+      font-size: 4rem;
     }
   }
 
   > h3 {
-    margin: 0;
+    margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
 
     ${Media.desktopDown} {
-      font-size: 2rem;
-      margin: 2rem 0;
+      font-size: 4rem;
     }
   }
 
   > h5 {
     font-size: 2.8rem;
+    margin: 0 0 5.6rem;
     font-weight: normal;
   }
 
@@ -138,16 +140,24 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   > small,
   > ul,
   > ol {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     text-align: left;
     font-weight: ${Font.weightNormal};
     line-height: 1.6;
     margin: 0 0 2.4rem;
     word-break: break-word;
+
+    ${Media.desktopDown} {
+      font-size: 1.6rem;
+    }
   }
 
   .large-text {
     font-size: 2.8rem;
+
+    ${Media.desktopDown} {
+      font-size: 2.4rem;
+    }
   }
 
   .section_FAQ {
@@ -156,7 +166,11 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     align-items: flex-start;
     margin: 2.4rem 0;
     width: var(--sectionMaxWidth);
-    gap: 1.2rem;
+
+    ${Media.desktopDown} {
+      width: 100%;
+      gap: 2.4rem;
+    }
   }
 
   details {
@@ -164,36 +178,60 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     flex-flow: column wrap;
     width: 100%;
     margin: 0 auto;
+    padding: 0;
     line-height: 1;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    position: relative;
+
+    ${Media.desktopDown} {
+      font-size: 2rem;
+    }
   }
 
   details > summary {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    font-weight: bold;
+    font-weight: ${Font.weightBold};
     cursor: pointer;
     margin: 0;
+    padding: 1rem 2.8rem 1rem 0;
     list-style-type: none;
-    line-height: 1;
+    line-height: 1.2;
+    border-bottom: 0.2rem solid ${Color.black};
+    position: relative;
 
-    &::before {
+    &::after {
       content: '+';
-      display: inline-block;
+      display: flex;
+      align-items: center;
       text-align: center;
-      margin: 0 1rem 0 0;
-      width: 1rem;
+      margin: auto;
+      position: absolute;
+      font-size: 2.8rem;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
   }
 
-  details[open] > summary::before {
-    content: '−';
+  details > div {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 0 2.4rem;
   }
 
-  details > div {
-    line-height: 1.5;
-    margin: 1.2rem 0 2.4rem 2rem;
+  details[open] > div {
+    border-bottom: 0.2rem solid ${Color.black};
+  }
+
+  details[open] > summary {
+    border-bottom: 0.2rem solid transparent;
+  }
+
+  details[open] > summary::after{
+    content: '−';
   }
 `
 
@@ -229,10 +267,15 @@ export const CardWrapper = styled.div<{count?: number}>`
   grid-template-columns: ${({ count }) => count ? `repeat(${count}, 1fr)` : 'unset'};
   gap: 2.4rem;
   align-items: stretch;
+
+  ${Media.desktopDown} {
+    display: flex;
+    flex-flow: column wrap;
+  }
 `
 
 export const CardItem = styled.div<{ backgroundColor?: string }>`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 1.1;
   display: flex;
   flex-flow: column wrap;
@@ -256,7 +299,11 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
 
   table {
     width: 100%;
-    border-collapse: collapse;
+    border-spacing: 0.5rem;
+  }
+
+  table tr > td:last-of-type {
+    padding: 0 0 0 1rem;
   }
 
   table td > span {
@@ -269,22 +316,43 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
 export const USPWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: flex-start;
+
+  ${Media.desktopDown} {
+    flex-flow: column wrap;
+  }
 `
 
 export const USPItem = styled.div`
   display: flex;
   flex-flow: column wrap;
+  align-items: center;
   width: calc(100% / 3);
   padding: 0 1.4rem;
 
-  > h4 {
-    font-size: 1.8rem;
+  ${Media.desktopDown} {
     width: 100%;
-    line-height: 1.1;
+    padding: 0;
+  }
+
+  > h4 {
+    font-size: 2.2rem;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
   }
 
   > p {
     font-size: 1.3rem;
+  }
+
+  > img,
+  > a {
+    --size: 24rem;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    background: ${Color.white};
+    border: 0.2rem solid ${Color.black};
   }
 `

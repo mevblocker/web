@@ -1,25 +1,24 @@
-export const USP_CONTENT = [
-  {
-    title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
-    description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
-    image: "usp-1.svg",
-    imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
-  },
-  {
-    title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
-    description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
-    image: "usp-1.svg",
-    imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
-  },
-  {
-    title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
-    description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
-    image: "usp-1.svg",
-    imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
-  }
-]
+import { CONFIG } from '@src/const/meta'
 
-export const FAQ_CONTENT = [
+export const USP_CONTENT: {
+  title: string
+  image: string
+}[] = [
+    {
+      title: "Keeps millions of dollars safe from harmful MEV rays, so you can trade worry-free",
+      image: "usp_1.svg",
+    },
+    {
+      title: "Jointly developed by a network of protocols to guarantee neutrality ",
+      image: "usp_2.svg",
+    },
+    {
+      title: "Formulated to cover every type of transaction including DeFi, NFTs, dApps and more",
+      image: "usp_3.svg",
+    },
+  ]
+
+export const FAQ_CONTENT: { question: string; answer: string }[] = [
   {
     question: "What is MEV",
     answer: "MEV or “maximal extractable value” is a method used by savvy traders (known as “searchers”) to exploit your trades at your expense. Any time you make a trade, searchers can “frontrun” it by submitting the exact same trade before you and keeping the profits for themselves. After getting frontrun, you can also get “backrun”, which is where the searcher cleans up any price slippage your trade caused, again keeping the profits for themselves. Both a frontrun and a backrun together are known as a “sandwich attack” — the worst type of MEV. MEV gives you a worse price for your trade and it can cause you to lose out on hundreds or even thousands of dollars. MEV Blocker is an easy solution that protects all types of transactions from MEV."
@@ -65,14 +64,14 @@ export const FAQ_CONTENT = [
   },
 ]
 
-export const RPC_DETAILS = [
+export const RPC_DETAILS: { title: string; value: string }[] = [
   {
     title: "Network Name",
     value: "MEV Blocker",
   },
   {
     title: "New RPC URL",
-    value: "https://http.wonderfulrpc.com",
+    value: CONFIG.RPC_URL,
   },
   {
     title: "Chain ID",
@@ -85,5 +84,57 @@ export const RPC_DETAILS = [
   {
     title: "Block Explorer URL",
     value: "https://etherscan.io",
+  },
+]
+
+export const TESTIMONIALS: { content: string; image: string; author: string }[] = [
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-1.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-2.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-1.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-2.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-1.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-2.png",
+    author: "John Doe",
+  },
+]
+
+
+export const BUILT_WITH_LOVE: { title: string, logo: string, link: string }[] = [
+  {
+    title: "CoW Protocol",
+    logo: "cow-logo.svg",
+    link: "https://cowswap.exchange",
+  },
+  {
+    title: "Beaver Builder",
+    logo: "beaver-logo.svg",
+    link: "https://beaverbuilder.io",
+  },
+  {
+    title: "Agnostic",
+    logo: "agnostic-logo.svg",
+    link: "https://agnostic.org",
   },
 ]

@@ -31,8 +31,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "lib/i18n.bak", "pages/terms.bak"  ],
+    "**/*.tsx" 
+  ],
   "exclude": [
     "node_modules"
   ],
