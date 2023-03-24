@@ -329,30 +329,36 @@ export const USPItem = styled.div`
   align-items: center;
   width: calc(100% / 3);
   padding: 0 1.4rem;
+  gap: 2.4rem;
 
   ${Media.desktopDown} {
     width: 100%;
     padding: 0;
   }
 
-  > h4 {
+  > h4,
+  > a {
     font-size: 2.2rem;
     width: 100%;
     line-height: 1.4;
     text-align: center;
+    margin: 0;
+    display: block;
+    color: ${Color.text1};
   }
 
   > p {
     font-size: 1.3rem;
+    margin: 0;
   }
 
-  > img,
-  > a {
+  > img {
     --size: 24rem;
     width: var(--size);
     height: var(--size);
     border-radius: var(--size);
     background: ${Color.white};
     border: 0.2rem solid ${Color.black};
+    display: inline-block;
   }
 `

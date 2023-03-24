@@ -139,9 +139,8 @@ const HandleOnCopy = useCallback(() => {
             <USPWrapper>
               {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
                 <USPItem key={index}>
-                  <a href={link} target="_blank" rel="noopener noreferrer">
-                    <img src={logo} alt={title} />
-                  </a>
+                    <img src={logo} alt={title} lazy />
+                    <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
                 </USPItem>
               ))}
             </USPWrapper>
