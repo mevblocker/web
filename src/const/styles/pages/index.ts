@@ -195,7 +195,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-weight: ${Font.weightBold};
     cursor: pointer;
     margin: 0;
-    padding: 1rem 0;
+    padding: 1rem 2.8rem 1rem 0;
     list-style-type: none;
     line-height: 1.2;
     border-bottom: 0.2rem solid ${Color.black};
@@ -275,7 +275,7 @@ export const CardWrapper = styled.div<{count?: number}>`
 `
 
 export const CardItem = styled.div<{ backgroundColor?: string }>`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 1.1;
   display: flex;
   flex-flow: column wrap;
@@ -316,19 +316,30 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
 export const USPWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: flex-start;
+
+  ${Media.desktopDown} {
+    flex-flow: column wrap;
+  }
 `
 
 export const USPItem = styled.div`
   display: flex;
   flex-flow: column wrap;
+  align-items: center;
   width: calc(100% / 3);
   padding: 0 1.4rem;
 
-  > h4 {
-    font-size: 1.8rem;
+  ${Media.desktopDown} {
     width: 100%;
-    line-height: 1.1;
+    padding: 0;
+  }
+
+  > h4 {
+    font-size: 2.2rem;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
   }
 
   > p {

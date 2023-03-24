@@ -2,28 +2,20 @@ import { CONFIG } from '@src/const/meta'
 
 export const USP_CONTENT: {
   title: string
-  description: string
   image: string
-  imageAlt: string
 }[] = [
     {
-      title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
-      description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+      title: "Keeps millions of dollars safe from harmful MEV rays, so you can trade worry-free",
       image: "usp-1.svg",
-      imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
     },
     {
-      title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
-      description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+      title: "Jointly developed by a network of protocols to guarantee neutrality ",
       image: "usp-1.svg",
-      imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
     },
     {
-      title: "MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.",
-      description: "MEV Blocker is an RPC that shields all your transactions from MEV.",
+      title: "Formulated to cover every type of transaction including DeFi, NFTs, dApps and more",
       image: "usp-1.svg",
-      imageAlt: "MEV Blocker is an RPC that shields all your transactions from MEV.",
-    }
+    },
   ]
 
 export const FAQ_CONTENT: { question: string; answer: string }[] = [

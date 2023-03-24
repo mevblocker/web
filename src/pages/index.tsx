@@ -44,7 +44,7 @@ const HandleOnCopy = useCallback(() => {
               <li>MEV Blocker auto-protects all transactions</li>
             </ol>
 
-            <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
+            <BigButton fontSize={2.2} label='Get RPC Details' href="#rpc" />
           </SectionContent>
 
           <SectionContent>
@@ -54,18 +54,17 @@ const HandleOnCopy = useCallback(() => {
       </SectionWrapper>
 
       {/* Features section */}
-      <SectionWrapper backgroundColor={Color.mint} borderDown>
+      <SectionWrapper backgroundColor={Color.pink} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <h3>Broad Spectrum <br/> MEV Defense</h3>
             <h5>Always-on protection from billions in value extraction</h5>
 
             <USPWrapper>
-              {USP_CONTENT.map(({image, imageAlt, title, description}, index) => (
+              {USP_CONTENT.map(({image, title}, index) => (
                 <USPItem key={index}> 
-                  <img src={image} alt={imageAlt} />
+                  <img src={image} alt={title} />
                   <h4>{title}</h4>
-                  <p>{description}</p>
                 </USPItem>
               ))}
             </USPWrapper>
@@ -113,7 +112,7 @@ const HandleOnCopy = useCallback(() => {
       </SectionWrapper>
 
       {/* FAQ section */}
-      <SectionWrapper backgroundColor={Color.yellow} borderDown>
+      <SectionWrapper backgroundColor={Color.green} borderDown>
         <Section>
           <SectionContent align={'center'}>
             <a id="faq" className={'anchor'} />
@@ -133,7 +132,7 @@ const HandleOnCopy = useCallback(() => {
 
 
       {/* Built with love */}
-      <SectionWrapper backgroundColor={Color.mint} borderDown>
+      <SectionWrapper backgroundColor={Color.blue} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>            
           <h3>Built with love by</h3>
