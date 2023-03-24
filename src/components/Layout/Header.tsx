@@ -38,7 +38,7 @@ const Wrapper = styled.header<{ menuVisible: boolean }>`
   right: 0;
   transition: background 0.5s ease-in-out;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     padding: 0 1.6rem;
     width: 100%;
     height: ${({ menuVisible }) => menuVisible ? '100%' : mobileHeaderHeight};
@@ -60,7 +60,7 @@ const Menu = styled.ol`
   padding: 0;
   margin: 0;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     display: none;
     top: 0;
     left: 0;
@@ -102,13 +102,13 @@ const MenuItem = styled.li<{ isActive: boolean }>`
   &:not(:last-of-type) {
     margin: 0 3.6rem 0 0;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       margin: 0 0 2.6rem;
       line-height: 1;
     }
   }
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     margin: 0 0 2.6rem;
     line-height: 1;
     width: 100%;
@@ -120,14 +120,14 @@ const MenuItem = styled.li<{ isActive: boolean }>`
     color: inherit;
     text-decoration: none;
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       color: ${Color.text1};
     }
 
     &:hover {
       text-decoration: underline;
 
-      ${Media.desktopDown} {
+      ${Media.mediumDown} {
         color: ${Color.text1};
       }
     }
@@ -153,12 +153,12 @@ const CloseIcon = styled.button`
     font-size: 5rem;
     font-family: ${Font.arial};
 
-    ${Media.desktopDown} {
+    ${Media.mediumDown} {
       font-size: 3.2rem;
     }
   }
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     display: flex;
     top: 1.4rem;
     right: 1.4rem;
@@ -177,7 +177,7 @@ const MenuToggle = styled.button`
   height: 5.6rem;
   width: 5.6rem;
 
-  ${Media.desktopDown} {
+  ${Media.mediumDown} {
     display: flex;
     height: 4.2rem;
     width: 4.2rem;

@@ -125,16 +125,16 @@ export const BUILT_WITH_LOVE: { title: string, logo: string, link: string }[] = 
   {
     title: "CoW Protocol",
     logo: "cow-logo.svg",
-    link: "https://cowswap.exchange",
+    link: "https://cow.fi/",
   },
   {
-    title: "Beaver Builder",
-    logo: "beaver-logo.svg",
-    link: "https://beaverbuilder.io",
+    title: "Beaver Build",
+    logo: "beaver.jpg",
+    link: "https://beaverbuild.org/",
   },
   {
-    title: "Agnostic",
-    logo: "agnostic-logo.svg",
-    link: "https://agnostic.org",
+    title: "Agnostic Relay",
+    logo: "agnostic.png",
+    link: "https://agnostic-relay.net/",
   },
 ]

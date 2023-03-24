@@ -24,14 +24,14 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
-    scrollbar-color: ${Color.text1} ${Color.text1};
+    scrollbar-color: ${Color.text1} ${Color.white};
 
     &::-webkit-scrollbar {
       width: 2.4rem;
     }
 
     &::-webkit-scrollbar-track {
-      background-color: ${Color.text1};
+      background-color: ${Color.white};
     }
 
     &::-webkit-scrollbar-thumb {
