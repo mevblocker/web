@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useState, useCallback } from 'react'
 import Layout from '@src/components/Layout'
 import { CopyIcon } from '@src/const/styles/global'
-import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem } from '@src/const/styles/pages/index'
+import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem, HeroImage } from '@src/const/styles/pages/index'
 import { Button, BigButton } from '@src/components/Button'
 // import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
@@ -48,7 +48,13 @@ const HandleOnCopy = useCallback(() => {
           </SectionContent>
 
           <SectionContent>
-            <img src="hero.svg" alt="MEVBlocker.io" />
+            <HeroImage>
+              <img className="line" src="hero/line.svg" alt="MEVBlocker.io" />
+              <img className="sandwhich-3" src="hero/sandwhich-3.svg" alt="MEVBlocker.io" />
+              <img className="sandwhich-2" src="hero/sandwhich-2.svg" alt="MEVBlocker.io" />
+              <img className="sandwhich-1" src="hero/sandwhich-1.svg" alt="MEVBlocker.io" />
+              <img className="person" src="hero/person.svg" alt="MEVBlocker.io" />
+            </HeroImage>
           </SectionContent>
         </Section>
       </SectionWrapper>

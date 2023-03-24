@@ -260,6 +260,70 @@ export const Content = styled.main`
   }
 `
 
+export const HeroImage = styled.div`
+  --size: 60rem;
+  display: flex;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+
+  ${Media.mediumDown} {
+    transform: scale(0.5);
+    max-width: 100%;
+  }
+
+  > img {
+    position: absolute;
+  }
+
+  .person {
+    right: 0;
+    bottom: 0;
+    height: 33rem;
+  }
+
+  .sandwhich-1 {
+    right: 0;
+    bottom: 50%;
+    height: 20rem;
+    width: auto;
+    animation: moveIn 3s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .sandwhich-2 {
+    left: 0;
+    bottom: 50%;
+    height: 20rem;
+    width: auto;
+    animation: moveIn 5s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .sandwhich-3 {
+    left: 30%;
+    bottom: 60%;
+    height: 20rem;
+    width: auto;
+    animation: moveIn 2s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .line {
+    right: 0;
+    bottom: 44%;
+    height: 6rem;
+    width: auto;
+    animation: moveIn 6s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  @keyframes moveIn {
+    0% {
+      transform: translateY(-50%) rotate(-9deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+`
+
 export const CardWrapper = styled.div<{count?: number}>`
   display: flex;
   flex-flow: row wrap;
