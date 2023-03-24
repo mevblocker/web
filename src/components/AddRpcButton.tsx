@@ -1,30 +1,28 @@
-import styled from "styled-components";
-import { transparentize } from "polished";
-import { Defaults, Color, Font, Media } from "@src/const/styles/variables";
 import { BigButton } from "./Button";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useAccount, useConnect } from "wagmi";
-import { useCallback } from "react";
+// import { ConnectButton, useConnectModal } from "@rainbow-me/rainbowkit";
+import { useAddRpcEndpoint } from "@src/hooks/useAddRpcEndpoint";
 
-const BigButtonWrapper = styled.a``;
 
 export function AddRpcButton() {
-  const { isConnected } = useAccount();
+  const { addRpcEndpoint, addedRpc } = useAddRpcEndpoint()
+  // const { openConnectModal } = useConnectModal()
 
-  const addRpcEndpoint = useCallback(() => {
-    console.log("Add RPC endpoint");
-  }, []);
+  // TODO: Disabled, for now to just go for injected wallet. Will probably improve and use it to support Wallet Connect and other wallets
+  // if (!isConnected) {
+  //   <ConnectButton
+  //     label="Connect Wallet"
+  //     accountStatus={"avatar"}
+  //     chainStatus={"none"}
+  //     showBalance={false}
+  //   />
+  // }
+
   return (
     <>
-      {isConnected ? (
-        <BigButton onClick={addRpcEndpoint} label="Add to Wallet" />
+      {addedRpc ? (
+        <span style={{color: 'green'}}>Added to your wallet! You are now safe</span>
       ) : (
-        <ConnectButton
-          label="Connect Wallet"
-          accountStatus={"avatar"}
-          chainStatus={"none"}
-          showBalance={false}
-        />
+        <BigButton onClick={addRpcEndpoint} label="Add to Wallet" />
       )}
     </>
   );

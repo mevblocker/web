@@ -7,6 +7,7 @@ import { mainnet, gnosis, goerli } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { publicProvider } from "wagmi/providers/public";
 import { CONFIG } from "@src/const/meta";
+import { InjectedConnector } from "@wagmi/core";
 
 export function WalletProvider({ children }: PropsWithChildren) {
   const { chains, provider } = configureChains(
@@ -14,22 +15,33 @@ export function WalletProvider({ children }: PropsWithChildren) {
     [
       jsonRpcProvider({
         rpc: () => ({
-          //http: "http://rpc.mevblocker.io",
-          http: "https://http.wonderfulrpc.com",
+          http: CONFIG.rpc.url,
         }),
+        priority: 0,
       }),
-      publicProvider(),
+      publicProvider({
+        priority: 1,
+      }),
     ]
   );
 
-  const { connectors } = getDefaultWallets({
-    appName: CONFIG.title,
-    chains,
-  });
+  // const { connectors } = getDefaultWallets({
+  //   appName: CONFIG.title,
+  //   chains,
+  // });
 
   const wagmiClient = createClient({
     autoConnect: true,
-    connectors,
+    // connectors,
+    connectors: [
+      new InjectedConnector({
+        chains,
+        options: {
+          name: 'Injected',
+          shimDisconnect: true,
+        },
+      })
+    ],
     provider,
   });
 
