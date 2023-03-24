@@ -1,6 +1,7 @@
 import { BigButton } from "./Button";
 // import { ConnectButton, useConnectModal } from "@rainbow-me/rainbowkit";
 import { useAddRpcEndpoint } from "@src/hooks/useAddRpcEndpoint";
+import { Confetti } from "./Confetti";
 
 
 export function AddRpcButton() {
@@ -20,7 +21,10 @@ export function AddRpcButton() {
   return (
     <>
       {addedRpc ? (
+        <>
+        <Confetti start={true} />
         <span style={{color: 'green'}}>Added to your wallet! You are now safe</span>
+        </>
       ) : (
         <BigButton onClick={addRpcEndpoint} label="Add to Wallet" />
       )}
