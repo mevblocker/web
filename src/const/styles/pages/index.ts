@@ -71,7 +71,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   ${Media.desktopDown} {
     max-width: 100%;
     height: auto;
-    padding: 3rem 3rem 0;
+    padding: 0 2.4rem 0;
+    margin: 2.4rem auto;
   }
 
   > hr {
@@ -96,16 +97,18 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-weight: ${Font.weightBold};
     margin: 0 0 2.4rem;
 
-    /* ${Media.desktopSmallHeight} {
-      font-size: 3rem;
-    } */
+    ${Media.desktopDown} {
+      margin: 2.4rem 0;
+    }
 
     > b {
       font-weight: ${Font.weightBold};
     }
+  }
 
+  > h1 {
     ${Media.desktopDown} {
-      font-size: 3.2rem;
+      font-size: 4.2rem;
     }
   }
 
@@ -115,22 +118,17 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
 
     ${Media.desktopDown} {
       font-size: 2.4rem;
-      margin: 2.4rem 0;
     }
   }
 
   > h3 {
-    margin: 0;
+    margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
-
-    ${Media.desktopDown} {
-      font-size: 2rem;
-      margin: 2rem 0;
-    }
   }
 
   > h5 {
     font-size: 2.8rem;
+    margin: 0 0 5.6rem;
     font-weight: normal;
   }
 
@@ -138,7 +136,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   > small,
   > ul,
   > ol {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     text-align: left;
     font-weight: ${Font.weightNormal};
     line-height: 1.6;
@@ -157,6 +155,11 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 2.4rem 0;
     width: var(--sectionMaxWidth);
     gap: 1.2rem;
+
+    ${Media.desktopDown} {
+      width: 100%;
+      gap: 2.4rem;
+    }
   }
 
   details {
@@ -165,7 +168,11 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     width: 100%;
     margin: 0 auto;
     line-height: 1;
-    font-size: 2rem;
+    font-size: 2.4rem;
+
+    ${Media.desktopDown} {
+      font-size: 2rem;
+    }
   }
 
   details > summary {
@@ -176,7 +183,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     cursor: pointer;
     margin: 0;
     list-style-type: none;
-    line-height: 1;
+    line-height: 1.2;
 
     &::before {
       content: '+';
@@ -229,6 +236,11 @@ export const CardWrapper = styled.div<{count?: number}>`
   grid-template-columns: ${({ count }) => count ? `repeat(${count}, 1fr)` : 'unset'};
   gap: 2.4rem;
   align-items: stretch;
+
+  ${Media.desktopDown} {
+    display: flex;
+    flex-flow: column wrap;
+  }
 `
 
 export const CardItem = styled.div<{ backgroundColor?: string }>`
@@ -256,7 +268,11 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
 
   table {
     width: 100%;
-    border-collapse: collapse;
+    border-spacing: 0.5rem;
+  }
+
+  table tr > td:last-of-type {
+    padding: 0 0 0 1rem;
   }
 
   table td > span {

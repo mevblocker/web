@@ -94,29 +94,17 @@ const GlobalStyles = createGlobalStyle`
   ul, ol {
     margin: 0 0 1rem;
     padding: 0;
-    /* list-style-position: inside; */
-    /* list-style: none; */
+    list-style-position: inside;
 
     > li {
-      display: flex;
+      display: list-item;
       align-items: center;
       gap: 0.7rem;
     }
 
-    /* > li::before {
-      --size: 1.8rem;
-      content: "+";
-      font-size: 3rem;
-      margin: -0.4rem 0 0;
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    > li::marker {
       font-weight: bold;
-      width: var(--size);
-      height: var(--size);
-      background: url('check.svg') no-repeat center/contain;
-    } */
+    }
   }
 
   button {

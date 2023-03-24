@@ -6,7 +6,7 @@ export const CONFIG = {
   description: 'MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.',
   descriptionShort: 'MEV Blocker is an RPC that shields all your transactions from MEV.',
   googleAnalyticsID: 'G-JV2Q6SXRNR',
-  RPCUrl: 'https://http.wonderfulrpc.com',
+  RPC_URL: 'https://rpc.mevblocker.io/',
   url: {
     root: "https://mevblocker.io",
     home: "/",

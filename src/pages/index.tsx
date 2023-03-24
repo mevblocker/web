@@ -6,10 +6,10 @@ import Layout from '@src/components/Layout'
 import { CopyIcon } from '@src/const/styles/global'
 import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem } from '@src/const/styles/pages/index'
 import { Button, BigButton } from '@src/components/Button'
-import TextLink from '@src/components/TextLink'
+// import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
 import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS } from '@src/const/content'
-import { CONFIG } from '@src/const/meta'
+// import { CONFIG } from '@src/const/meta'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
@@ -37,13 +37,13 @@ const HandleOnCopy = useCallback(() => {
           <SectionContent>
             <h1>The best MEV protection under the sun</h1>
             <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
-            <p>
-              <ol>
-                <li>Add the RPC endpoint directly to your wallet</li>
-                <li>Buy, sell, trade, and swap on any dApp</li>
-                <li>MEV Blocker auto-protects all transactions</li>
-              </ol>
-            </p>
+
+            <ol>
+              <li>Add the RPC endpoint directly to your wallet</li>
+              <li>Buy, sell, trade, and swap on any dApp</li>
+              <li>MEV Blocker auto-protects all transactions</li>
+            </ol>
+
             <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
           </SectionContent>
 
@@ -57,8 +57,7 @@ const HandleOnCopy = useCallback(() => {
       <SectionWrapper backgroundColor={Color.mint} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
-            <h3>Broad Spectrum 
-              MEV Defense</h3>
+            <h3>Broad Spectrum <br/> MEV Defense</h3>
             <h5>Always-on protection from billions in value extraction</h5>
 
             <USPWrapper>
@@ -86,13 +85,13 @@ const HandleOnCopy = useCallback(() => {
             <CardWrapper count={2}>
               <CardItem>
                 <h4>Click to add to your client</h4>
-                <BigButton label='Add to MetaMask' href="https://metamask.io/" />
+                <BigButton label='Connect Wallet' href="https://metamask.io/" />
               </CardItem>
               <CardItem>
                 <h4>Or, manually add:</h4>
                 <table>
                   <tbody>
-                    {RPC_DETAILS.map(({title, value}, index) => (
+                    {RPC_DETAILS.map(({title, value}, index: number) => (
                       <tr key={index}>
                         <td>{title}</td>
                         <td>
@@ -114,9 +113,9 @@ const HandleOnCopy = useCallback(() => {
       </SectionWrapper>
 
       {/* FAQ section */}
-      <SectionWrapper backgroundColor={Color.yellow}>
+      <SectionWrapper backgroundColor={Color.yellow} borderDown>
         <Section>
-          <SectionContent>
+          <SectionContent align={'center'}>
             <a id="faq" className={'anchor'} />
             <h3>FAQ</h3>
             <div className={'section_FAQ'}>
@@ -134,7 +133,7 @@ const HandleOnCopy = useCallback(() => {
 
 
       {/* Built with love */}
-      <SectionWrapper backgroundColor={Color.mint}>
+      <SectionWrapper backgroundColor={Color.mint} borderDown>
         <Section>
           <SectionContent>
             

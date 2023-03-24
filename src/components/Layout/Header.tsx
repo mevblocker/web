@@ -8,7 +8,6 @@ import { Defaults, Color, Font, Media } from '@src/const/styles/variables'
 import useMediaQuery from '@src/lib/hooks/useMediaQuery';
 import { InView } from 'react-intersection-observer'
 
-const MenuImage = 'images/icons/menu.svg'
 const mobileHeaderHeight = `7rem`;
 
 const Pixel = styled.div`
@@ -43,15 +42,8 @@ const Wrapper = styled.header<{ menuVisible: boolean }>`
     padding: 0 1.6rem;
     width: 100%;
     height: ${({ menuVisible }) => menuVisible ? '100%' : mobileHeaderHeight};
-    background: ${transparentize(0.1, Color.text1)};
     justify-content: center;
     backdrop-filter: blur(0.2rem);
-  }
-
-  > a {
-    ${Media.desktopDown} {
-      margin: 0 2.4rem 0 auto;
-    }
   }
 
   &.sticky {
@@ -179,13 +171,14 @@ const MenuToggle = styled.button`
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  border: 0.1rem solid ${transparentize(0.6, Color.border)};
+  border: 0.1rem solid ${transparentize(0.6, Color.black)};
   border-radius: ${Defaults.borderRadius};
   text-decoration: none;
   height: 5.6rem;
   width: 5.6rem;
 
   ${Media.desktopDown} {
+    display: flex;
     height: 4.2rem;
     width: 4.2rem;
     margin: 0 0 0 auto;
@@ -194,13 +187,9 @@ const MenuToggle = styled.button`
   &::before {
     display: flex;
     content: "";
-    background: url(${MenuImage}) no-repeat center/contain;
-    width: 100%;
-    height: 100%;
-  }
-
-  ${Media.desktopDown} {
-    display: flex;
+    background: url('menu.svg') no-repeat center/contain;
+    width: 90%;
+    height: 90%;
   }
 `
 
@@ -218,15 +207,6 @@ const Logo = styled.div<{ menuVisible: boolean }>`
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
-
-  ${Media.desktopDown} {
-    font-size: 2.2rem;
-    margin: 0;
-    height: ${mobileHeaderHeight};
-    align-items: center;
-    display: flex;
-    color: ${({ menuVisible }) => menuVisible ? Color.text1 : Color.text1};
   }
 `
 
