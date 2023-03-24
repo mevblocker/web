@@ -166,7 +166,6 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     align-items: flex-start;
     margin: 2.4rem 0;
     width: var(--sectionMaxWidth);
-    gap: 1.2rem;
 
     ${Media.desktopDown} {
       width: 100%;
@@ -179,8 +178,10 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     flex-flow: column wrap;
     width: 100%;
     margin: 0 auto;
+    padding: 0;
     line-height: 1;
     font-size: 2.4rem;
+    position: relative;
 
     ${Media.desktopDown} {
       font-size: 2rem;
@@ -191,28 +192,46 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    font-weight: bold;
+    font-weight: ${Font.weightBold};
     cursor: pointer;
     margin: 0;
+    padding: 1rem 0;
     list-style-type: none;
     line-height: 1.2;
+    border-bottom: 0.2rem solid ${Color.black};
+    position: relative;
 
-    &::before {
+    &::after {
       content: '+';
-      display: inline-block;
+      display: flex;
+      align-items: center;
       text-align: center;
-      margin: 0 1rem 0 0;
-      width: 1rem;
+      margin: auto;
+      position: absolute;
+      font-size: 2.8rem;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
   }
 
-  details[open] > summary::before {
-    content: '−';
+  details > div {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 0 2.4rem;
   }
 
-  details > div {
-    line-height: 1.5;
-    margin: 1.2rem 0 2.4rem 2rem;
+  details[open] > div {
+    border-bottom: 0.2rem solid ${Color.black};
+  }
+
+  details[open] > summary {
+    border-bottom: 0.2rem solid transparent;
+  }
+
+  details[open] > summary::after{
+    content: '−';
   }
 `
 

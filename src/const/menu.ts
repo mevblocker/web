@@ -2,9 +2,9 @@ import { CONFIG } from '@src/const/meta'
 const {url, social} = CONFIG
 
 export const mainMenu = [
-  { id: 0, title: 'RPC', url: '#rpc'},
+  { id: 0, title: 'Get RPC', url: '#rpc'},
   { id: 1, title: 'FAQ', url: '#faq'},
-  { id: 2, title: 'Support', url: '#' }
+  { id: 2, title: 'Forum', url: social.forum.url, target: '_blank' }
 ]
 
 export const footerMenu = [

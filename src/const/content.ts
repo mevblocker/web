@@ -95,6 +95,40 @@ export const RPC_DETAILS: { title: string; value: string }[] = [
   },
 ]
 
+export const TESTIMONIALS: { content: string; image: string; author: string }[] = [
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-1.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-2.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-1.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-2.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-1.png",
+    author: "John Doe",
+  },
+  {
+    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+    image: "testimonial-2.png",
+    author: "John Doe",
+  },
+]
+
+
 export const BUILT_WITH_LOVE: { title: string, logo: string, link: string }[] = [
   {
     title: "CoW Protocol",
