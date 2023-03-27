@@ -44,7 +44,7 @@ export function AddRpcButton() {
         } else {
           setState(AddRpcState.ERROR_ADDING)
         }
-      }) // TODO: Handle by open Raimbow Wallet :) 
+      }) 
   }, [addRpcEndpoint])
 
   // TODO: Disabled, for now to just go for injected wallet. Will probably improve and use it to support Wallet Connect and other wallets
