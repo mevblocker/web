@@ -3,6 +3,9 @@ import { BigButton } from "./Button";
 import { useAddRpcEndpoint } from "@src/hooks/useAddRpcEndpoint";
 import { Confetti } from "./Confetti";
 import { useCallback, useState } from "react";
+import styled from 'styled-components'
+import { Color } from "@src/const/styles/variables";
+import { transparentize } from "polished";
 
 
 enum AddRpcState {
@@ -11,6 +14,17 @@ enum AddRpcState {
   ERROR_ADDING,
   REJECTED_BY_USER
 }
+
+const ErrorMessage = styled.p`
+  color: ${Color.orange};
+  font-weight: bold;
+  width: 100%;
+  margin: 2.4rem 0 0;
+  background: ${transparentize(0.9, Color.orange)};
+  padding: 1rem;
+  border-radius: 1.2rem;
+  text-align: center;
+`
 
 export function AddRpcButton() {
   const { addRpcEndpoint } = useAddRpcEndpoint()
@@ -57,10 +71,10 @@ export function AddRpcButton() {
         <>
           <BigButton onClick={addToWallet} label="Add to Wallet" />
           {state === AddRpcState.REJECTED_BY_USER && (
-            <span style={{color: 'red'}}>The new network couldn&apos;t be added. Rejected by user</span>
+            <ErrorMessage>The new network couldn&apos;t be added. Rejected by user</ErrorMessage>
           )}
           {state === AddRpcState.ERROR_ADDING && (
-            <span style={{color: 'red'}}>There was an error adding the RPC automatically to your wallet. Please add manually</span>
+            <ErrorMessage>There was an error adding the RPC automatically to your wallet. Please add manually</ErrorMessage>
           )}
         </>
       )}
