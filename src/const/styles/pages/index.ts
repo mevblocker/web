@@ -156,7 +156,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     text-align: left;
     font-weight: ${Font.weightNormal};
     line-height: 1.6;
-    margin: 0 0 2.4rem;
+    margin: 0 0 3.2rem;
     word-break: break-word;
 
     ${Media.mobile} {
@@ -294,59 +294,51 @@ export const HeroImage = styled.div`
   }
 
   .sandwhich-2 {
-    right: 4%;
-    bottom: 55%;
-    height: 20rem;
+    right: 6%;
+    bottom: 58%;
+    height: 22rem;
     width: auto;
     animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
   .sandwhich-1 {
-    left: 4%;
-    bottom: 55%;
+    left: 18%;
+    bottom: 56%;
     height: 20rem;
     width: auto;
     animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
   .tomato-1 {
-    left: 0;
-    bottom: 45%;
+    left: 9%;
+    bottom: 60%;
     height: 5rem;
     width: auto;
-    animation: moveIn 6s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 4s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
   .tomato-2 {
-    right: 38%;
-    bottom: 62%;
-    height: 8rem;
+    right: 41%;
+    bottom: 72%;
+    height: 10rem;
     width: auto;
-    animation: moveIn 6s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 4s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
   .leaf-1 {
-    left: -5%;
-    bottom: 65%;
-    height: 15rem;
+    left: 0;
+    bottom: 77%;
+    height: 5rem;
     width: auto;
     animation: moveIn 1.5s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
   .leaf-2 {
-    right: -12%;
-    bottom: 42%;
-    height: 9rem;
+    right: 0;
+    bottom: 50%;
+    height: 5rem;
     width: auto;
     animation: moveIn 3s forwards cubic-bezier(.62,.16,.13,1.01);
-  }
-
-  .line-1 {
-    left: 32%;
-    bottom: 59%;
-    height: 18rem;
-    width: auto;
-    animation: moveIn 1s forwards cubic-bezier(.62,.16,.13,1.01);
   }
 
   @keyframes moveIn {
