@@ -1,8 +1,10 @@
 import { useAccount, useConnect as useConnectWagmi } from "wagmi";
 import { useCallback, useMemo } from "react";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 
 export function useConnect() {
   const { isConnected } = useAccount();
+  const { openConnectModal } = useConnectModal()
   const { connectAsync, connectors } = useConnectWagmi()
 
   const [injectedConnector, hasInjectedProviderPromise] = useMemo(() => {
@@ -23,9 +25,8 @@ export function useConnect() {
       })
     }
 
-    alert('Not injected!')
-    return undefined    
-  }, [connectAsync, injectedConnector, hasInjectedProviderPromise]);
+    return openConnectModal()   
+  }, [connectAsync, injectedConnector, hasInjectedProviderPromise, openConnectModal]);
 
   return {
     isConnected,
