@@ -57,7 +57,7 @@ export default function Footer({ siteConfig, menu }) {
       <Menu>
         {menu.length > 0 && <>{menu.map(({ id, title, url, target }) => (
           <li key={id}>
-            <Link href={url}>{title}</Link>
+            <Link href={url} target={target}>{title}</Link>
           </li>
         ))}</>}
         <li>©{titleShort} {currentYear}</li>
