@@ -24,7 +24,7 @@ const Menu = styled.ol`
   margin: 0;
   width: 100%;
 
-  ${Media.mediumDown} {
+  ${Media.mobile} {
     text-align: center;
     flex-flow: column wrap;
     gap: 3.2rem;
@@ -41,7 +41,7 @@ const Menu = styled.ol`
       text-decoration: underline;
       color: ${Color.text1};
 
-      ${Media.mediumDown} {
+      ${Media.mobile} {
         color: ${Color.text1};
       {
     }

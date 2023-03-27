@@ -33,7 +33,7 @@ const HandleOnCopy = useCallback(() => {
     <Layout route={router.pathname}>
 
       <SectionWrapper backgroundColor={Color.yellow} borderDown>
-        <Section>
+        <Section columns={2}>
           <SectionContent>
             <h1>The best MEV protection under the sun</h1>
             <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>

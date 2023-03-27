@@ -38,7 +38,7 @@ const Wrapper = styled.header<{ menuVisible: boolean }>`
   right: 0;
   transition: background 0.5s ease-in-out;
 
-  ${Media.mediumDown} {
+  ${Media.mobile} {
     padding: 0 1.6rem;
     width: 100%;
     height: ${({ menuVisible }) => menuVisible ? '100%' : mobileHeaderHeight};
@@ -60,7 +60,7 @@ const Menu = styled.ol`
   padding: 0;
   margin: 0;
 
-  ${Media.mediumDown} {
+  ${Media.mobile} {
     display: none;
     top: 0;
     left: 0;
@@ -102,13 +102,13 @@ const MenuItem = styled.li<{ isActive: boolean }>`
   &:not(:last-of-type) {
     margin: 0 3.6rem 0 0;
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       margin: 0 0 2.6rem;
       line-height: 1;
     }
   }
 
-  ${Media.mediumDown} {
+  ${Media.mobile} {
     margin: 0 0 2.6rem;
     line-height: 1;
     width: 100%;
@@ -120,14 +120,14 @@ const MenuItem = styled.li<{ isActive: boolean }>`
     color: inherit;
     text-decoration: none;
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       color: ${Color.text1};
     }
 
     &:hover {
       text-decoration: underline;
 
-      ${Media.mediumDown} {
+      ${Media.mobile} {
         color: ${Color.text1};
       }
     }
@@ -153,12 +153,12 @@ const CloseIcon = styled.button`
     font-size: 5rem;
     font-family: ${Font.arial};
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       font-size: 3.2rem;
     }
   }
 
-  ${Media.mediumDown} {
+  ${Media.mobile} {
     display: flex;
     top: 1.4rem;
     right: 1.4rem;
@@ -177,7 +177,7 @@ const MenuToggle = styled.button`
   height: 5.6rem;
   width: 5.6rem;
 
-  ${Media.mediumDown} {
+  ${Media.mobile} {
     display: flex;
     height: 4.2rem;
     width: 4.2rem;
