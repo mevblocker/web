@@ -47,7 +47,7 @@ export const Section = styled.section<{bgColor?: string, imageMaxHeight?: number
     width: 100%;
     height: 100%;
     max-width: 100%;
-    max-height: auto
+    max-height: 100%;
   }
 `
 
@@ -92,7 +92,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   > h4,
   > h5 {
     text-align: ${({ align }) => align === 'center' ? 'center' : 'left'};
-    font-size: 7rem;
+    font-size: 6rem;
     line-height: 1.1;
     color: ${Color.text1};
     font-weight: ${Font.weightBold};
