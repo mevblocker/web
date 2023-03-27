@@ -5,7 +5,6 @@ import { useSigner } from "wagmi";
 import { isJsonRpcProvider } from "@src/utils/ethers";
 
 export function useAddRpcEndpoint() {
-  const [addedRpc, setAddedRpc] = useState(false);
   const { isConnected, connect } = useConnect();
 
   const signer = useSigner();
@@ -27,7 +26,8 @@ export function useAddRpcEndpoint() {
       chainId,
       blockExplorerUrl: blockExplorerUrls,
     } = CONFIG.rpc;
-    connectedProvider
+    
+    return connectedProvider
       .send("wallet_addEthereumChain", [
         {
           chainId: `0x${chainId.toString(16)}`,
@@ -40,22 +40,11 @@ export function useAddRpcEndpoint() {
           },
           blockExplorerUrls: [blockExplorerUrls],
         },
-      ])
-      .then(() => setAddedRpc(true))
-      .catch((e) => {
-        console.log(e);
-        // TODO: Handle Error in follow up PR
-        if (e?.code === 4001) {
-          console.error("Rejected by user");
-        } else {
-          console.error("Handle Error");
-        }
-      });
+      ])      
   }, [isConnected, connect, provider]);
 
   return {
     addRpcEndpoint,
     isConnected,
-    addedRpc,
   };
 }
