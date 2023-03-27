@@ -16,6 +16,18 @@ export const USP_CONTENT: {
       title: "Formulated to cover every type of transaction including DeFi, NFTs, dApps and more",
       image: "usp_3.svg",
     },
+    {
+      title: "Keeps millions of dollars safe from harmful MEV rays, so you can trade worry-free",
+      image: "usp_1.svg",
+    },
+    {
+      title: "Jointly developed by a network of protocols to guarantee neutrality ",
+      image: "usp_2.svg",
+    },
+    {
+      title: "Formulated to cover every type of transaction including DeFi, NFTs, dApps and more",
+      image: "usp_3.svg",
+    },
   ]
 
 export const FAQ_CONTENT: { question: string; answer: string }[] = [
@@ -87,38 +99,13 @@ export const RPC_DETAILS: { title: string; value: string }[] = [
   },
 ]
 
-export const TESTIMONIALS: { content: string; image: string; author: string }[] = [
-  {
-    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
-    image: "testimonial-1.png",
-    author: "John Doe",
-  },
-  {
-    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
-    image: "testimonial-2.png",
-    author: "John Doe",
-  },
-  {
-    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
-    image: "testimonial-1.png",
-    author: "John Doe",
-  },
-  {
-    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
-    image: "testimonial-2.png",
-    author: "John Doe",
-  },
-  {
-    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
-    image: "testimonial-1.png",
-    author: "John Doe",
-  },
-  {
-    content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
-    image: "testimonial-2.png",
-    author: "John Doe",
-  },
-]
+// export const TESTIMONIALS: { content: string; image: string; author: string }[] = [
+//   {
+//     content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
+//     image: "testimonial-1.png",
+//     author: "John Doe",
+//   }
+// ]
 
 
 export const BUILT_WITH_LOVE: { title: string, logo: string, link: string }[] = [

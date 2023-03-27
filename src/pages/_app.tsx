@@ -35,6 +35,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta name="twitter:image" content={url.root + "/og-meta-mevblocker.png"} />
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"></meta>
 
+        <link rel="preload" href={Font.defaultFile} as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href={Font.defaultBoldFile} as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href={Font.defaultHeadingFile} as="font" type="font/woff2" crossOrigin="anonymous" />
 
         <title>{title} - {descriptionShort}</title>
