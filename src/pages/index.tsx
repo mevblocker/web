@@ -12,6 +12,7 @@ import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE} from '@src/cons
 // import { CONFIG } from '@src/const/meta'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { AddRpcButton } from '@src/components/AddRpcButton'
 
 const DATA_CACHE_TIME_SECONDS = 5 * 60 // Cache 5min
 
@@ -92,7 +93,7 @@ const HandleOnCopy = useCallback(() => {
             <CardWrapper count={2}>
               <CardItem>
                 <h4>Click to add to your client</h4>
-                <BigButton label='Connect Wallet' href="https://metamask.io/" />
+                <AddRpcButton />
               </CardItem>
               <CardItem>
                 <h4>Or, manually add:</h4>
