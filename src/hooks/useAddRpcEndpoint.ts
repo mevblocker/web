@@ -1,27 +1,22 @@
 import { useCallback, useState } from "react";
 import { CONFIG } from "@src/const/meta";
 import { useConnect } from "./useConnect";
-// import { useConnectModal } from "@rainbow-me/rainbowkit";
+import { useSigner } from "wagmi";
+import { isJsonRpcProvider } from "@src/utils/ethers";
 
 export function useAddRpcEndpoint() {
   const [addedRpc, setAddedRpc] = useState(false);
-  const { isConnected, connect } = useConnect()
+  const { isConnected, connect } = useConnect();
 
-  // TODO: Can we use the provider instead of windown.ethereum?
-  // const signer = useSigner();
-  // const provider = signer.data?.provider;
+  const signer = useSigner();
+  const provider = signer.data?.provider;
 
-  // console.log("provider", provider);
-  // console.log("signer", signer);
+  const addRpcEndpoint = useCallback(async () => {    
+    const connectedProvider = isConnected ? provider : (await connect()).provider
 
-  // if (typeof window !== "undefined") {
-  //   window["provider"] = provider;
-  //   window["signer"] = signer;
-  // }
-
-  const addRpcEndpoint = useCallback(async () => {
-    if (!isConnected) {
-      await connect()
+    if (!isJsonRpcProvider(connectedProvider)) {
+      console.warn('[addRpcEndpoint] Not JSON Provider. Impossible to send wallet_addEthereumChain')
+      return undefined;
     }
 
     const {
@@ -32,26 +27,23 @@ export function useAddRpcEndpoint() {
       chainId,
       blockExplorerUrl: blockExplorerUrls,
     } = CONFIG.rpc;
-    window.ethereum
-      .request({
-        method: "wallet_addEthereumChain",
-        params: [
-          {
-            chainId: `0x${chainId.toString(16)}`,
-            rpcUrls: [rpcUrl],
-            chainName,
-            nativeCurrency: {
-              name: "",
-              symbol: nativeSymbol,
-              decimals: nativeDecimals,
-            },
-            blockExplorerUrls: [blockExplorerUrls],
+    connectedProvider
+      .send("wallet_addEthereumChain", [
+        {
+          chainId: `0x${chainId.toString(16)}`,
+          rpcUrls: [rpcUrl],
+          chainName,
+          nativeCurrency: {
+            name: "",
+            symbol: nativeSymbol,
+            decimals: nativeDecimals,
           },
-        ],
-      })
+          blockExplorerUrls: [blockExplorerUrls],
+        },
+      ])
       .then(() => setAddedRpc(true))
       .catch((e) => {
-        console.log(e)
+        console.log(e);
         // TODO: Handle Error in follow up PR
         if (e?.code === 4001) {
           console.error("Rejected by user");
@@ -59,7 +51,7 @@ export function useAddRpcEndpoint() {
           console.error("Handle Error");
         }
       });
-  }, [isConnected, connect]);
+  }, [isConnected, connect, provider]);
 
   return {
     addRpcEndpoint,
