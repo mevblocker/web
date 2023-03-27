@@ -124,7 +124,7 @@ export const TESTIMONIALS: { content: string; image: string; author: string }[] 
 export const BUILT_WITH_LOVE: { title: string, logo: string, link: string }[] = [
   {
     title: "CoW Protocol",
-    logo: "cow-logo.svg",
+    logo: "cow-protocol.svg",
     link: "https://cow.fi/",
   },
   {

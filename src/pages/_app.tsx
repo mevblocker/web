@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import { useAnalyticsReporter } from "../lib/analytics";
 import GlobalStyles from '@src/const/styles/global'
+import { Font} from '@src/const/styles/variables'
 import Head from 'next/head'
 
 import { CONFIG } from '@src/const/meta'
@@ -28,10 +29,12 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta property="og:url" content={url.root} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={social.twitter.account} />
+        {/* <meta name="twitter:site" content={social.twitter.account} /> */}
         <meta name="twitter:title" content={title} />
         <meta name="twitter:image" content={url.root + "/og-meta-mevblocker.png"} />
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"></meta>
+
+        <link rel="preload" href={Font.defaultHeadingFile} as="font" type="font/woff2" crossOrigin="anonymous" />
 
         <title>{title} - {descriptionShort}</title>
       </Head>
