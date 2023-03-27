@@ -4,7 +4,7 @@ import { GaOptions, InitOptions, UaEventOptions } from "react-ga4/types/ga4";
 /**
  * Google Analytics Provider containing all methods used throughout app to log events to Google Analytics.
  */
-export default class GoogleAnalyticsProvider {
+export class GoogleAnalyticsProvider {
   public sendEvent(event: string | UaEventOptions, params?: any): void {
     ReactGA.event(event, params);
   }

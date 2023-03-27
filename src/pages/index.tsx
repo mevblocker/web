@@ -12,6 +12,7 @@ import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE} from '@src/cons
 // import { CONFIG } from '@src/const/meta'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { copyToClipboardAction } from '@src/lib/analytics/events'
 
 const DATA_CACHE_TIME_SECONDS = 5 * 60 // Cache 5min
 
@@ -19,10 +20,11 @@ export default function Home() {
   const router = useRouter()
   const [copied, setCopied] = useState(false);
 
-const HandleOnCopy = useCallback(() => {
+const handleOnCopy = useCallback((title: string) => {
     try {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      copyToClipboardAction(title)
     } catch (error) {
       //handle errors
     }
@@ -103,7 +105,7 @@ const HandleOnCopy = useCallback(() => {
                       <tr key={index}>
                         <td>{title}</td>
                         <td>
-                          <CopyToClipboard text={value} onCopy={() => HandleOnCopy()}>
+                          <CopyToClipboard text={value} onCopy={() => handleOnCopy(title)}>
                             <span><b>{value}</b> <CopyIcon /></span>
                           </CopyToClipboard>
                         </td>
