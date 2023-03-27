@@ -20,13 +20,6 @@ export const CONFIG = {
     faq: "/faq",
   },
   social: {
-    twitter: {
-      label: "Twitter",
-      account: "mevblocker",
-      url: "https://twitter.com/",
-    },
-    discord: { label: "Discord", url: "https://discord.gg/4wCETCfpQu" },
-    forum: { label: "Forum", url: "https://mevblocker.discourse.group/" },
-    github: { label: "GitHub", url: "https://github.com/mevblocker" },
+    telegram: { label: "Telegram", url: "https://t.me/+yonLSGoFPRI0YTFk" },
   },
 };

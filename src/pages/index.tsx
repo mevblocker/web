@@ -33,8 +33,8 @@ const HandleOnCopy = useCallback(() => {
     // get page route from next.js router and pass it to Layout component as props
     <Layout route={router.pathname}>
 
-      <SectionWrapper backgroundColor={Color.yellow} borderDown>
-        <Section>
+      <SectionWrapper backgroundColor={Color.blue} borderDown>
+        <Section columns={2}>
           <SectionContent>
             <h1>The best MEV protection under the sun</h1>
             <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
@@ -50,7 +50,6 @@ const HandleOnCopy = useCallback(() => {
 
           <SectionContent>
             <HeroImage>
-              <img className="line-1" src="hero/line-1.svg" alt="MEVBlocker.io" />
               <img className="leaf-1" src="hero/leaf-1.svg" alt="MEVBlocker.io" />
               <img className="leaf-2" src="hero/leaf-2.svg" alt="MEVBlocker.io" />
               <img className="tomato-1" src="hero/tomato-1.svg" alt="MEVBlocker.io" />
@@ -64,7 +63,7 @@ const HandleOnCopy = useCallback(() => {
       </SectionWrapper>
 
       {/* Features section */}
-      <SectionWrapper backgroundColor={Color.pink} borderDown>
+      <SectionWrapper backgroundColor={Color.yellow} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <h3>Broad Spectrum <br/> MEV Defense</h3>
@@ -84,7 +83,7 @@ const HandleOnCopy = useCallback(() => {
       </SectionWrapper>
 
       {/* RPC Details section */}
-      <SectionWrapper backgroundColor={Color.white} borderDown>
+      <SectionWrapper backgroundColor={Color.pink} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <a id="rpc" className={'anchor'}/>
