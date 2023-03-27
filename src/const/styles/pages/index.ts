@@ -376,7 +376,7 @@ export const CardWrapper = styled.div<{count?: number}>`
 `
 
 export const CardItem = styled.div<{ backgroundColor?: string }>`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.1;
   display: flex;
   flex-flow: column wrap;
