@@ -239,7 +239,7 @@ export default function Header({ siteConfig, menu}) {
             </Link>
             <Menu className={menuVisible ? 'visible' : ""}>
               {menu.map(({ id, title, url, target, rel }) => (
-                <MenuItem key={id} isActive={currentRoute === url}>
+                <MenuItem key={id} isActive={currentRoute === url} onClick={handleClick}>
                   <a href={url} target={target} rel={rel}>{title}</a>
                 </MenuItem>
               ))}
