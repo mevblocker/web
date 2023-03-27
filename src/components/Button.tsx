@@ -44,7 +44,7 @@ const Wrapper = styled.a<
   text-align: center;
   cursor: pointer;
 
-  ${Media.mobile} {
+  ${Media.mediumDown} {
     padding: ${({ paddingLR }) => paddingLR ? `0 ${paddingLR}rem` : '0 6rem'};
     margin: ${({ marginTB }) => marginTB ? `${marginTB}rem 0` : '0'};
     min-height: 5.6rem;
@@ -64,7 +64,7 @@ export const ButtonWrapper = styled.div`
   gap: 1.6rem;
   width: 100%;
 
-  ${Media.mobile} {
+  ${Media.mediumDown} {
     justify-content: center;
     flex-flow: column wrap;
 
@@ -134,20 +134,8 @@ export function Button({
   );
 }
 
-export function BigButton({
-  label,
-  href,
-  target,
-  rel,
-  fontSize,
-  onClick,
-}: BigButtonProps) {
+export function BigButton({ label, href, target, rel, fontSize, onClick }: BigButtonProps) {
   return (
-    <BigButtonWrapper
-      onClick={onClick}
-      {...{ href, label, target, rel, fontSize }}
-    >
-      {label}
-    </BigButtonWrapper>
-  );
+    <BigButtonWrapper {...{ href, label, target, rel, fontSize, onClick }}>{label}</BigButtonWrapper>
+  )
 }

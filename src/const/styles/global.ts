@@ -4,12 +4,28 @@ import { transparentize } from "polished";
 
 const GlobalStyles = createGlobalStyle`
 
-@font-face {
+  @font-face {
     font-family: ${Font.defaultHeading};
     font-style: normal;
     font-weight: bold;
     font-display: swap;
     src: url(${Font.defaultHeadingFile}) format('woff2');
+  }
+
+  @font-face {
+    font-family: ${Font.default};
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url(${Font.defaultFile}) format('woff2');
+  }
+
+  @font-face {
+    font-family: ${Font.default};
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url(${Font.defaultBoldFile}) format('woff2');
   }
 
   html, body {  

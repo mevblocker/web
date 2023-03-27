@@ -35,7 +35,9 @@ export const Color = {
 export const Font = {
   defaultHeading: 'Ginto Nord',
   defaultHeadingFile: "/fonts/ABCGintoNord-Bold.woff2",
-  default: "Helvetica, sans-serif",
+  default: "Roobert",
+  defaultFile: "/fonts/Roobert-Regular.woff2",
+  defaultBoldFile: "/fonts/Roobert-Bold.woff2",
   arial: "Arial, Helvetica, sans-serif",
   sizeDefault: '1.8rem',
   weightLight: 300,

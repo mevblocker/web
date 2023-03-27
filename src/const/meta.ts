@@ -17,7 +17,7 @@ export const CONFIG = {
   url: {
     root: "https://mevblocker.io",
     home: "/",
-    faq: "/faq",
+    faq: "/faq"
   },
   social: {
     telegram: { label: "Telegram", url: "https://t.me/+yonLSGoFPRI0YTFk" },

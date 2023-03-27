@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
 
@@ -71,7 +71,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   max-width: ${({ maxWidth }) => maxWidth ? `${maxWidth}rem` : 'var(--sectionMaxWidth)'};
   height: auto;
   padding: 0 2.4rem;
-  margin: 9rem 0;
+  margin: 9rem auto;
   justify-content: center;
   align-items: ${({ align }) => align === 'center' ? 'center' : 'flex-start'};
 
@@ -79,7 +79,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     max-width: 100%;
     height: auto;
     padding: 0 2.4rem 0;
-    margin: 8rem auto;
+    margin: 7rem auto 0;
     align-items: center;
   }
 
@@ -120,7 +120,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
 
   > h1 {
     ${Media.mobile} {
-      font-size: 5rem;
+      font-size: 3.2rem;
     }
   }
 
@@ -129,7 +129,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-weight: ${Font.weightBold};
 
     ${Media.mobile} {
-      font-size: 4rem;
+      font-size: 3rem;
     }
   }
 
@@ -161,6 +161,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
 
     ${Media.mobile} {
       font-size: 1.6rem;
+      text-align: center;
     }
   }
 
@@ -168,7 +169,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-size: 2.8rem;
 
     ${Media.mobile} {
-      font-size: 2.4rem;
+      font-size: 1.9rem;
     }
   }
 
@@ -277,9 +278,14 @@ export const HeroImage = styled.div`
   position: relative;
   width: var(--size);
   height: var(--size);
+  max-width: 45vw;
+
+  ${Media.desktopDown}  {
+    --size: 50rem;
+  }
 
   ${Media.mobile} {
-    transform: scale(0.5);
+    --size: 40rem;
     max-width: 100%;
   }
 
@@ -291,6 +297,13 @@ export const HeroImage = styled.div`
     right: 0;
     bottom: 0;
     height: 33rem;
+
+    ${Media.mobile} {
+      height: 100%;
+      width: 100%;
+      max-height: 33rem;
+      max-width: 100%;
+    }
   }
 
   .sandwhich-2 {
@@ -299,6 +312,16 @@ export const HeroImage = styled.div`
     height: 22rem;
     width: auto;
     animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.desktopDown}  {
+      height: 17rem;
+      bottom: 63%;
+    }
+
+    ${Media.mobile} {
+      height: 12rem;
+      bottom: 68%;
+    }
   }
 
   .sandwhich-1 {
@@ -307,6 +330,17 @@ export const HeroImage = styled.div`
     height: 20rem;
     width: auto;
     animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.desktopDown}  {
+      bottom: 67%;
+      left: 21%;
+      height: 14rem;
+    }
+
+    ${Media.mobile} {
+      height: 11rem;
+      bottom: 70%;
+    }
   }
 
   .tomato-1 {
@@ -315,6 +349,12 @@ export const HeroImage = styled.div`
     height: 5rem;
     width: auto;
     animation: moveIn 4s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.mobile} {
+      height: 2.5rem;
+      bottom: 70%;
+      left: 15%;
+    }
   }
 
   .tomato-2 {
@@ -323,6 +363,15 @@ export const HeroImage = styled.div`
     height: 10rem;
     width: auto;
     animation: moveIn 4s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.mediumDown} {
+      height: 4rem;
+    }
+
+    ${Media.mobile} {
+      height: 5rem;
+      bottom: 74%;
+    }
   }
 
   .leaf-1 {
@@ -331,6 +380,12 @@ export const HeroImage = styled.div`
     height: 5rem;
     width: auto;
     animation: moveIn 1.5s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.mobile} {
+      height: 2.5rem;
+      bottom: 60%;
+      left: 6%;
+    }
   }
 
   .leaf-2 {
@@ -339,6 +394,16 @@ export const HeroImage = styled.div`
     height: 5rem;
     width: auto;
     animation: moveIn 3s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.desktopDown} {
+      bottom: 59%;
+    }
+
+    ${Media.mobile} {
+      height: 2.5rem;
+      bottom: 44%;
+      right: 7%;
+    }
   }
 
   @keyframes moveIn {
@@ -351,7 +416,7 @@ export const HeroImage = styled.div`
   }
 `
 
-export const CardWrapper = styled.div<{count?: number}>`
+export const CardWrapper = styled.div<{count?: number, cardRotate?: boolean}>`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -361,14 +426,25 @@ export const CardWrapper = styled.div<{count?: number}>`
   align-items: stretch;
   width: 100%;
 
+  ${({ cardRotate }) => cardRotate && css`
+    gap: 3.8rem; 
+
+    > div:nth-child(3n) {
+      transform: rotate(-3deg);
+    }
+    > div:nth-child(2n + 1) {
+      transform: rotate(3deg);
+    }
+  `}
+
   ${Media.mediumDown} {
     display: flex;
     flex-flow: column wrap;
   }
 `
 
-export const CardItem = styled.div<{ backgroundColor?: string }>`
-  font-size: 1.6rem;
+export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number }>`
+  font-size: ${({ fontSize }) => fontSize ? `${fontSize}rem` : '1.6rem'};
   line-height: 1.1;
   display: flex;
   flex-flow: column wrap;
@@ -436,6 +512,11 @@ export const USPWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
+  justify-content: center;
+
+  ${Media.mediumDown} {
+    gap: 2.4rem;
+  }
 
   ${Media.mobile} {
     flex-flow: column wrap;
@@ -448,8 +529,13 @@ export const USPItem = styled.div`
   flex-flow: column wrap;
   align-items: center;
   width: calc(100% / 3);
+  margin: 0 0 4.2rem;
   padding: 0 1.4rem;
   gap: 2.4rem;
+
+  ${Media.mediumDown} {
+    margin: 0 auto;
+  }
 
   ${Media.mobile} {
     width: 100%;
@@ -472,13 +558,21 @@ export const USPItem = styled.div`
     margin: 0;
   }
 
-  > img {
+  > img,
+  > a > img {
     --size: 24rem;
     width: var(--size);
     height: var(--size);
+    max-width: var(--size);
+    max-height: var(--size);
     border-radius: var(--size);
     background: ${Color.white};
     border: 0.2rem solid ${Color.black};
-    display: inline-block;
+    display: block;
+    transition: transform 2s ease-in-out;
+  }
+
+  > a:hover > img {
+    transform: rotate(360deg);
   }
 `
