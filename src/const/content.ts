@@ -83,7 +83,7 @@ export const RPC_DETAILS: { title: string; value: string }[] = [
   },
   {
     title: "New RPC URL",
-    value: CONFIG.RPC_URL,
+    value: CONFIG.rpc.url,
   },
   {
     title: "Chain ID",
