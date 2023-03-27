@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import { useAnalyticsReporter } from "../lib/analytics";
 import GlobalStyles from '@src/const/styles/global'
-import { Font} from '@src/const/styles/variables'
+import { Font, Color } from '@src/const/styles/variables'
 import Head from 'next/head'
 
 import { CONFIG } from '@src/const/meta'
@@ -14,12 +14,13 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <>
       <Head>
         <meta name="description" content={description} />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#CAE9FF" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#CAE9FF" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content={Color.white} />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={Color.white} />
 
-        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="192x192" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png" />
+        <link rel="shortcut icon" href="favicon.svg" />
+        <link rel="mask-icon" href="favicon-mask.svg" color={Color.white} />
+        <link rel="apple-touch-icon" sizes="192x192" href="favicon.png" />
+        <link rel="apple-touch-icon" sizes="512x512" href="favicon.png" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
