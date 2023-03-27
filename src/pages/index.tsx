@@ -9,7 +9,7 @@ import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrap
 import { Button, BigButton } from '@src/components/Button'
 // import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
-import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE} from '@src/const/content'
+import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE, TESTIMONIALS} from '@src/const/content'
 import { ShareButton } from '@src/components/ShareButton'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
@@ -139,6 +139,23 @@ const HandleOnCopy = useCallback(() => {
         </Section>
       </SectionWrapper>
 
+      {/* Testemonials */}
+      <SectionWrapper backgroundColor={Color.yellow} borderDown>
+        <Section>
+          <SectionContent maxWidth={100} align={'center'}>
+            <h3>What others are saying...</h3>
+            <CardWrapper count={3} cardRotate>
+            {TESTIMONIALS.map(({content}, index) => (
+              <CardItem key={index} fontSize={2.7}>
+                <p>{content}</p>
+              </CardItem>
+            ))}
+            </CardWrapper>
+          </SectionContent>
+
+        </Section>
+      </SectionWrapper>
+
       {/* Share */}
       <SectionWrapper backgroundColor={Color.blue} borderDown>
       <Section>
@@ -160,8 +177,11 @@ const HandleOnCopy = useCallback(() => {
           <USPWrapper>
             {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
               <USPItem key={index}>
-                  <img src={logo} alt={title} loading="lazy" />
-                  <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                    <img src={logo} alt={title} loading="lazy" />
+                    <br />
+                    {title}
+                  </a>
               </USPItem>
             ))}
           </USPWrapper>

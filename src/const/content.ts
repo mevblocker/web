@@ -99,13 +99,38 @@ export const RPC_DETAILS: { title: string; value: string }[] = [
   },
 ]
 
-// export const TESTIMONIALS: { content: string; image: string; author: string }[] = [
-//   {
-//     content: "MEV Blocker is a great way to protect your trades from MEV. I’ve been using it for a while now and it’s been a great experience.",
-//     image: "testimonial-1.png",
-//     author: "John Doe",
-//   }
-// ]
+export const TESTIMONIALS: { content: string; image: string; author: string }[] = [
+  {
+    content: '"I was tired of getting rekt, so I started using MEV Blocker"',
+    image: "testimonial-1.png",
+    author: "John Doe",
+  },
+  {
+    content: '"I used MEV Blocker and it stopped raining outside"',
+    image: "testimonial-2.png",
+    author: "Jane Doe",
+  },
+  {
+    content: '"I don\'t trust robots, that\'s why I use MEV Blocker"',
+    image: "testimonial-3.png",
+    author: "John Doe",
+  },
+  {
+    content: '"Nobody\'s stolen my lunch money since I started using MEV Blocker"',
+    image: "testimonial-4.png",
+    author: "Jane Doe",
+  },
+  {
+    content: '"MEV Blocker fixed my marriage"',
+    image: "testimonial-5.png",
+    author: "John Doe",
+  },
+  {
+    content: '"I used MEV Blocker and I instantly went up a tax bracket"',
+    image: "testimonial-6.png",
+    author: "Jane Doe",
+  },
+]
 
 
 export const BUILT_WITH_LOVE: { title: string, logo: string, link: string }[] = [

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
 
@@ -416,7 +416,7 @@ export const HeroImage = styled.div`
   }
 `
 
-export const CardWrapper = styled.div<{count?: number}>`
+export const CardWrapper = styled.div<{count?: number, cardRotate?: boolean}>`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -426,14 +426,25 @@ export const CardWrapper = styled.div<{count?: number}>`
   align-items: stretch;
   width: 100%;
 
+  ${({ cardRotate }) => cardRotate && css`
+    gap: 3.8rem; 
+
+    > div:nth-child(3n) {
+      transform: rotate(-3deg);
+    }
+    > div:nth-child(2n + 1) {
+      transform: rotate(3deg);
+    }
+  `}
+
   ${Media.mediumDown} {
     display: flex;
     flex-flow: column wrap;
   }
 `
 
-export const CardItem = styled.div<{ backgroundColor?: string }>`
-  font-size: 1.6rem;
+export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number }>`
+  font-size: ${({ fontSize }) => fontSize ? `${fontSize}rem` : '1.6rem'};
   line-height: 1.1;
   display: flex;
   flex-flow: column wrap;
@@ -547,7 +558,8 @@ export const USPItem = styled.div`
     margin: 0;
   }
 
-  > img {
+  > img,
+  > a > img {
     --size: 24rem;
     width: var(--size);
     height: var(--size);
@@ -557,5 +569,10 @@ export const USPItem = styled.div`
     background: ${Color.white};
     border: 0.2rem solid ${Color.black};
     display: block;
+    transition: transform 2s ease-in-out;
+  }
+
+  > a:hover > img {
+    transform: rotate(360deg);
   }
 `
