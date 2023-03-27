@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from 'next'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { useState, useCallback } from 'react'
 import Layout from '@src/components/Layout'
@@ -9,7 +10,7 @@ import { Button, BigButton } from '@src/components/Button'
 // import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
 import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE} from '@src/const/content'
-// import { CONFIG } from '@src/const/meta'
+import { ShareButton } from '@src/components/ShareButton'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
@@ -138,24 +139,36 @@ const HandleOnCopy = useCallback(() => {
         </Section>
       </SectionWrapper>
 
-
-      {/* Built with love */}
+      {/* Share */}
       <SectionWrapper backgroundColor={Color.blue} borderDown>
-        <Section>
-          <SectionContent maxWidth={100} align={'center'}>            
-          <h3>Built with love by</h3>
-            <USPWrapper>
-              {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
-                <USPItem key={index}>
-                    <img src={logo} alt={title} loading="lazy" />
-                    <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
-                </USPItem>
-              ))}
-            </USPWrapper>
-          </SectionContent>
+      <Section>
+        <SectionContent maxWidth={100} align={'center'}>            
+        <h3>Don&apos;t let your friends get burned</h3>
 
-        </Section>
-      </SectionWrapper>
+        <ShareButton />
+      
+        </SectionContent>
+
+      </Section>
+    </SectionWrapper>
+
+    {/* Built with love */}
+    <SectionWrapper backgroundColor={Color.white} borderDown>
+      <Section>
+        <SectionContent maxWidth={100} align={'center'}>            
+        <h3>Built with love by</h3>
+          <USPWrapper>
+            {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
+              <USPItem key={index}>
+                  <img src={logo} alt={title} loading="lazy" />
+                  <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
+              </USPItem>
+            ))}
+          </USPWrapper>
+        </SectionContent>
+
+      </Section>
+    </SectionWrapper>
 
     </Layout>
   )
