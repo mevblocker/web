@@ -4,6 +4,14 @@ import { transparentize } from "polished";
 
 const GlobalStyles = createGlobalStyle`
 
+@font-face {
+    font-family: ${Font.defaultHeading};
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url(${Font.defaultHeadingFile}) format('woff2');
+  }
+
   html, body {  
     width: 100%;
     height: 100%;
@@ -84,6 +92,10 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     top: -15rem;
     visibility: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: ${Font.defaultHeading};
   }
 
   h1, h2, h3, p, b, i, strong {
