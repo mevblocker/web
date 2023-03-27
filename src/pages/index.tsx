@@ -12,7 +12,7 @@ import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE} from '@src/cons
 // import { CONFIG } from '@src/const/meta'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-import { copyToClipboardAction } from '@src/lib/analytics/events'
+import { copyToClipboardAction, scrollToAction } from '@src/lib/analytics/events'
 
 const DATA_CACHE_TIME_SECONDS = 5 * 60 // Cache 5min
 
@@ -30,6 +30,10 @@ const handleOnCopy = useCallback((title: string) => {
     }
   }, [setCopied]);
 
+  const onRPCScroll = useCallback(() => {
+    scrollToAction('Get RPC Details')
+  }, [])
+
   return (
     // get page route from next.js router and pass it to Layout component as props
     <Layout route={router.pathname}>
@@ -46,7 +50,7 @@ const handleOnCopy = useCallback((title: string) => {
               <li>MEV Blocker auto-protects all transactions</li>
             </ol>
 
-            <BigButton fontSize={2.2} label='Get RPC Details' href="#rpc" />
+            <BigButton onClick={onRPCScroll} fontSize={2.2} label='Get RPC Details' href="#rpc" />
           </SectionContent>
 
           <SectionContent>

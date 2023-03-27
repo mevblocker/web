@@ -72,6 +72,7 @@ type BigButtonProps = {
   label: string
   target?: string
   rel?: string
+  onClick?: () => void
 }
 
 const BigButtonWrapper = styled.a`
@@ -118,8 +119,8 @@ export function Button({
   )
 }
 
-export function BigButton({ label, href, target, rel, fontSize }: BigButtonProps) {
+export function BigButton({ label, href, target, rel, fontSize, onClick }: BigButtonProps) {
   return (
-    <BigButtonWrapper {...{ href, label, target, rel, fontSize }}>{label}</BigButtonWrapper>
+    <BigButtonWrapper {...{ href, label, target, rel, fontSize, onClick }}>{label}</BigButtonWrapper>
   )
 }
