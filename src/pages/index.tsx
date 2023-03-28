@@ -14,6 +14,7 @@ import { ShareButton } from '@src/components/ShareButton'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { AddRpcButton } from '@src/components/AddRpcButton'
+import { CONFIG } from '@src/const/meta'
 
 const DATA_CACHE_TIME_SECONDS = 5 * 60 // Cache 5min
 
@@ -163,7 +164,12 @@ const HandleOnCopy = useCallback(() => {
         <SectionContent maxWidth={100} align={'center'}>            
         <h3>Don&apos;t let your friends get burned</h3>
 
-        <ShareButton />
+        <ShareButton 
+          shareText={CONFIG.description}
+          shareUrl={CONFIG.url.root}
+          shareTitle={CONFIG.title}
+          label={'Share MEV Blocker 🌞'}
+         />
       
         </SectionContent>
 

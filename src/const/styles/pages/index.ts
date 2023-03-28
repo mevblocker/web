@@ -466,6 +466,10 @@ export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number
     margin: 1.6rem auto 2.4rem;;
   }
 
+  > p {
+    margin: auto;
+  }
+
   table {
     width: 100%;
     border-spacing: 0.5rem;

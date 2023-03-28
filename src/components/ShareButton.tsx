@@ -1,20 +1,27 @@
 
-import { CONFIG } from '@src/const/meta'
+
 import { BigButton } from '@src/components/Button'
 import { RWebShare } from "react-web-share";
 
-export function ShareButton() {
+interface ShareButtonProps {
+  label: string;
+  shareText: string;
+  shareUrl: string;
+  shareTitle: string;
+}
+
+export function ShareButton({ label, shareText, shareUrl, shareTitle }: ShareButtonProps)  {
 
   return (
     <RWebShare
         data={{
-          text: CONFIG.description,
-          url: CONFIG.url.root,
-          title: CONFIG.title,
+          text: shareText,
+          url: shareUrl,
+          title: shareTitle
         }}
         onClick={() => console.log("shared successfully!")}
       >
-        <BigButton fontSize={2.2} label='Share MEV Blocker 🌞' />
+        <BigButton fontSize={2.2} label={label} />
       </RWebShare>
   )
 }

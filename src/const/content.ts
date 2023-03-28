@@ -99,37 +99,34 @@ export const RPC_DETAILS: { title: string; value: string }[] = [
   },
 ]
 
-export const TESTIMONIALS: { content: string; image: string; author: string }[] = [
+export const TESTIMONIALS: { content: string; }[] = [
   {
-    content: '"I was tired of getting rekt, so I started using MEV Blocker"',
-    image: "testimonial-1.png",
-    author: "John Doe",
+    content: "MEV Blocker fixed my marriage"
   },
   {
-    content: '"I used MEV Blocker and it stopped raining outside"',
-    image: "testimonial-2.png",
-    author: "Jane Doe",
+    content: "I used MEV Blocker and went up a tax bracket"
   },
   {
-    content: '"I don\'t trust robots, that\'s why I use MEV Blocker"',
-    image: "testimonial-3.png",
-    author: "John Doe",
+    content: "Nobody’s stolen my lunch money since I started using MEV Blocker"
   },
   {
-    content: '"Nobody\'s stolen my lunch money since I started using MEV Blocker"',
-    image: "testimonial-4.png",
-    author: "Jane Doe",
+    content: "The first time I used MEV Blocker it stopped raining outside"
   },
   {
-    content: '"MEV Blocker fixed my marriage"',
-    image: "testimonial-5.png",
-    author: "John Doe",
+    content: "Before MEV blocker I was just a heifer, now I'm the coolest guy in the graze"
   },
   {
-    content: '"I used MEV Blocker and I instantly went up a tax bracket"',
-    image: "testimonial-6.png",
-    author: "Jane Doe",
+    content: "I was tired of getting rekt, so I started using MEV Blocker"
   },
+  {
+    content: "I don't trust robots, that's why I use MEV Blocker"
+  },
+  {
+    content: "If you know, you know"
+  },
+  {
+    content: "Before MEV Blocker I was broke, now I’m up!"
+  }
 ]
 
 
