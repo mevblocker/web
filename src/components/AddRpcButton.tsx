@@ -35,9 +35,9 @@ const TIMEOUT_TIME = 90000 // 1.5min
 
 const ERROR_ADD_MANUALLY_MESSAGE = 'There was an error adding the RPC automatically to your wallet. Please add manually'
 
-function getErrorMessage(error: any) {
+function getErrorMessage(error: any): string | null {
   if (error === NotConnectedError) {
-    return 'Please connect your wallet'
+    return null
   }
 
   if (error?.code === 4001) {
@@ -83,7 +83,13 @@ export function AddRpcButton() {
         console.error('[AddRpcButton] Error adding RPC to Wallet', error)
 
         const message = getErrorMessage(error)
-        setState({ state: 'error', errorMessage: message })
+        if (message === null) {
+          // The user is connecting
+          setState(DEFAULT_STATE)
+        } else {
+          // Display the error
+          setState({ state: 'error', errorMessage: message })
+        }
       })
       .finally(clearTimeouts)
 
