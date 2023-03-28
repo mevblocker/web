@@ -203,6 +203,30 @@ const GlobalStyles = createGlobalStyle`
   .container {
     margin: 0 auto;
   }
+
+  // RWebShare widget style overrides
+  .rws-container {
+    max-width: 54rem!important;
+    margin: 0 0 2rem!important;
+    border-radius: 1rem!important;
+    overflow: hidden!important;
+
+    ${Media.mobile} {
+      max-width: 100%!important;
+    }
+  }
+
+  .rws-header {
+    font-size: 2rem!important;
+    margin: 2.4rem auto;
+    text-align: center;
+  }
+
+  .rws-close {
+    font-size: 2rem!important;
+    font-weight: bold;
+    background: ${Color.orange}!important;
+  }
 `
 
 export const ExternalLink = styled.a`
