@@ -9,6 +9,16 @@ MEV Blocker is your personal protection from frontrunning and sandwich attacks f
 2. Trade with DeFi, mint NFTs, or use any dApp
 3. MEV Blocker auto-protects all transactions
 
+
+## RPC details
+| Network Name   | MEV Blocker       |
+| -------------- | ----------------- |
+| New RPC URL    | https://rpc.mevblocker.io   |
+| Chain ID       | 1                 |
+| Currency Symbol | ETH               |
+| Block Explorer URL | https://etherscan.io |
+
+
 ## Quick Start
 
 **Run the development server:**
