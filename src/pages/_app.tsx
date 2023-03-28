@@ -26,13 +26,13 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <meta property="og:title" content={title} />
 
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={url.root + "/og-meta-mevblocker.png"} />
+        <meta property="og:image" content={url.root + "/og-social.png"} />
         <meta property="og:url" content={url.root} />
 
         <meta name="twitter:card" content="summary_large_image" />
         {/* <meta name="twitter:site" content={social.twitter.account} /> */}
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:image" content={url.root + "/og-meta-mevblocker.png"} />
+        <meta name="twitter:image" content={url.root + "/og-social.png"} />
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"></meta>
 
         <link rel="preload" href={Font.defaultFile} as="font" type="font/woff2" crossOrigin="anonymous" />
