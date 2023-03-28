@@ -469,16 +469,17 @@ export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number
   position: relative;
   width: 100%;
   justify-content: space-between;
+  gap: 2.4rem;
 
   ${Media.mobile} {
-    gap: 2.4rem;
+    
   }
 
   h4 {
     width: 100%;
     font-size: 2.1rem;
     text-align: center;
-    margin: 1.6rem auto 2.4rem;;
+    margin: 1.6rem auto 0;
   }
 
   > p {
