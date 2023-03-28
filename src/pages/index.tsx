@@ -7,7 +7,6 @@ import Layout from '@src/components/Layout'
 import { CopyIcon } from '@src/const/styles/global'
 import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem, HeroImage } from '@src/const/styles/pages/index'
 import { Button, BigButton } from '@src/components/Button'
-// import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
 import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE, TESTIMONIALS} from '@src/const/content'
 import { ShareButton } from '@src/components/ShareButton'
@@ -171,7 +170,7 @@ const HandleOnCopy = useCallback(() => {
           shareText={CONFIG.socialShareDescription}
           shareUrl={CONFIG.url.root}
           shareTitle={CONFIG.title}
-          label={'Share MEV Blocker 🌞'}
+          label={'Share MEV Blocker ⛱️'}
          />
       
         </SectionContent>
