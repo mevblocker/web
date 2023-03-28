@@ -544,7 +544,7 @@ export const USPWrapper = styled.div`
   }
 `
 
-export const USPItem = styled.div<{imageBorder?: boolean}>`
+export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean}>`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -585,6 +585,7 @@ export const USPItem = styled.div<{imageBorder?: boolean}>`
     height: var(--size);
     max-width: var(--size);
     max-height: var(--size);
+    border-radius: ${({ borderRadius = true }) => borderRadius ? 'var(--size)' : 'none'};
     background: ${Color.white};
     border: ${({ imageBorder = true }) => imageBorder ? `0.2rem solid ${Color.black}` : 'none'};
     display: block;
