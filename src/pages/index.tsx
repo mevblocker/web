@@ -150,9 +150,9 @@ const HandleOnCopy = useCallback(() => {
           <SectionContent maxWidth={100} align={'center'}>
             <h3>What others are saying...</h3>
             <CardWrapper count={3} cardRotate>
-            {TESTIMONIALS.map(({content}, index) => (
+            {TESTIMONIALS.map(({content, author}, index) => (
               <CardItem key={index} fontSize={2.7}>
-                <p>{content}</p>
+                <p>{content} - <b>{author}</b></p>
               </CardItem>
             ))}
             </CardWrapper>

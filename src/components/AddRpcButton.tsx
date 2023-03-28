@@ -5,7 +5,7 @@ import { Confetti } from "./Confetti";
 import { useCallback, useState } from "react";
 import styled from 'styled-components'
 import { Color } from "@src/const/styles/variables";
-import { transparentize } from "polished";
+import { transparentize, darken } from "polished";
 
 
 enum AddRpcState {
@@ -15,12 +15,12 @@ enum AddRpcState {
   REJECTED_BY_USER
 }
 
-const ErrorMessage = styled.p`
-  color: ${Color.orange};
+const Message = styled.p<{messageType: AddRpcState}>`
+  color: ${({messageType}) => messageType === AddRpcState.ADDED ? darken(0.3, Color.green) : Color.orange};
   font-weight: bold;
   width: 100%;
   margin: 2.4rem 0 0;
-  background: ${transparentize(0.9, Color.orange)};
+  background: ${({messageType}) => messageType === AddRpcState.ADDED ? transparentize(0.8, Color.green) : transparentize(0.9, Color.orange)};
   padding: 1rem;
   border-radius: 1.2rem;
   text-align: center;
@@ -65,16 +65,16 @@ export function AddRpcButton() {
       {state === AddRpcState.ADDED ? (
         <>
         <Confetti start={true} />
-        <span style={{color: 'green'}}>Added to your wallet! You are now safe</span>
+        <Message messageType={state}>Added to your wallet! You are now safe</Message>
         </>
       ) : (
         <>
           <BigButton onClick={addToWallet} label="Add to Wallet" />
           {state === AddRpcState.REJECTED_BY_USER && (
-            <ErrorMessage>The new network couldn&apos;t be added. Rejected by user</ErrorMessage>
+            <Message messageType={state}>The new network couldn&apos;t be added. Rejected by user</Message>
           )}
           {state === AddRpcState.ERROR_ADDING && (
-            <ErrorMessage>There was an error adding the RPC automatically to your wallet. Please add manually</ErrorMessage>
+            <Message messageType={state}>There was an error adding the RPC automatically to your wallet. Please add manually</Message>
           )}
         </>
       )}
