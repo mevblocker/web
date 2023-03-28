@@ -79,7 +79,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     max-width: 100%;
     height: auto;
     padding: 0 2.4rem 0;
-    margin: 7rem auto 0;
+    margin: 4rem auto 0;
     align-items: center;
   }
 
@@ -120,7 +120,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
 
   > h1 {
     ${Media.mobile} {
-      font-size: 3.2rem;
+      font-size: 3.5rem;
     }
   }
 
@@ -469,6 +469,10 @@ export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number
   position: relative;
   width: 100%;
   justify-content: space-between;
+
+  ${Media.mobile} {
+    gap: 2.4rem;
+  }
 
   h4 {
     width: 100%;

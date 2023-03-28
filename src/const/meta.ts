@@ -5,6 +5,7 @@ export const CONFIG = {
   titleShort: 'MEVBlocker.io',
   description: 'MEV Blocker is an RPC that shields all your transactions from MEV, and returns those protected funds directly to you -the user.',
   descriptionShort: 'MEV Blocker is an RPC that shields all your transactions from MEV.',
+  socialShareDescription: `I'm using MEV Blocker to protect myself from frontrunning and sandwich attacks. You should too. Set up the RPC endpoint here:`,
   rpc: {
     name: "MEV Blocker",
     url: "https://rpc.mevblocker.io",

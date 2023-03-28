@@ -165,10 +165,10 @@ const HandleOnCopy = useCallback(() => {
       <SectionWrapper backgroundColor={Color.blue} borderDown>
       <Section>
         <SectionContent maxWidth={100} align={'center'}>            
-        <h3>Don&apos;t let your friends get burned</h3>
+        <h3>Don&apos;t let your friends get burned by MEV</h3>
 
         <ShareButton 
-          shareText={CONFIG.description}
+          shareText={CONFIG.socialShareDescription}
           shareUrl={CONFIG.url.root}
           shareTitle={CONFIG.title}
           label={'Share MEV Blocker 🌞'}
