@@ -112,12 +112,12 @@ export const BUILT_WITH_LOVE: { title: string, logo: string, link: string }[] = 
   },
   {
     title: "Beaver Build",
-    logo: "beaver.jpg",
+    logo: "beaver-build.svg",
     link: "https://beaverbuild.org/",
   },
   {
     title: "Agnostic Relay",
-    logo: "agnostic.png",
+    logo: "agnostic.svg",
     link: "https://agnostic-relay.net/",
   },
 ]
