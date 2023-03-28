@@ -30,7 +30,7 @@ const DEFAULT_STATE: AddToWalletState = { state: 'unknown' }
 const ADDING_STATE: AddToWalletState = { state: 'adding' }
 const ADDED_STATE: AddToWalletState = { state: 'added' }
 
-const TAKING_TOO_LONG_TIME = 10000 // 10s
+const TAKING_TOO_LONG_TIME = 15000 // 10s
 const TIMEOUT_TIME = 90000 // 1.5min
 
 const ERROR_ADD_MANUALLY_MESSAGE = 'There was an error adding the RPC automatically to your wallet. Please add manually'
