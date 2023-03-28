@@ -1,5 +1,4 @@
-
-# [MEVblocker.io](https://mevblocker.io): The best MEV protection under the sun
+# <a href="https://mevblocker.io" target="_blank">MEVblocker.io</a>: The best MEV protection under the sun
 
 ![mevblocker-logo](https://user-images.githubusercontent.com/31534717/228222199-30b9e41b-0896-4602-a6f1-e464876a76de.svg)
 
