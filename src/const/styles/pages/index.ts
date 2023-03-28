@@ -79,7 +79,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     max-width: 100%;
     height: auto;
     padding: 0 2.4rem 0;
-    margin: 7rem auto 0;
+    margin: 4rem auto 0;
     align-items: center;
   }
 
@@ -120,7 +120,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
 
   > h1 {
     ${Media.mobile} {
-      font-size: 3.2rem;
+      font-size: 3.5rem;
     }
   }
 
@@ -143,7 +143,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   }
 
   > h5 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    line-height: 1.3;
     margin: 0 0 5.6rem;
     font-weight: normal;
   }
@@ -171,6 +172,11 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     ${Media.mobile} {
       font-size: 1.9rem;
     }
+  }
+
+  .centered-text {
+    text-align: center;
+    margin: 4.2rem auto 0;
   }
 
   .section_FAQ {
@@ -213,6 +219,11 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     line-height: 1.2;
     border-bottom: 0.2rem solid ${Color.black};
     position: relative;
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
 
     &::after {
       content: '+';
@@ -459,11 +470,19 @@ export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number
   width: 100%;
   justify-content: space-between;
 
+  ${Media.mobile} {
+    gap: 2.4rem;
+  }
+
   h4 {
     width: 100%;
     font-size: 2.1rem;
     text-align: center;
     margin: 1.6rem auto 2.4rem;;
+  }
+
+  > p {
+    margin: auto;
   }
 
   table {

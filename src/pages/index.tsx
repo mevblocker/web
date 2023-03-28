@@ -14,6 +14,7 @@ import { ShareButton } from '@src/components/ShareButton'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { AddRpcButton } from '@src/components/AddRpcButton'
+import { CONFIG } from '@src/const/meta'
 
 const DATA_CACHE_TIME_SECONDS = 5 * 60 // Cache 5min
 
@@ -38,15 +39,15 @@ const HandleOnCopy = useCallback(() => {
         <Section columns={2}>
           <SectionContent>
             <h1>The best MEV protection under the sun</h1>
-            <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
+            <p className={'large-text'}>MEV Blocker is your personal protection from frontrunning and sandwich attacks for a broad spectrum of Ethereum transactions</p>
 
             <ol>
               <li>Add the RPC endpoint directly to your wallet</li>
-              <li>Buy, sell, trade, and swap on any dApp</li>
+              <li>Trade with DeFi, mint NFTs, or use any dApp</li>
               <li>MEV Blocker auto-protects all transactions</li>
             </ol>
 
-            <BigButton fontSize={2.2} label='Get RPC Details' href="#rpc" />
+            <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
           </SectionContent>
 
           <SectionContent>
@@ -67,8 +68,8 @@ const HandleOnCopy = useCallback(() => {
       <SectionWrapper backgroundColor={Color.yellow} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
-            <h3>Broad Spectrum <br/> MEV Defense</h3>
-            <h5>Always-on protection from billions in value extraction</h5>
+            <h3>Broad spectrum <br/> MEV Defense</h3>
+            <h5>MEV bots have extracted more than $1.38 billion from well-meaning Ethereum users across a variety of use cases (trading, provisioning, minting, etc). MEV Blocker is an RPC endpoint that supports these users by offering: </h5>
 
             <USPWrapper>
               {USP_CONTENT.map(({image, title}, index) => (
@@ -88,12 +89,13 @@ const HandleOnCopy = useCallback(() => {
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <a id="rpc" className={'anchor'}/>
-            <h3>RPC Details</h3>
-            <h5>Get setup in seconds. Be protected forever.</h5>
+            <h3>Use early, use often</h3>
+            <h5>Add this RPC endpoint to your wallet to enjoy the full benefits of MEV Blocker</h5>
 
             <CardWrapper count={2}>
               <CardItem>
                 <h4>Click to add to your client</h4>
+                <p>MEV Blocker Ethereum Mainnet</p>
                 <AddRpcButton />
               </CardItem>
               <CardItem>
@@ -116,6 +118,8 @@ const HandleOnCopy = useCallback(() => {
                 {copied && <p className={'copied'}>Copied to clipboard!</p>}
               </CardItem>
             </CardWrapper>
+
+            <p className={'centered-text'}>Having trouble? Check your wallet&apos;s documentation <br/> for instructions on how to update your RPC endpoint.</p>
           </SectionContent>
 
         </Section>
@@ -161,9 +165,14 @@ const HandleOnCopy = useCallback(() => {
       <SectionWrapper backgroundColor={Color.blue} borderDown>
       <Section>
         <SectionContent maxWidth={100} align={'center'}>            
-        <h3>Don&apos;t let your friends get burned</h3>
+        <h3>Don&apos;t let your friends get burned by MEV</h3>
 
-        <ShareButton />
+        <ShareButton 
+          shareText={CONFIG.socialShareDescription}
+          shareUrl={CONFIG.url.root}
+          shareTitle={CONFIG.title}
+          label={'Share MEV Blocker 🌞'}
+         />
       
         </SectionContent>
 
