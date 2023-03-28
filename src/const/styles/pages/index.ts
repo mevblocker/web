@@ -585,7 +585,6 @@ export const USPItem = styled.div<{imageBorder?: boolean}>`
     height: var(--size);
     max-width: var(--size);
     max-height: var(--size);
-    border-radius: var(--size);
     background: ${Color.white};
     border: ${({ imageBorder = true }) => imageBorder ? `0.2rem solid ${Color.black}` : 'none'};
     display: block;
