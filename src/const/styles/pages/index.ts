@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
 
@@ -11,8 +11,8 @@ export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: st
   padding: 5.6rem 0;
   width: 100%;
   background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : 'transparent'};
-  border-bottom: ${({ borderDown }) => borderDown ? `0.2rem solid ${Color.black}` : 'none'};
-
+  border-bottom: ${({ borderDown }) => borderDown ? `0.1rem solid ${Color.black}` : 'none'};
+  
   ${TextLinkWrapper} {
     width: 100%;
     text-align: center;
@@ -22,17 +22,23 @@ export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: st
   }
 `
 
-export const Section = styled.section<{bgColor?: string, imageMaxHeight?: number, imageMaxWidth?: number }>`
-  display: flex;
+export const Section = styled.section<{columns?: number, bgColor?: string, imageMaxHeight?: number, imageMaxWidth?: number }>`
+  display: grid;
   align-items: center;
+  align-content: center;
+  justify-items: center;
   justify-content: center;
-  gap: 5.6rem;
+  grid-template-columns: ${({ columns }) => columns ? `repeat(${columns}, 1fr)` : '1fr'};
+  gap: 5.6rem 0;
   width: 100%;
+  max-width: 130rem;
+  margin: 0 auto;
   min-height: 50vh;
   flex-flow: row wrap;
   background: ${({ bgColor }) => bgColor ? bgColor : 'transparent'};
 
   ${Media.mediumDown} {
+    display: flex;
     height: auto;
     max-width: 86rem;
     margin: 0 auto;
@@ -47,7 +53,7 @@ export const Section = styled.section<{bgColor?: string, imageMaxHeight?: number
     width: 100%;
     height: 100%;
     max-width: 100%;
-    max-height: auto
+    max-height: 100%;
   }
 `
 
@@ -64,8 +70,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth ? `${maxWidth}rem` : 'var(--sectionMaxWidth)'};
   height: auto;
-  padding: 0;
-  margin: 9rem 0;
+  padding: 0 2.4rem;
+  margin: 9rem auto;
   justify-content: center;
   align-items: ${({ align }) => align === 'center' ? 'center' : 'flex-start'};
 
@@ -73,7 +79,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     max-width: 100%;
     height: auto;
     padding: 0 2.4rem 0;
-    margin: 2.4rem auto;
+    margin: 4rem auto 0;
+    align-items: center;
   }
 
   > hr {
@@ -92,13 +99,17 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   > h4,
   > h5 {
     text-align: ${({ align }) => align === 'center' ? 'center' : 'left'};
-    font-size: 7rem;
+    font-size: 6rem;
     line-height: 1.1;
     color: ${Color.text1};
     font-weight: ${Font.weightBold};
     margin: 0 0 2.4rem;
 
     ${Media.mediumDown} {
+      text-align: center;
+    }
+
+    ${Media.mobile} {
       margin: 2.4rem 0;
     }
 
@@ -108,8 +119,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   }
 
   > h1 {
-    ${Media.mediumDown} {
-      font-size: 5rem;
+    ${Media.mobile} {
+      font-size: 3.5rem;
     }
   }
 
@@ -117,8 +128,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 2.4rem 0;
     font-weight: ${Font.weightBold};
 
-    ${Media.mediumDown} {
-      font-size: 4rem;
+    ${Media.mobile} {
+      font-size: 3rem;
     }
   }
 
@@ -126,13 +137,14 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       font-size: 4rem;
     }
   }
 
   > h5 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    line-height: 1.3;
     margin: 0 0 5.6rem;
     font-weight: normal;
   }
@@ -145,20 +157,26 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     text-align: left;
     font-weight: ${Font.weightNormal};
     line-height: 1.6;
-    margin: 0 0 2.4rem;
+    margin: 0 0 3.2rem;
     word-break: break-word;
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       font-size: 1.6rem;
+      text-align: center;
     }
   }
 
   .large-text {
     font-size: 2.8rem;
 
-    ${Media.mediumDown} {
-      font-size: 2.4rem;
+    ${Media.mobile} {
+      font-size: 1.9rem;
     }
+  }
+
+  .centered-text {
+    text-align: center;
+    margin: 4.2rem auto 0;
   }
 
   .section_FAQ {
@@ -168,7 +186,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     margin: 2.4rem 0;
     width: var(--sectionMaxWidth);
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       width: 100%;
       gap: 2.4rem;
     }
@@ -184,7 +202,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     font-size: 2.4rem;
     position: relative;
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       font-size: 2rem;
     }
   }
@@ -201,6 +219,11 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     line-height: 1.2;
     border-bottom: 0.2rem solid ${Color.black};
     position: relative;
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
 
     &::after {
       content: '+';
@@ -246,7 +269,7 @@ export const Content = styled.main`
   flex-flow: column wrap;
   min-height: 80rem;
 
-  ${Media.mediumDown} {
+  ${Media.mobile} {
     height: auto;
     max-width: 100%;
     min-height: initial;
@@ -266,9 +289,14 @@ export const HeroImage = styled.div`
   position: relative;
   width: var(--size);
   height: var(--size);
+  max-width: 45vw;
 
-  ${Media.mediumDown} {
-    transform: scale(0.5);
+  ${Media.desktopDown}  {
+    --size: 50rem;
+  }
+
+  ${Media.mobile} {
+    --size: 40rem;
     max-width: 100%;
   }
 
@@ -280,62 +308,113 @@ export const HeroImage = styled.div`
     right: 0;
     bottom: 0;
     height: 33rem;
+
+    ${Media.mobile} {
+      height: 100%;
+      width: 100%;
+      max-height: 33rem;
+      max-width: 100%;
+    }
   }
 
   .sandwhich-2 {
-    right: 4%;
-    bottom: 55%;
-    height: 20rem;
+    right: 6%;
+    bottom: 58%;
+    height: 22rem;
     width: auto;
     animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.desktopDown}  {
+      height: 17rem;
+      bottom: 63%;
+    }
+
+    ${Media.mobile} {
+      height: 12rem;
+      bottom: 68%;
+    }
   }
 
   .sandwhich-1 {
-    left: 4%;
-    bottom: 55%;
+    left: 18%;
+    bottom: 56%;
     height: 20rem;
     width: auto;
     animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.desktopDown}  {
+      bottom: 67%;
+      left: 21%;
+      height: 14rem;
+    }
+
+    ${Media.mobile} {
+      height: 11rem;
+      bottom: 70%;
+    }
   }
 
   .tomato-1 {
-    left: 0;
-    bottom: 45%;
+    left: 9%;
+    bottom: 60%;
     height: 5rem;
     width: auto;
-    animation: moveIn 6s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 4s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.mobile} {
+      height: 2.5rem;
+      bottom: 70%;
+      left: 15%;
+    }
   }
 
   .tomato-2 {
-    right: 38%;
-    bottom: 62%;
-    height: 8rem;
+    right: 41%;
+    bottom: 72%;
+    height: 10rem;
     width: auto;
-    animation: moveIn 6s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 4s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.mediumDown} {
+      height: 4rem;
+    }
+
+    ${Media.mobile} {
+      height: 5rem;
+      bottom: 74%;
+    }
   }
 
   .leaf-1 {
-    left: -5%;
-    bottom: 65%;
-    height: 15rem;
+    left: 0;
+    bottom: 77%;
+    height: 5rem;
     width: auto;
     animation: moveIn 1.5s forwards cubic-bezier(.62,.16,.13,1.01);
+
+    ${Media.mobile} {
+      height: 2.5rem;
+      bottom: 60%;
+      left: 6%;
+    }
   }
 
   .leaf-2 {
-    right: -12%;
-    bottom: 42%;
-    height: 9rem;
+    right: 0;
+    bottom: 50%;
+    height: 5rem;
     width: auto;
     animation: moveIn 3s forwards cubic-bezier(.62,.16,.13,1.01);
-  }
 
-  .line-1 {
-    left: 32%;
-    bottom: 59%;
-    height: 18rem;
-    width: auto;
-    animation: moveIn 1s forwards cubic-bezier(.62,.16,.13,1.01);
+    ${Media.desktopDown} {
+      bottom: 59%;
+    }
+
+    ${Media.mobile} {
+      height: 2.5rem;
+      bottom: 44%;
+      right: 7%;
+    }
   }
 
   @keyframes moveIn {
@@ -348,7 +427,7 @@ export const HeroImage = styled.div`
   }
 `
 
-export const CardWrapper = styled.div<{count?: number}>`
+export const CardWrapper = styled.div<{count?: number, cardRotate?: boolean}>`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -358,14 +437,25 @@ export const CardWrapper = styled.div<{count?: number}>`
   align-items: stretch;
   width: 100%;
 
+  ${({ cardRotate }) => cardRotate && css`
+    gap: 3.8rem; 
+
+    > div:nth-child(3n) {
+      transform: rotate(-3deg);
+    }
+    > div:nth-child(2n + 1) {
+      transform: rotate(3deg);
+    }
+  `}
+
   ${Media.mediumDown} {
     display: flex;
     flex-flow: column wrap;
   }
 `
 
-export const CardItem = styled.div<{ backgroundColor?: string }>`
-  font-size: 1.8rem;
+export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number }>`
+  font-size: ${({ fontSize }) => fontSize ? `${fontSize}rem` : '1.6rem'};
   line-height: 1.1;
   display: flex;
   flex-flow: column wrap;
@@ -379,19 +469,28 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
   position: relative;
   width: 100%;
   justify-content: space-between;
+  gap: 2.4rem;
+
+  ${Media.mobile} {
+    
+  }
 
   h4 {
     width: 100%;
     font-size: 2.1rem;
     text-align: center;
-    margin: 1.6rem auto 2.4rem;;
+    margin: 1.6rem auto 0;
+  }
+
+  > p {
+    margin: auto;
   }
 
   table {
     width: 100%;
     border-spacing: 0.5rem;
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       border-spacing: 0;
       display: flex;
       flex-flow: column wrap;
@@ -399,7 +498,7 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
   }
 
   table > tbody {
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       display: flex;
       flex-flow: column wrap;
       gap: 2rem;
@@ -407,7 +506,7 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
   }
 
   table tr {
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       display: flex;
       flex-flow: column wrap;
       gap: 0.6rem;
@@ -417,7 +516,7 @@ export const CardItem = styled.div<{ backgroundColor?: string }>`
   table tr > td:last-of-type {
     padding: 0 0 0 1rem;
 
-    ${Media.mediumDown} {
+    ${Media.mobile} {
       padding: 0;
     }
   }
@@ -433,22 +532,32 @@ export const USPWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
+  justify-content: center;
 
   ${Media.mediumDown} {
+    gap: 2.4rem;
+  }
+
+  ${Media.mobile} {
     flex-flow: column wrap;
     gap: 8rem;
   }
 `
 
-export const USPItem = styled.div`
+export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean}>`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   width: calc(100% / 3);
+  margin: 0 0 4.2rem;
   padding: 0 1.4rem;
   gap: 2.4rem;
 
   ${Media.mediumDown} {
+    margin: 0 auto;
+  }
+
+  ${Media.mobile} {
     width: 100%;
     padding: 0;
   }
@@ -469,13 +578,21 @@ export const USPItem = styled.div`
     margin: 0;
   }
 
-  > img {
+  > img,
+  > a > img {
     --size: 24rem;
     width: var(--size);
     height: var(--size);
-    border-radius: var(--size);
-    background: ${Color.white};
-    border: 0.2rem solid ${Color.black};
-    display: inline-block;
+    max-width: var(--size);
+    max-height: var(--size);
+    border-radius: ${({ borderRadius = true }) => borderRadius ? 'var(--size)' : 'none'};
+    background: transparent;
+    border: ${({ imageBorder = false }) => imageBorder ? `0.1rem solid ${Color.black}` : 'none'};
+    display: block;
+    transition: transform 2s ease-in-out;
+  }
+
+  > a:hover > img {
+    transform: rotate(360deg);
   }
 `

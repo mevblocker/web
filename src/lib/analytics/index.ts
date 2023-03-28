@@ -45,7 +45,7 @@ if (IS_CLIENT) {
     GOOGLE_ANALYTICS_CLIENT_ID_STORAGE_KEY
   );
 
-  if (typeof GOOGLE_ANALYTICS_ID === "string") {
+  if (GOOGLE_ANALYTICS_ID && typeof GOOGLE_ANALYTICS_ID === "string") {
     googleAnalytics.initialize(GOOGLE_ANALYTICS_ID, {
       gaOptions: {
         storage: "none",

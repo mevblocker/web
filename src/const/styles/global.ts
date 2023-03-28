@@ -4,6 +4,30 @@ import { transparentize } from "polished";
 
 const GlobalStyles = createGlobalStyle`
 
+  @font-face {
+    font-family: ${Font.defaultHeading};
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url(${Font.defaultHeadingFile}) format('woff2');
+  }
+
+  @font-face {
+    font-family: ${Font.default};
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url(${Font.defaultFile}) format('woff2');
+  }
+
+  @font-face {
+    font-family: ${Font.default};
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url(${Font.defaultBoldFile}) format('woff2');
+  }
+
   html, body {  
     width: 100%;
     height: 100%;
@@ -40,20 +64,14 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  *::selection {
+  ::selection,
+  ::-moz-selection,
+  ::-webkit-selection {
     background: ${Color.orange};
     color: ${Color.text1};
   }
-
-  *::-moz-selection {
-    background: ${Color.text1};
-  }
-
-  *::-webkit-selection {
-    background: ${Color.text1};
-  }
-
-  *::-moz-placeholder {
+  
+  ::-moz-placeholder {
     line-height: revert;
   }
 
@@ -84,6 +102,10 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     top: -15rem;
     visibility: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: ${Font.defaultHeading};
   }
 
   h1, h2, h3, p, b, i, strong {
@@ -180,6 +202,39 @@ const GlobalStyles = createGlobalStyle`
 
   .container {
     margin: 0 auto;
+  }
+
+  // RWebShare widget style overrides
+  .rws-container {
+    max-width: 54rem!important;
+    margin: auto!important;
+    border-radius: 1rem!important;
+    overflow: hidden!important;
+
+    ${Media.mobile} {
+      max-width: 100%!important;
+    }
+  }
+
+  .rws-header {
+    font-size: 2rem!important;
+    margin: 2.4rem auto;
+    text-align: center;
+  }
+
+  .rws-close {
+    font-size: 2rem!important;
+    font-weight: bold;
+    background: ${Color.orange}!important;
+  }
+
+  .rws-icons {
+    padding: 2.4rem!important;
+  }
+
+  .rsw-icon {
+    border-radius: 3rem!important;
+    padding: 2rem!important;
   }
 `
 

@@ -1,38 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# <a href="https://mevblocker.io" target="_blank">MEVblocker.io</a>: The best MEV protection under the sun
 
-## Getting Started
+![mevblocker-logo](https://user-images.githubusercontent.com/31534717/228222199-30b9e41b-0896-4602-a6f1-e464876a76de.svg)
 
-First, run the development server:
+MEV Blocker is your personal protection from frontrunning and sandwich attacks for a broad spectrum of Ethereum transactions. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Add the RPC endpoint directly to your wallet
+2. Trade with DeFi, mint NFTs, or use any dApp
+3. MEV Blocker auto-protects all transactions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## RPC details
+| Network Name   | MEV Blocker       |
+| -------------- | ----------------- |
+| New RPC URL    | https://rpc.mevblocker.io   |
+| Chain ID       | 1                 |
+| Currency Symbol | ETH               |
+| Block Explorer URL | https://etherscan.io |
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Quick Start
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Run the development server:**
+Choose your preferred package manager and run the development server:
 
-## Learn More
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
 
-To learn more about Next.js, take a look at the following resources:
+**Open the application:**
+Visit http://localhost:3000 in your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Edit the landing page:**
+Start editing the landing page by modifying pages/index.tsx. The page auto-updates as you edit the file.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+<a href="https://twitter.com/intent/tweet?text=I%27m%20using%20MEV%20Blocker%20to%20protect%20myself%20from%20frontrunning%20and%20sandwich%20attacks.%20You%20should%20too.%20Set%20up%20the%20RPC%20endpoint%20here%3A%20https%3A%2F%2Fmevblocker.io%2F" target="_blank">
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![share](https://user-images.githubusercontent.com/31534717/228224101-f2d7e2d1-3cd5-4fc6-a0ce-a46b207984e7.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+</a>
+
+
+

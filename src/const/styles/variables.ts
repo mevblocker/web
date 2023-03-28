@@ -8,11 +8,11 @@ export const Defaults = {
 export const Color = {
   white: '#FFFFFF',
   black: '#000000',
-  orange: '#F35534',
+  orange: '#F35034',
   green: '#8ED6D1',
-  yellow: '#FBC641',
+  yellow: '#FFD338',
   pink: '#FFC9F0',
-  blue: '#58A3FF',
+  blue: '#48BDFF',
   border: transparentize(0.75, '#979797'),
   borderGradient: `linear-gradient(to bottom, ${transparentize(0.75, '#979797')}, ${transparentize(1, '#979797')})`,
   background1: '#ffffff',
@@ -33,7 +33,11 @@ export const Color = {
 }
 
 export const Font = {
-  default: "Helvetica, sans-serif",
+  defaultHeading: 'Ginto Nord',
+  defaultHeadingFile: "/fonts/ABCGintoNord-Bold.woff2",
+  default: "Roobert",
+  defaultFile: "/fonts/Roobert-Regular.woff2",
+  defaultBoldFile: "/fonts/Roobert-Bold.woff2",
   arial: "Arial, Helvetica, sans-serif",
   sizeDefault: '1.8rem',
   weightLight: 300,

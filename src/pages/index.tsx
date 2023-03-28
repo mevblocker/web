@@ -1,18 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from 'next'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { useState, useCallback } from 'react'
 import Layout from '@src/components/Layout'
 import { CopyIcon } from '@src/const/styles/global'
 import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem, HeroImage } from '@src/const/styles/pages/index'
 import { Button, BigButton } from '@src/components/Button'
-// import TextLink from '@src/components/TextLink'
 import { Color } from '@src/const/styles/variables'
-import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE} from '@src/const/content'
-// import { CONFIG } from '@src/const/meta'
+import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE, TESTIMONIALS} from '@src/const/content'
+import { ShareButton } from '@src/components/ShareButton'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { copyToClipboardAction, scrollToAction } from '@src/lib/analytics/events'
+import { AddRpcButton } from '@src/components/AddRpcButton'
+import { CONFIG } from '@src/const/meta'
 
 const DATA_CACHE_TIME_SECONDS = 5 * 60 // Cache 5min
 
@@ -38,47 +40,46 @@ const handleOnCopy = useCallback((title: string) => {
     // get page route from next.js router and pass it to Layout component as props
     <Layout route={router.pathname}>
 
-      <SectionWrapper backgroundColor={Color.yellow} borderDown>
-        <Section>
+      <SectionWrapper backgroundColor={Color.blue} borderDown>
+        <Section columns={2}>
           <SectionContent>
             <h1>The best MEV protection under the sun</h1>
-            <p className={'large-text'}>Introducing MEV Blocker — your personal protection against front-running, sandwich attacks, and all other types of MEV.</p>
+            <p className={'large-text'}>MEV Blocker is your personal protection from frontrunning and sandwich attacks for a broad spectrum of Ethereum transactions</p>
 
             <ol>
               <li>Add the RPC endpoint directly to your wallet</li>
-              <li>Buy, sell, trade, and swap on any dApp</li>
+              <li>Trade with DeFi, mint NFTs, or use any dApp</li>
               <li>MEV Blocker auto-protects all transactions</li>
             </ol>
 
-            <BigButton onClick={onRPCScroll} fontSize={2.2} label='Get RPC Details' href="#rpc" />
+            <BigButton onClick={onRPCScroll} fontSize={2.2} label='Get Protected' href="#rpc" />
           </SectionContent>
 
           <SectionContent>
             <HeroImage>
-              <img className="line-1" src="hero/line-1.svg" alt="MEVBlocker.io" />
-              <img className="leaf-1" src="hero/leaf-1.svg" alt="MEVBlocker.io" />
-              <img className="leaf-2" src="hero/leaf-2.svg" alt="MEVBlocker.io" />
-              <img className="tomato-1" src="hero/tomato-1.svg" alt="MEVBlocker.io" />
-              <img className="tomato-2" src="hero/tomato-2.svg" alt="MEVBlocker.io" />
-              <img className="sandwhich-2" src="hero/sandwhich-2.svg" alt="MEVBlocker.io" />
-              <img className="sandwhich-1" src="hero/sandwhich-1.svg" alt="MEVBlocker.io" />
-              <img className="person" src="hero/person.svg" alt="MEVBlocker.io" />
+              <img className="leaf-1" src="hero/leaf-1.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="leaf-2" src="hero/leaf-2.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="tomato-1" src="hero/tomato-1.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="tomato-2" src="hero/tomato-2.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="sandwhich-2" src="hero/sandwhich-2.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="sandwhich-1" src="hero/sandwhich-1.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="person" src="hero/person.svg" alt="MEVBlocker.io" loading="lazy" />
             </HeroImage>
           </SectionContent>
         </Section>
       </SectionWrapper>
 
       {/* Features section */}
-      <SectionWrapper backgroundColor={Color.pink} borderDown>
+      <SectionWrapper backgroundColor={Color.yellow} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
-            <h3>Broad Spectrum <br/> MEV Defense</h3>
-            <h5>Always-on protection from billions in value extraction</h5>
+            <h3>Broad spectrum <br/> MEV Defense</h3>
+            <h5>MEV bots have extracted more than $1.38 billion from well-meaning Ethereum users across a variety of use cases (trading, provisioning, minting, etc). MEV Blocker is an RPC endpoint that supports these users by offering: </h5>
 
             <USPWrapper>
               {USP_CONTENT.map(({image, title}, index) => (
                 <USPItem key={index}> 
-                  <img src={image} alt={title} />
+                  <img src={image} alt={title} loading="lazy" />
                   <h4>{title}</h4>
                 </USPItem>
               ))}
@@ -89,17 +90,18 @@ const handleOnCopy = useCallback((title: string) => {
       </SectionWrapper>
 
       {/* RPC Details section */}
-      <SectionWrapper backgroundColor={Color.white} borderDown>
+      <SectionWrapper backgroundColor={Color.pink} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <a id="rpc" className={'anchor'}/>
-            <h3>RPC Details</h3>
-            <h5>Get setup in seconds. Be protected forever.</h5>
+            <h3>Use early, use often</h3>
+            <h5>Add this RPC endpoint to your wallet to enjoy the full benefits of MEV Blocker</h5>
 
             <CardWrapper count={2}>
               <CardItem>
                 <h4>Click to add to your client</h4>
-                <BigButton label='Connect Wallet' href="https://metamask.io/" />
+                <p>MEV Blocker Ethereum Mainnet</p>
+                <AddRpcButton />
               </CardItem>
               <CardItem>
                 <h4>Or, manually add:</h4>
@@ -121,6 +123,8 @@ const handleOnCopy = useCallback((title: string) => {
                 {copied && <p className={'copied'}>Copied to clipboard!</p>}
               </CardItem>
             </CardWrapper>
+
+            <p className={'centered-text'}>Having trouble? Check your wallet&apos;s documentation <br/> for instructions on how to update your RPC endpoint.</p>
           </SectionContent>
 
         </Section>
@@ -145,24 +149,61 @@ const handleOnCopy = useCallback((title: string) => {
         </Section>
       </SectionWrapper>
 
-
-      {/* Built with love */}
-      <SectionWrapper backgroundColor={Color.blue} borderDown>
+      {/* Testemonials */}
+      <SectionWrapper backgroundColor={Color.yellow} borderDown>
         <Section>
-          <SectionContent maxWidth={100} align={'center'}>            
-          <h3>Built with love by</h3>
-            <USPWrapper>
-              {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
-                <USPItem key={index}>
-                    <img src={logo} alt={title} loading="lazy" />
-                    <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
-                </USPItem>
-              ))}
-            </USPWrapper>
+          <SectionContent maxWidth={100} align={'center'}>
+            <h3>What others are saying...</h3>
+            <CardWrapper count={3} cardRotate>
+            {TESTIMONIALS.map(({content, author}, index) => (
+              <CardItem key={index} fontSize={2.7}>
+                <p>{content} - <b>{author}</b></p>
+              </CardItem>
+            ))}
+            </CardWrapper>
           </SectionContent>
 
         </Section>
       </SectionWrapper>
+
+      {/* Share */}
+      <SectionWrapper backgroundColor={Color.blue} borderDown>
+      <Section>
+        <SectionContent maxWidth={100} align={'center'}>            
+        <h3>Don&apos;t let your friends get burned by MEV</h3>
+
+        <ShareButton 
+          shareText={CONFIG.socialShareDescription}
+          shareUrl={CONFIG.url.root}
+          shareTitle={CONFIG.title}
+          label={'Share MEV Blocker ⛱️'}
+         />
+      
+        </SectionContent>
+
+      </Section>
+    </SectionWrapper>
+
+    {/* Built with love */}
+    <SectionWrapper backgroundColor={Color.white} borderDown>
+      <Section>
+        <SectionContent maxWidth={100} align={'center'}>            
+        <h3>Built with love by</h3>
+          <USPWrapper>
+            {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
+              <USPItem key={index} imageBorder={false} borderRadius={false}>
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                    <img src={logo} alt={title} loading="lazy" />
+                    <br />
+                    {title}
+                  </a>
+              </USPItem>
+            ))}
+          </USPWrapper>
+        </SectionContent>
+
+      </Section>
+    </SectionWrapper>
 
     </Layout>
   )
