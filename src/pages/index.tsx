@@ -52,13 +52,13 @@ const HandleOnCopy = useCallback(() => {
 
           <SectionContent>
             <HeroImage>
-              <img className="leaf-1" src="hero/leaf-1.svg" alt="MEVBlocker.io" />
-              <img className="leaf-2" src="hero/leaf-2.svg" alt="MEVBlocker.io" />
-              <img className="tomato-1" src="hero/tomato-1.svg" alt="MEVBlocker.io" />
-              <img className="tomato-2" src="hero/tomato-2.svg" alt="MEVBlocker.io" />
-              <img className="sandwhich-2" src="hero/sandwhich-2.svg" alt="MEVBlocker.io" />
-              <img className="sandwhich-1" src="hero/sandwhich-1.svg" alt="MEVBlocker.io" />
-              <img className="person" src="hero/person.svg" alt="MEVBlocker.io" />
+              <img className="leaf-1" src="hero/leaf-1.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="leaf-2" src="hero/leaf-2.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="tomato-1" src="hero/tomato-1.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="tomato-2" src="hero/tomato-2.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="sandwhich-2" src="hero/sandwhich-2.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="sandwhich-1" src="hero/sandwhich-1.svg" alt="MEVBlocker.io" loading="lazy" />
+              <img className="person" src="hero/person.svg" alt="MEVBlocker.io" loading="lazy" />
             </HeroImage>
           </SectionContent>
         </Section>
@@ -74,7 +74,7 @@ const HandleOnCopy = useCallback(() => {
             <USPWrapper>
               {USP_CONTENT.map(({image, title}, index) => (
                 <USPItem key={index}> 
-                  <img src={image} alt={title} />
+                  <img src={image} alt={title} loading="lazy" />
                   <h4>{title}</h4>
                 </USPItem>
               ))}
