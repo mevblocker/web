@@ -12,6 +12,7 @@ import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE, TESTIMONIALS} f
 import { ShareButton } from '@src/components/ShareButton'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { copyToClipboardAction, scrollToAction } from '@src/lib/analytics/events'
 import { AddRpcButton } from '@src/components/AddRpcButton'
 import { CONFIG } from '@src/const/meta'
 
@@ -21,14 +22,19 @@ export default function Home() {
   const router = useRouter()
   const [copied, setCopied] = useState(false);
 
-const HandleOnCopy = useCallback(() => {
+const handleOnCopy = useCallback((title: string) => {
     try {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      copyToClipboardAction(title)
     } catch (error) {
       //handle errors
     }
   }, [setCopied]);
+
+  const onRPCScroll = useCallback(() => {
+    scrollToAction('Get RPC Details')
+  }, [])
 
   return (
     // get page route from next.js router and pass it to Layout component as props
@@ -46,7 +52,7 @@ const HandleOnCopy = useCallback(() => {
               <li>MEV Blocker auto-protects all transactions</li>
             </ol>
 
-            <BigButton fontSize={2.2} label='Get Protected' href="#rpc" />
+            <BigButton onClick={onRPCScroll} fontSize={2.2} label='Get Protected' href="#rpc" />
           </SectionContent>
 
           <SectionContent>
@@ -105,7 +111,7 @@ const HandleOnCopy = useCallback(() => {
                       <tr key={index}>
                         <td>{title}</td>
                         <td>
-                          <CopyToClipboard text={value} onCopy={() => HandleOnCopy()}>
+                          <CopyToClipboard text={value} onCopy={() => handleOnCopy(title)}>
                             <span><b>{value}</b> <CopyIcon /></span>
                           </CopyToClipboard>
                         </td>

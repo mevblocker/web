@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { UaEventOptions } from "react-ga4/types/ga4";
 import { isMobile } from "react-device-detect";
 
-import GoogleAnalyticsProvider from "./GoogleAnalyticsProvider";
+import { GoogleAnalyticsProvider } from "./provider";
 
 const GOOGLE_ANALYTICS_ID: string | undefined =
   process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
