@@ -5,29 +5,17 @@ export const USP_CONTENT: {
   image: string
 }[] = [
     {
-      title: "Keeps millions of dollars safe from harmful MEV rays, so you can trade worry-free",
+      title: "Full protection from frontrunning and sandwich attacks on all types of transactions",
       image: "usp_1.svg",
     },
     {
-      title: "Jointly developed by a network of protocols to guarantee neutrality ",
+      title: "90% share of profits generated from backrunning (compared with 0% today)",
       image: "usp_2.svg",
     },
     {
-      title: "Formulated to cover every type of transaction including DeFi, NFTs, dApps and more",
+      title: "A fast, free, censorship-resistant solution open to all searchers and builders",
       image: "usp_3.svg",
-    },
-    {
-      title: "Keeps millions of dollars safe from harmful MEV rays, so you can trade worry-free",
-      image: "usp_1.svg",
-    },
-    {
-      title: "Jointly developed by a network of protocols to guarantee neutrality ",
-      image: "usp_2.svg",
-    },
-    {
-      title: "Formulated to cover every type of transaction including DeFi, NFTs, dApps and more",
-      image: "usp_3.svg",
-    },
+    }
   ]
 
 export const FAQ_CONTENT: { question: string; answer: string }[] = [

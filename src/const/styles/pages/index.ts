@@ -143,7 +143,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   }
 
   > h5 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    line-height: 1.3;
     margin: 0 0 5.6rem;
     font-weight: normal;
   }
@@ -171,6 +172,11 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     ${Media.mobile} {
       font-size: 1.9rem;
     }
+  }
+
+  .centered-text {
+    text-align: center;
+    margin: 4.2rem auto 0;
   }
 
   .section_FAQ {
@@ -213,6 +219,11 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     line-height: 1.2;
     border-bottom: 0.2rem solid ${Color.black};
     position: relative;
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
 
     &::after {
       content: '+';
