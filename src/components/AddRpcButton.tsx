@@ -9,7 +9,7 @@ import { darken, transparentize } from "polished";
 import { useConnect } from "@src/hooks/useConnect";
 
 
-const Message = styled.p<{state: string }>`
+const Message = styled.p<{state: AddToWalletStateValues }>`
   color: ${({state}) => state === 'added' ? darken(0.3, Color.green) : Color.orange};
   font-weight: bold;
   width: 100%;
