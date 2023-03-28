@@ -20,15 +20,20 @@ const Message = styled.p<{state: string }>`
   text-align: center;
 `
 
+type AddToWalletStateValues = 'unknown' | 'adding' | 'added' | 'error' | 'takingTooLong'
 interface AddToWalletState {
-  state: 'unknown' | 'adding' | 'added' | 'error' | 'takingTooLong',
+  state: AddToWalletStateValues,
   errorMessage?: string
 }
 
 const DEFAULT_STATE: AddToWalletState = { state: 'unknown' }
 const ADDING_STATE: AddToWalletState = { state: 'adding' }
 const ADDED_STATE: AddToWalletState = { state: 'added' }
-const TAKING_TOO_LONG_TIME = 2000
+
+const TAKING_TOO_LONG_TIME = 10000 // 10s
+const TIMEOUT_TIME = 90000 // 1.5min
+
+const ERROR_ADD_MANUALLY_MESSAGE = 'There was an error adding the RPC automatically to your wallet. Please add manually'
 
 function getErrorMessage(error: any) {
   if (error === NotConnectedError) {
@@ -43,11 +48,10 @@ function getErrorMessage(error: any) {
     return `Your wallet has a pending request to add the network. Please review your wallet.`
   }
   
-  return 'There was an error adding the RPC automatically to your wallet. Please add manually'
+  return ERROR_ADD_MANUALLY_MESSAGE
 }
 
 export function AddRpcButton() {
-  const { isConnected } = useConnect();
   const { addRpcEndpoint } = useAddRpcEndpoint()
   const [{ state, errorMessage }, setState ] = useState<AddToWalletState>(DEFAULT_STATE)
   const isAdding = state === 'adding'
@@ -61,10 +65,17 @@ export function AddRpcButton() {
     setState(ADDING_STATE)
 
     // Show a message if it takes long to connect/add-network
-    const timeoutId = setTimeout(() => {
-      const errorMessage = (isConnected ? 'Connecting to your wallet' : 'Adding the new network to your wallet') + ' is taking too long. Please verify your wallet'
-      setState({ state: 'adding', errorMessage })
-    }, TAKING_TOO_LONG_TIME)
+    const delayMessage = (errorMessage: string, newState: AddToWalletStateValues, delay: number) => setTimeout(() => {      
+      setState({ 
+        state: newState,
+        errorMessage
+      })
+    }, delay)
+
+    // Gives some feedback if it takes long, plus add some timeout
+    const timeoutSlow = delayMessage('Adding the new network to your wallet is taking too long. Please verify your wallet', 'adding', TAKING_TOO_LONG_TIME)
+    const timeoutTimeout = delayMessage(ERROR_ADD_MANUALLY_MESSAGE, 'error', TIMEOUT_TIME)
+    const clearTimeouts = () => [timeoutSlow, timeoutTimeout].forEach(clearTimeout)
 
     addRpcEndpoint()
       .then(() => setState(ADDED_STATE))
@@ -74,10 +85,10 @@ export function AddRpcButton() {
         const message = getErrorMessage(error)
         setState({ state: 'error', errorMessage: message })
       })
-      .finally(() => clearTimeout(timeoutId))
+      .finally(clearTimeouts)
 
-      return () => clearTimeout(timeoutId)
-  }, [addRpcEndpoint, isConnected, isAdding])
+      return clearTimeouts
+  }, [addRpcEndpoint, isAdding])
 
   // useEffect(() => {
   //   if (isConnected && state === 'unknown') {
