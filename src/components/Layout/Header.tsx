@@ -7,6 +7,7 @@ import { transparentize } from 'polished'
 import { Defaults, Color, Font, Media } from '@src/const/styles/variables'
 import useMediaQuery from '@src/lib/hooks/useMediaQuery';
 import { InView } from 'react-intersection-observer'
+import { scrollToClickedElement } from '@src/lib/analytics/events';
 
 const mobileHeaderHeight = `7rem`;
 
@@ -244,7 +245,7 @@ export default function Header({ siteConfig, menu}) {
             <Menu className={menuVisible ? 'visible' : ""}>
               {menu.map(({ id, title, url, target, rel }) => (
                 <MenuItem key={id} isActive={currentRoute === url} onClick={isMobile ? handleClick : null}>
-                  <a href={url} target={target} rel={rel}>{title}</a>
+                  <a href={url} target={target} rel={rel} onClick={scrollToClickedElement}>{title}</a>
                 </MenuItem>
               ))}
               <CloseIcon onClick={handleClick} />
