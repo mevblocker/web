@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { transparentize } from "polished";
 import { Defaults, Color, Font, Media } from "@src/const/styles/variables";
 
@@ -80,10 +80,11 @@ type BigButtonProps = {
   label: string;
   target?: string;
   rel?: string;
+  disabled: boolean
   onClick?: () => void;
 };
 
-const BigButtonWrapper = styled.a`
+const BigButtonWrapper = styled.a<{disabled: boolean}>`
   text-align: center;
   line-height: 1;
   border: 0.2rem solid ${Color.black};
@@ -93,19 +94,28 @@ const BigButtonWrapper = styled.a`
   text-decoration: none;
   box-shadow: 0.3rem 0.3rem 0 ${Color.black};
   border-radius: 5px;
-  background: ${Color.orange};
   color: ${Color.black};
   display: inline-block;
   cursor: pointer;
-
-  &:hover {
-    top: 0.4rem;
-    left: 0.4rem;
-    box-shadow: 0.1rem 0.1rem 0 ${Color.black};
-    transition-property: box-shadow, top, left;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-  }
+  
+  ${({ disabled }) => disabled ?
+    css`
+    color: gray;
+    border-color: gray;
+    cursor: not-allowed;
+    opacity: 0.5;
+    `:
+    css`
+    background: ${Color.orange};
+    &:hover {
+      top: 0.4rem;
+      left: 0.4rem;
+      box-shadow: 0.1rem 0.1rem 0 ${Color.black};
+      transition-property: box-shadow, top, left;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+    }
+    `}
 `;
 
 export function Button({
@@ -134,8 +144,8 @@ export function Button({
   );
 }
 
-export function BigButton({ label, href, target, rel, fontSize, onClick }: BigButtonProps) {
+export function BigButton({ label, href, target, rel, fontSize, onClick, disabled }: BigButtonProps) {
   return (
-    <BigButtonWrapper {...{ href, label, target, rel, fontSize, onClick }}>{label}</BigButtonWrapper>
+    <BigButtonWrapper {...{ href, label, target, rel, fontSize, onClick, disabled }}>{label}</BigButtonWrapper>
   )
 }

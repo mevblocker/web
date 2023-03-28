@@ -1,6 +1,8 @@
-import { useAccount, useConnect as useConnectWagmi } from "wagmi";
+import { useAccount, useConnect as useConnectWagmi } from "wagmi"
 import { useCallback, useMemo } from "react";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
+import { ConnectResult, Provider } from '@wagmi/core';
+
 
 export function useConnect() {
   const { isConnected } = useAccount();
@@ -15,17 +17,23 @@ export function useConnect() {
 
 
 
-  const connect = useCallback(async () => {
+  const connect = useCallback(async (): Promise<ConnectResult<Provider | undefined>> => {
     const hasInjectedProvider = await hasInjectedProviderPromise
     
-    // Tries to connect first with the injected wallet
-    if (hasInjectedProvider) {
-      return connectAsync({
-        connector: injectedConnector
-      })
+    // Shows connect modal if there's no injected wallet
+    if (!hasInjectedProvider) {
+      console.log('[useConnect] No injected connector. Using connect modal')
+      openConnectModal()
+      return undefined      
     }
 
-    return openConnectModal()   
+
+    // Connects with injected wallet (if available)
+    console.log('[useConnect] Connect using injected wallet')
+    return connectAsync({
+      connector: injectedConnector
+    })
+    
   }, [connectAsync, injectedConnector, hasInjectedProviderPromise, openConnectModal]);
 
   return {
