@@ -11,7 +11,7 @@ export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: st
   padding: 5.6rem 0;
   width: 100%;
   background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : 'transparent'};
-  border-bottom: ${({ borderDown }) => borderDown ? `0.2rem solid ${Color.black}` : 'none'};
+  border-bottom: ${({ borderDown }) => borderDown ? `0.1rem solid ${Color.black}` : 'none'};
   
   ${TextLinkWrapper} {
     width: 100%;
@@ -587,7 +587,7 @@ export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean
     max-height: var(--size);
     border-radius: ${({ borderRadius = true }) => borderRadius ? 'var(--size)' : 'none'};
     background: transparent;
-    border: ${({ imageBorder = true }) => imageBorder ? `0.2rem solid ${Color.black}` : 'none'};
+    border: ${({ imageBorder = true }) => imageBorder ? `0.1rem solid ${Color.black}` : 'none'};
     display: block;
     transition: transform 2s ease-in-out;
   }
