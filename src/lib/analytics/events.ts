@@ -26,6 +26,14 @@ export function openExternalLink(url: string) {
   });
 }
 
+export function shareLink(url: string) {
+  sendEvent({
+    category: Category.SHARE_LINK,
+    action: `share`,
+    label: url
+  });
+}
+
 /**
  * Triggers an analytic event of type scroll_to, with the text of the element that was cliked as the event's label
  * @param event click event
