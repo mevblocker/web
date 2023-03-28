@@ -587,7 +587,7 @@ export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean
     max-height: var(--size);
     border-radius: ${({ borderRadius = true }) => borderRadius ? 'var(--size)' : 'none'};
     background: transparent;
-    border: ${({ imageBorder = true }) => imageBorder ? `0.1rem solid ${Color.black}` : 'none'};
+    border: ${({ imageBorder = false }) => imageBorder ? `0.1rem solid ${Color.black}` : 'none'};
     display: block;
     transition: transform 2s ease-in-out;
   }
