@@ -207,7 +207,7 @@ const GlobalStyles = createGlobalStyle`
   // RWebShare widget style overrides
   .rws-container {
     max-width: 54rem!important;
-    margin: 0 0 2rem!important;
+    margin: auto!important;
     border-radius: 1rem!important;
     overflow: hidden!important;
 
@@ -226,6 +226,15 @@ const GlobalStyles = createGlobalStyle`
     font-size: 2rem!important;
     font-weight: bold;
     background: ${Color.orange}!important;
+  }
+
+  .rws-icons {
+    padding: 2.4rem!important;
+  }
+
+  .rsw-icon {
+    border-radius: 3rem!important;
+    padding: 2rem!important;
   }
 `
 
