@@ -80,7 +80,7 @@ type BigButtonProps = {
   label: string;
   target?: string;
   rel?: string;
-  disabled: boolean
+  disabled?: boolean
   onClick?: () => void;
 };
 
