@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link'
 import { useRouter } from "next/router";
@@ -223,7 +223,12 @@ export default function Header({ siteConfig, menu}) {
     toggleBodyScroll()
   }
 
-  const isDesktopDown = useMediaQuery(`(max-width: ${Media.desktopScreen})`);
+  const isMobile = useMediaQuery(`(max-width: ${Media.smallScreen})`);
+  useEffect(() => {
+    if (!isMobile) {
+      document.body.classList.remove('noScroll')
+    }
+  }, [isMobile])
 
   return (
     <InView threshold={1} delay={500}>
@@ -233,13 +238,12 @@ export default function Header({ siteConfig, menu}) {
           <Wrapper menuVisible={menuVisible} className={!inView && 'sticky'}>
             <Link href={siteConfig.url.home}>
               <Logo menuVisible={menuVisible}>
-                {/* <img src={`images/mevblocker-logo${(!isDesktopDown && inView) ? '' : ''}.svg`} alt="MEVBlocker.io" /> */}
                 <img src={'mevblocker-logo.svg'} alt="MEVBlocker.io" />
               </Logo>
             </Link>
             <Menu className={menuVisible ? 'visible' : ""}>
               {menu.map(({ id, title, url, target, rel }) => (
-                <MenuItem key={id} isActive={currentRoute === url} onClick={handleClick}>
+                <MenuItem key={id} isActive={currentRoute === url} onClick={isMobile ? handleClick : null}>
                   <a href={url} target={target} rel={rel}>{title}</a>
                 </MenuItem>
               ))}
