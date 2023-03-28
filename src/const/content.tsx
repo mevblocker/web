@@ -78,15 +78,15 @@ export const RPC_DETAILS: { title: string; value: string }[] = [
 
 export const TESTIMONIALS: { content: string, author: string; }[] = [
   {
-    content: "MEV Blocker fixed my marriage",
+    content: "MEV Blocker fixed my marriage.",
     author: "Anon",
   },
   {
-    content: "I was tired of getting rekt, so I started using MEV Blocker",
+    content: "I was tired of getting rekt, so I started using MEV Blocker.",
     author: "Anon",
   },
   {
-    content: "If I’d known about MEV Blocker sooner, I could’ve had a lambo by now",
+    content: "If I’d known about MEV Blocker sooner, I could've had a lambo by now.",
     author: "Anon",
   },
   {
@@ -94,11 +94,11 @@ export const TESTIMONIALS: { content: string, author: string; }[] = [
     author: "Anon",
   },
   {
-    content: "Nobody's stolen my lunch money since I started using MEV Blocker",
+    content: "Nobody's stolen my lunch money since I started using MEV Blocker.",
     author: "Anon",
   },
   {
-    content: "I used MEV Blocker and I instantly went up a tax bracket",
+    content: "I used MEV Blocker and I instantly went up a tax bracket.",
     author: "Anon",
   },
 ]

@@ -64,20 +64,14 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  *::selection {
+  ::selection,
+  ::-moz-selection,
+  ::-webkit-selection {
     background: ${Color.orange};
     color: ${Color.text1};
   }
-
-  *::-moz-selection {
-    background: ${Color.text1};
-  }
-
-  *::-webkit-selection {
-    background: ${Color.text1};
-  }
-
-  *::-moz-placeholder {
+  
+  ::-moz-placeholder {
     line-height: revert;
   }
 
