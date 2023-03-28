@@ -7,7 +7,6 @@ export const CONFIG = {
   descriptionShort: 'MEV Blocker is an RPC that shields all your transactions from MEV.',
   socialShareDescription: `I'm using MEV Blocker to protect myself from frontrunning and sandwich attacks. You should too. Set up the RPC endpoint here:`,
   rpc: {
-    name: "MEV Blocker",
     url: "https://rpc.mevblocker.io",
     chainId: 1,
     chainName: "Mainnet - MEV Blocker",

@@ -53,10 +53,10 @@ export const FAQ_CONTENT: { question: string; answer: string | React.ReactElemen
   }
 ]
 
-export const RPC_DETAILS: { title: string; value: string }[] = [
+export const RPC_DETAILS: { title: string; value: string | number }[] = [
   {
     title: "Network Name",
-    value: "MEV Blocker",
+    value: CONFIG.rpc.chainName,
   },
   {
     title: "New RPC URL",
@@ -64,15 +64,15 @@ export const RPC_DETAILS: { title: string; value: string }[] = [
   },
   {
     title: "Chain ID",
-    value: "1",
+    value: CONFIG.rpc.chainId
   },
   {
     title: "Currency Symbol",
-    value: "ETH",
+    value: CONFIG.rpc.nativeSymbol,
   },
   {
     title: "Block Explorer URL",
-    value: "https://etherscan.io",
+    value: CONFIG.rpc.blockExplorerUrl
   },
 ]
 
