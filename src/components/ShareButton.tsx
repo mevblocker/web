@@ -1,7 +1,10 @@
 
 
 import { BigButton } from '@src/components/Button'
+import { shareLink as sendAnalytics } from '@src/lib/analytics/events';
 import { RWebShare } from "react-web-share";
+
+
 
 interface ShareButtonProps {
   label: string;
@@ -19,7 +22,7 @@ export function ShareButton({ label, shareText, shareUrl, shareTitle }: ShareBut
           url: shareUrl,
           title: shareTitle
         }}
-        onClick={() => console.log("shared successfully!")}
+        onClick={() => sendAnalytics(shareUrl)}
       >
         <BigButton fontSize={2.2} label={label} />
       </RWebShare>
