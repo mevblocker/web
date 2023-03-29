@@ -2,7 +2,7 @@
 import { GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, MouseEventHandler, MouseEvent } from 'react'
 import Layout from '@src/components/Layout'
 import { CopyIcon } from '@src/const/styles/global'
 import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem, HeroImage } from '@src/const/styles/pages/index'
@@ -12,11 +12,17 @@ import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE, TESTIMONIALS} f
 import { ShareButton } from '@src/components/ShareButton'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-import { copyToClipboardAction, scrollToAction } from '@src/lib/analytics/events'
+import { copyToClipboardAction, expandFaqQuestion, scrollToAction } from '@src/lib/analytics/events'
 import { AddRpcButton } from '@src/components/AddRpcButton'
 import { CONFIG } from '@src/const/meta'
 
 const DATA_CACHE_TIME_SECONDS = 5 * 60 // Cache 5min
+
+function expandFaq(event: MouseEvent<HTMLElement>) {
+  const question = event.currentTarget.innerHTML
+  console.log('[expandFaq]', question)
+  expandFaqQuestion(question)
+}
 
 export default function Home() {
   const router = useRouter()
@@ -139,7 +145,7 @@ const handleOnCopy = useCallback((title: string) => {
             <div className={'section_FAQ'}>
             {FAQ_CONTENT.map(({question, answer}, index) => (
               <details key={index}>
-                <summary>{question}</summary>
+                <summary onClick={expandFaq}>{question}</summary>
                 <div>{answer}</div>
               </details>
             ))}

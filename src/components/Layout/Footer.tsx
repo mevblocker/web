@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link'
 import { Color, Media } from '@src/const/styles/variables'
+import { scrollToClickedElement } from '@src/lib/analytics/events';
 
 const Wrapper = styled.footer`
   display: flex;
@@ -55,9 +56,9 @@ export default function Footer({ siteConfig, menu }) {
   return (
     <Wrapper>
       <Menu>
-        {menu.length > 0 && <>{menu.map(({ id, title, url, target }) => (
+        {menu.length > 0 && <>{menu.map(({ id, title, url, target, onClick }) => (
           <li key={id}>
-            <Link href={url} target={target}>{title}</Link>
+            <Link href={url} target={target} onClick={onClick}>{title}</Link>
           </li>
         ))}</>}
         <li>©{titleShort} {currentYear}</li>

@@ -12,6 +12,7 @@ const IS_CLIENT = typeof window !== "undefined";
 const googleAnalytics = new GoogleAnalyticsProvider();
 
 export function sendEvent(event: string | UaEventOptions, params?: any): void {
+  console.log('[analytics] sendEvent', event, params)
   googleAnalytics.sendEvent(event, params);
 }
 
