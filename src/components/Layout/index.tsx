@@ -63,7 +63,8 @@ export default function Layout({ children, route, pageTitle }: LayoutProps) {
     <WalletProvider>
 
       <Head>
-        <title key="title">{title} - {descriptionShort}</title>
+        <title>{`${title} - ${descriptionShort}`}</title>
+        
         <meta name="description" content={description} />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content={Color.white} />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content={Color.white} />
