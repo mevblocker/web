@@ -1,80 +1,119 @@
 import { BigButton } from "./Button";
 // import { ConnectButton, useConnectModal } from "@rainbow-me/rainbowkit";
-import { useAddRpcEndpoint } from "@src/hooks/useAddRpcEndpoint";
+import { NotConnectedError, useAddRpcEndpoint } from "@src/hooks/useAddRpcEndpoint";
 import { Confetti } from "./Confetti";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styled from 'styled-components'
 import { Color } from "@src/const/styles/variables";
-import { transparentize, darken } from "polished";
+import { darken, transparentize } from "polished";
+import { useConnect } from "@src/hooks/useConnect";
 
 
-enum AddRpcState {
-  UNKNOWN,
-  ADDED,
-  ERROR_ADDING,
-  REJECTED_BY_USER
-}
-
-const Message = styled.p<{messageType: AddRpcState}>`
-  color: ${({messageType}) => messageType === AddRpcState.ADDED ? darken(0.3, Color.green) : Color.orange};
+const Message = styled.p<{state: AddToWalletStateValues }>`
+  color: ${({state}) => state === 'added' ? darken(0.3, Color.green) : Color.orange};
   font-weight: bold;
   width: 100%;
   margin: 2.4rem 0 0;
-  background: ${({messageType}) => messageType === AddRpcState.ADDED ? transparentize(0.8, Color.green) : transparentize(0.9, Color.orange)};
+  background: ${({state}) => state === 'added' ? transparentize(0.8, Color.green) : transparentize(0.9, Color.orange)};
   padding: 1rem;
   border-radius: 1.2rem;
   text-align: center;
 `
 
+type AddToWalletStateValues = 'unknown' | 'adding' | 'added' | 'error' | 'takingTooLong'
+interface AddToWalletState {
+  state: AddToWalletStateValues,
+  errorMessage?: string
+}
+
+const DEFAULT_STATE: AddToWalletState = { state: 'unknown' }
+const ADDING_STATE: AddToWalletState = { state: 'adding' }
+const ADDED_STATE: AddToWalletState = { state: 'added' }
+
+const TAKING_TOO_LONG_TIME = 15000 // 10s
+const TIMEOUT_TIME = 90000 // 1.5min
+
+const ERROR_ADD_MANUALLY_MESSAGE = 'There was an error adding the RPC automatically to your wallet. Please add manually'
+
+function getErrorMessage(error: any): string | null {
+  if (error === NotConnectedError) {
+    return null
+  }
+
+  if (error?.code === 4001) {
+    return `The new network couldn't be added. Rejected by user`
+  }
+
+  if (error?.code === -32002 && error?.message?.includes('already pending')) {
+    return `Your wallet has a pending request to add the network. Please review your wallet.`
+  }
+  
+  return ERROR_ADD_MANUALLY_MESSAGE
+}
+
 export function AddRpcButton() {
   const { addRpcEndpoint } = useAddRpcEndpoint()
-  const [state, setState ] = useState<AddRpcState>(AddRpcState.UNKNOWN)
-  
-  // const { openConnectModal } = useConnectModal()
+  const [{ state, errorMessage }, setState ] = useState<AddToWalletState>(DEFAULT_STATE)
+  const isAdding = state === 'adding'
 
   const addToWallet = useCallback(() => {
-    setState(AddRpcState.UNKNOWN)
+    if (isAdding) {
+      return undefined
+    }
+
+    console.log('[addToWallet] Add to wallet')
+    setState(ADDING_STATE)
+
+    // Show a message if it takes long to connect/add-network
+    const delayMessage = (errorMessage: string, newState: AddToWalletStateValues, delay: number) => setTimeout(() => {      
+      setState({ 
+        state: newState,
+        errorMessage
+      })
+    }, delay)
+
+    // Gives some feedback if it takes long, plus add some timeout
+    const timeoutSlow = delayMessage('Adding the new network to your wallet is taking too long. Please verify your wallet', 'adding', TAKING_TOO_LONG_TIME)
+    const timeoutTimeout = delayMessage(ERROR_ADD_MANUALLY_MESSAGE, 'error', TIMEOUT_TIME)
+    const clearTimeouts = () => [timeoutSlow, timeoutTimeout].forEach(clearTimeout)
+
     addRpcEndpoint()
-      .then(() => setState(AddRpcState.ADDED))
+      .then(() => setState(ADDED_STATE))
       .catch(error => {
         console.error('[AddRpcButton] Error adding RPC to Wallet', error)
 
-        if (error?.code === 4001) {
-          setState(AddRpcState.REJECTED_BY_USER)
+        const message = getErrorMessage(error)
+        if (message === null) {
+          // The user is connecting
+          setState(DEFAULT_STATE)
         } else {
-          setState(AddRpcState.ERROR_ADDING)
+          // Display the error
+          setState({ state: 'error', errorMessage: message })
         }
-      }) // TODO: Handle by open Raimbow Wallet :) 
-  }, [addRpcEndpoint])
+      })
+      .finally(clearTimeouts)
 
-  // TODO: Disabled, for now to just go for injected wallet. Will probably improve and use it to support Wallet Connect and other wallets
-  // if (!isConnected) {
-  //   <ConnectButton
-  //     label="Connect Wallet"
-  //     accountStatus={"avatar"}
-  //     chainStatus={"none"}
-  //     showBalance={false}
-  //   />
-  // }
+      return clearTimeouts
+  }, [addRpcEndpoint, isAdding])
 
-
-  // const addedRpc = state === AddRpcState.ADDED
+  // useEffect(() => {
+  //   if (isConnected && state === 'unknown') {
+  //     addToWallet()
+  //   }
+  // }, [isConnected, addToWallet, state])
 
   return (
     <>
-      {state === AddRpcState.ADDED ? (
+      {state === 'added' ? (
         <>
         <Confetti start={true} />
-        <Message messageType={state}>Added to your wallet! You are now safe</Message>
+        <Message state={state}>Added to your wallet! You are now safe</Message>
         </>
       ) : (
         <>
-          <BigButton onClick={addToWallet} label="Add to Wallet" />
-          {state === AddRpcState.REJECTED_BY_USER && (
-            <Message messageType={state}>The new network couldn&apos;t be added. Rejected by user</Message>
-          )}
-          {state === AddRpcState.ERROR_ADDING && (
-            <Message messageType={state}>There was an error adding the RPC automatically to your wallet. Please add manually</Message>
+          <BigButton onClick={addToWallet} label={isAdding? "Addding to Wallet..." : "Add to Wallet"} disabled={isAdding} />
+          {errorMessage && (
+            <Message state={state}>{errorMessage}</Message>
           )}
         </>
       )}

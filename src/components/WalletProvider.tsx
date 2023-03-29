@@ -7,7 +7,6 @@ import { mainnet, gnosis, goerli } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { publicProvider } from "wagmi/providers/public";
 import { CONFIG } from "@src/const/meta";
-import { InjectedConnector } from "@wagmi/core";
 
 export function WalletProvider({ children }: PropsWithChildren) {
   const { chains, provider } = configureChains(
@@ -23,25 +22,16 @@ export function WalletProvider({ children }: PropsWithChildren) {
         priority: 1,
       }),
     ]
-  );
-
-  // const { connectors } = getDefaultWallets({
-  //   appName: CONFIG.title,
-  //   chains,
-  // });
+  )
+  
+  const { connectors } = getDefaultWallets({
+    appName: CONFIG.title,
+    chains,
+  });
 
   const wagmiClient = createClient({
     autoConnect: true,
-    // connectors,
-    connectors: [
-      new InjectedConnector({
-        chains,
-        options: {
-          name: 'Injected',
-          shimDisconnect: true,
-        },
-      })
-    ],
+    connectors,
     provider,
   });
 
