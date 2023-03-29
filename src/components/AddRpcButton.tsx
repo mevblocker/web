@@ -107,11 +107,11 @@ export function AddRpcButton() {
       {state === 'added' ? (
         <>
           <Confetti start={true} />
-          <Message state={state}>Added to your wallet! You are now safe</Message>
+          <Message state={state}>Added to your wallet! You are now safe!</Message>
         </>
       ) : (
         <>
-          <BigButton onClick={addToWallet} label={isAdding ? "Addding to Wallet..." : "Add to Wallet"} disabled={isAdding} />
+          <BigButton onClick={addToWallet} label={isAdding ? "Adding to Wallet..." : "Add to Wallet"} disabled={isAdding} />
           {errorMessage && (
             <Message state={state}>{errorMessage}</Message>
           )}
