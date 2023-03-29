@@ -45,10 +45,17 @@ function getErrorMessage(error: any): { errorMessage: string | null, isUserRejec
     return { errorMessage: `MEV Blocker was not added. User rejected.`, isUserRejection: true, isError: false }
   }
 
-  if (error?.code === -32002 && error?.message?.includes('already pending')) {
+  const message = error?.message
+  if (error?.code === -32002 && message?.includes('already pending')) {
     return { errorMessage: `Your wallet has a pending request to add the network. Please review your wallet.`, isUserRejection: false, isError: true }
   }
-  
+
+  if (error?.code === -32000 && message?.includes('May not specify default')) {
+    // Metakas IOS don't allow you to replace your RPC Endpoint
+    // https://community.metamask.io/t/allow-to-add-switch-between-ethereum-networks-using-api/23595
+    return { errorMessage: `Your wallet don't allow you to change your RPC so you can be protected 😢. It would be nice you let them know your thoughts!`, isUserRejection: false, isError: true }
+  }
+
   return { errorMessage: ERROR_ADD_MANUALLY_MESSAGE, isUserRejection: false, isError: true }
 }
 
