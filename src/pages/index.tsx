@@ -80,7 +80,7 @@ const handleOnCopy = useCallback((title: string) => {
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <h3>Broad spectrum <br/> MEV defense</h3>
-            <h5>MEV bots have extracted more than $1.38 billion from well-meaning Ethereum users across a variety of use cases (trading, provisioning liquidity, minting NFTs, etc). MEV Blocker is an RPC endpoint that supports these users by offering:</h5>
+            <h5>MEV bots have extracted more than $1.38 billion from well-meaning Ethereum users across a variety of use cases (trading, providing liquidity, minting NFTs, etc). MEV Blocker is an RPC endpoint that supports these users by offering:</h5>
 
             <USPWrapper>
               {USP_CONTENT.map(({image, title}, index) => (
