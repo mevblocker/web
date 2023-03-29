@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { Color, Font, Media } from '@src/const/styles/variables'
-import { transparentize } from "polished";
+import { transparentize, darken } from "polished";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -190,11 +190,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .copied {
-    color: ${Color.orange};
+    color: ${darken(0.5, Color.green)};
     font-weight: bold;
     width: 100%;
     margin: 2.4rem 0 0;
-    background: ${transparentize(0.9, Color.orange)};
+    background: ${transparentize(0.8, Color.green)};
     padding: 1rem;
     border-radius: 1.2rem;
     text-align: center;
