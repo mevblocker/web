@@ -3,8 +3,8 @@ import { openExternalLinkClickedElement, scrollToAction, scrollToClickedElement 
 const {social} = CONFIG
 
 export const mainMenu = [
-  { id: 0, title: 'Get protected', url: '#rpc', onClick: scrollToClickedElement },
-  { id: 1, title: 'FAQ', url: '#faq', onClick: scrollToClickedElement },
+  { id: 0, title: 'Get protected', url: CONFIG.url.rpc, onClick: scrollToClickedElement },
+  { id: 1, title: 'FAQ', url: CONFIG.url.faq, onClick: scrollToClickedElement },
 ]
 
 export const footerMenu = [

@@ -54,8 +54,8 @@ const handleOnCopy = useCallback((title: string) => {
 
             <ol>
               <li>Add the RPC endpoint directly to your wallet</li>
-              <li>Trade with DeFi, mint NFTs, or use any dApp</li>
-              <li>MEV Blocker auto-protects all transactions from MEV</li>
+              <li>Enjoy full, automatic protection from all types of MEV</li>
+              <li>Get paid by searchers for your transactions</li>
             </ol>
 
             <BigButton onClick={onRPCScroll} fontSize={2.2} label='Get Protected' href="#rpc" />
@@ -80,7 +80,7 @@ const handleOnCopy = useCallback((title: string) => {
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <h3>Broad spectrum <br/> MEV defense</h3>
-            <h5>MEV bots have extracted more than $1.38 billion from well-meaning Ethereum users across a variety of use cases (trading, provisioning, minting , etc). MEV Blocker is an RPC endpoint that supports these users by offering:</h5>
+            <h5>MEV bots have extracted more than $1.38 billion from well-meaning Ethereum users across a variety of use cases (trading, providing liquidity, minting NFTs, etc). MEV Blocker is an RPC endpoint that supports these users by offering:</h5>
 
             <USPWrapper>
               {USP_CONTENT.map(({image, title}, index) => (
@@ -100,15 +100,14 @@ const handleOnCopy = useCallback((title: string) => {
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <a id="rpc" className={'anchor'}/>
-            <h3>Use early, use often</h3>
+            <h3>Get protected</h3>
             <h5>Add this RPC endpoint to your wallet to enjoy the full benefits of MEV Blocker</h5>
 
             <CardWrapper count={2}>
               <CardItem>
                 <h4>Click to add to your client</h4>
                 <p className={'title-text'}>
-                  <b>{CONFIG.rpc.chainName}</b><br/>
-                  <i>Ethereum Mainnet</i>
+                  <b>{CONFIG.rpc.chainName}</b>
                 </p>
                 <AddRpcButton />
               </CardItem>
@@ -133,7 +132,7 @@ const handleOnCopy = useCallback((title: string) => {
               </CardItem>
             </CardWrapper>
 
-            <p className={'centered-text'}>Having trouble? Check your wallet&apos;s documentation <br/> for instructions on how to update your RPC endpoint.</p>
+            <p className={'centered-text'}>Having trouble? Check your wallet&apos;s documentation <br/> for instructions on how to update your RPC endpoint</p>
           </SectionContent>
 
         </Section>
@@ -185,7 +184,7 @@ const handleOnCopy = useCallback((title: string) => {
           shareText={CONFIG.socialShareDescription}
           shareUrl={CONFIG.url.root}
           shareTitle={CONFIG.title}
-          label={'Share MEV Blocker ⛱️'}
+          label={'Share MEV Blocker'}
          />
       
         </SectionContent>
