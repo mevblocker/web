@@ -26,6 +26,14 @@ export function openExternalLink(url: string) {
   });
 }
 
+export function shareLink(url: string) {
+  sendEvent({
+    category: Category.SHARE_LINK,
+    action: `share`,
+    label: url
+  });
+}
+
 /**
  * Triggers an analytic event of type scroll_to, with the text of the element that was cliked as the event's label
  * @param event click event
@@ -51,5 +59,14 @@ export function expandFaqQuestion(question: string) {
     category: Category.FAQ,
     action: `expand_question`,
     label: question
+  });
+}
+
+
+export type AddRpcUrlActionType = 'click_to_add_rpc' | 'added_rpc_successfully'| 'rejected_by_user_adding_rpc' | 'timeout_add_rpc' | 'adding_is_taking_too_long' | 'error_add_rpc'
+export function addRpcUrlAction(action: AddRpcUrlActionType ) {
+  sendEvent({
+    category: Category.RPC_URL,
+    action: action
   });
 }

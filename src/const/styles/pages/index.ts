@@ -465,14 +465,14 @@ export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number
   background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : Color.white};
   border-radius: 0.5rem;
   margin: 0 auto;
-  padding: 2.4rem;
+  padding: 1.7rem 1.4rem;
   position: relative;
   width: 100%;
   justify-content: space-between;
   gap: 2.4rem;
 
   ${Media.mobile} {
-    
+    padding: 2.4rem;
   }
 
   h4 {
