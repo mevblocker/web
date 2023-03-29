@@ -42,7 +42,7 @@ function getErrorMessage(error: any): { errorMessage: string | null, isUserRejec
   }
 
   if (error?.code === 4001) {
-    return { errorMessage: `MEV Blocker was not added. User rejected.`, isUserRejection: true, isError: false }
+    return { errorMessage: `MEV Blocker couldn't be added because you rejected the prompt. Please try again.`, isUserRejection: true, isError: false }
   }
 
   const message = error?.message

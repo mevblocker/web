@@ -7,7 +7,7 @@ export const CONFIG = {
   rpc: {
     url: "https://rpc.mevblocker.io",
     chainId: 1,
-    chainName: "MEV Blocker",
+    chainName: "MEV Blocker (Ethereum Mainnet)",
     nativeSymbol: "ETH",
     nativeDecimals: 18,
     blockExplorerUrl: "https://etherscan.io",
@@ -15,7 +15,12 @@ export const CONFIG = {
   url: {
     root: "https://mevblocker.io",
     home: "/",
-    faq: "/faq"
+    faq: "#faq",
+    rpc: "#rpc",
+    cowSwap: "https://swap.cow.fi",
+    cowProtocol: "https://cow.fi",
+    beaver: "https://beaverbuild.org/",
+    agnostic: "https://agnostic-relay.net/",
   },
   social: {
     telegram: { label: "Telegram", url: "https://t.me/+yonLSGoFPRI0YTFk" },
