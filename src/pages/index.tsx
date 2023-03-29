@@ -107,8 +107,7 @@ const handleOnCopy = useCallback((title: string) => {
               <CardItem>
                 <h4>Click to add to your client</h4>
                 <p className={'title-text'}>
-                  <b>{CONFIG.rpc.chainName}</b><br/>
-                  <i>Ethereum Mainnet</i>
+                  <b>{CONFIG.rpc.chainName}</b>
                 </p>
                 <AddRpcButton />
               </CardItem>
