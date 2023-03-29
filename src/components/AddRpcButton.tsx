@@ -10,7 +10,7 @@ import { useConnect } from "@src/hooks/useConnect";
 
 
 const Message = styled.p<{ state: AddToWalletStateValues }>`
-  color: ${({ state }) => state === 'added' ? darken(0.3, Color.green) : Color.orange};
+  color: ${({ state }) => state === 'added' ? darken(0.5, Color.green) : Color.orange};
   font-weight: bold;
   width: 100%;
   margin: 2.4rem 0 0;
