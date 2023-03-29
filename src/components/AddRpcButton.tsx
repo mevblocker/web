@@ -9,12 +9,12 @@ import { darken, transparentize } from "polished";
 import { useConnect } from "@src/hooks/useConnect";
 
 
-const Message = styled.p<{state: AddToWalletStateValues }>`
-  color: ${({state}) => state === 'added' ? darken(0.3, Color.green) : Color.orange};
+const Message = styled.p<{ state: AddToWalletStateValues }>`
+  color: ${({ state }) => state === 'added' ? darken(0.3, Color.green) : Color.orange};
   font-weight: bold;
   width: 100%;
   margin: 2.4rem 0 0;
-  background: ${({state}) => state === 'added' ? transparentize(0.8, Color.green) : transparentize(0.9, Color.orange)};
+  background: ${({ state }) => state === 'added' ? transparentize(0.8, Color.green) : transparentize(0.9, Color.orange)};
   padding: 1rem;
   border-radius: 1.2rem;
   text-align: center;
@@ -41,19 +41,19 @@ function getErrorMessage(error: any): string | null {
   }
 
   if (error?.code === 4001) {
-    return `The new network couldn't be added. Rejected by user`
+    return `MEV Blocker was not added. User rejected.`
   }
 
   if (error?.code === -32002 && error?.message?.includes('already pending')) {
     return `Your wallet has a pending request to add the network. Please review your wallet.`
   }
-  
+
   return ERROR_ADD_MANUALLY_MESSAGE
 }
 
 export function AddRpcButton() {
   const { addRpcEndpoint } = useAddRpcEndpoint()
-  const [{ state, errorMessage }, setState ] = useState<AddToWalletState>(DEFAULT_STATE)
+  const [{ state, errorMessage }, setState] = useState<AddToWalletState>(DEFAULT_STATE)
   const isAdding = state === 'adding'
 
   const addToWallet = useCallback(() => {
@@ -65,8 +65,8 @@ export function AddRpcButton() {
     setState(ADDING_STATE)
 
     // Show a message if it takes long to connect/add-network
-    const delayMessage = (errorMessage: string, newState: AddToWalletStateValues, delay: number) => setTimeout(() => {      
-      setState({ 
+    const delayMessage = (errorMessage: string, newState: AddToWalletStateValues, delay: number) => setTimeout(() => {
+      setState({
         state: newState,
         errorMessage
       })
@@ -93,7 +93,7 @@ export function AddRpcButton() {
       })
       .finally(clearTimeouts)
 
-      return clearTimeouts
+    return clearTimeouts
   }, [addRpcEndpoint, isAdding])
 
   // useEffect(() => {
@@ -106,12 +106,12 @@ export function AddRpcButton() {
     <>
       {state === 'added' ? (
         <>
-        <Confetti start={true} />
-        <Message state={state}>Added to your wallet! You are now safe</Message>
+          <Confetti start={true} />
+          <Message state={state}>Added to your wallet! You are now safe</Message>
         </>
       ) : (
         <>
-          <BigButton onClick={addToWallet} label={isAdding? "Addding to Wallet..." : "Add to Wallet"} disabled={isAdding} />
+          <BigButton onClick={addToWallet} label={isAdding ? "Addding to Wallet..." : "Add to Wallet"} disabled={isAdding} />
           {errorMessage && (
             <Message state={state}>{errorMessage}</Message>
           )}

@@ -8,7 +8,7 @@ import { CONFIG } from '@src/const/meta'
 
 export default function App({ Component, pageProps, router }: AppProps) {
   useAnalyticsReporter({ pathname: router.asPath });
-  const { title, description, descriptionShort, url, social } = CONFIG
+  const { title, description, descriptionShort, url } = CONFIG
 
   return (
     <>
@@ -39,7 +39,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <link rel="preload" href={Font.defaultBoldFile} as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href={Font.defaultHeadingFile} as="font" type="font/woff2" crossOrigin="anonymous" />
 
-        <title>{title} - {descriptionShort}</title>
+        <title>{title} – {descriptionShort}</title>
       </Head>
       
       <GlobalStyles />

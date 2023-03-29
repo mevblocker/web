@@ -55,7 +55,7 @@ const handleOnCopy = useCallback((title: string) => {
             <ol>
               <li>Add the RPC endpoint directly to your wallet</li>
               <li>Trade with DeFi, mint NFTs, or use any dApp</li>
-              <li>MEV Blocker auto-protects all transactions</li>
+              <li>MEV Blocker auto-protects all transactions from MEV</li>
             </ol>
 
             <BigButton onClick={onRPCScroll} fontSize={2.2} label='Get Protected' href="#rpc" />
@@ -79,8 +79,8 @@ const handleOnCopy = useCallback((title: string) => {
       <SectionWrapper backgroundColor={Color.yellow} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
-            <h3>Broad spectrum <br/> MEV Defense</h3>
-            <h5>MEV bots have extracted more than $1.38 billion from well-meaning Ethereum users across a variety of use cases (trading, provisioning, minting, etc). MEV Blocker is an RPC endpoint that supports these users by offering: </h5>
+            <h3>Broad spectrum <br/> MEV defense</h3>
+            <h5>MEV bots have extracted more than $1.38 billion from well-meaning Ethereum users across a variety of use cases (trading, provisioning, minting , etc). MEV Blocker is an RPC endpoint that supports these users by offering:</h5>
 
             <USPWrapper>
               {USP_CONTENT.map(({image, title}, index) => (
@@ -106,11 +106,14 @@ const handleOnCopy = useCallback((title: string) => {
             <CardWrapper count={2}>
               <CardItem>
                 <h4>Click to add to your client</h4>
-                <p>MEV Blocker Ethereum Mainnet</p>
+                <p className={'title-text'}>
+                  <b>{CONFIG.rpc.chainName}</b><br/>
+                  <i>Ethereum Mainnet</i>
+                </p>
                 <AddRpcButton />
               </CardItem>
               <CardItem>
-                <h4>Or, manually add:</h4>
+                <h4>Or manually add:</h4>
                 <table>
                   <tbody>
                     {RPC_DETAILS.map(({title, value}, index: number) => (
@@ -194,7 +197,7 @@ const handleOnCopy = useCallback((title: string) => {
     <SectionWrapper backgroundColor={Color.white} borderDown>
       <Section>
         <SectionContent maxWidth={100} align={'center'}>            
-        <h3>Built with love by</h3>
+        <h3>Jointly formulated by</h3>
           <USPWrapper>
             {BUILT_WITH_LOVE.map(({title, logo, link}, index) => (
               <USPItem key={index} imageBorder={false} borderRadius={false}>
