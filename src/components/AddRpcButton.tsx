@@ -49,7 +49,10 @@ function getErrorMessage(error: any): string | null {
     return `Your wallet has a pending request to add the network. Please review your wallet.`
   }
 
-  if (error?.code === -32000 && message?.includes('May not specify default')) {
+  if (error?.code === -32000 && (
+    message?.includes('May not specify default') || // i.e. IOS Metamask
+    message?.includes('Chain ID already exists. Received')) // i.e. Im token
+  ) {
     // Metakas IOS don't allow you to replace your RPC Endpoint
     // https://community.metamask.io/t/allow-to-add-switch-between-ethereum-networks-using-api/23595
     return `Your wallet does't allow you to automatically change your RPC so you can be protected 😢. You might be able to do it manually. Please, consider letting them know about this!`
