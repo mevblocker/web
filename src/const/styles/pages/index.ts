@@ -484,6 +484,12 @@ export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number
 
   > p {
     margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  p.title-text {
+    font-size: 1.8rem;
   }
 
   table {
