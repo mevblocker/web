@@ -33,7 +33,7 @@ export const FAQ_CONTENT: { question: string; answer: string | React.ReactElemen
   },
   {
     question: "When and where should I use MEV Blocker?",
-    answer: <>You should use MEV Blocker as often as possible!<br /><br />While some DEXs like <a href={CONFIG.url.cowSwap} target="_blank" rel="noopener nofollow">Cow Swap</a> offer MEV protection for your DeFi trades, most DeFi venues and NFT marketplaces do not provide any type of MEV protection.<br /><br />This is where MEV Blocker comes in: any user or dApp can implement it and it protects all types of transactions from MEV.<br /><br />See a chance to mint the next Cryptopunks but don&apos;t want anyone to snatch the opportunity from you? Use MEV Blocker.<br /><br />Want to add JIT liquidity to a pool without someone skipping ahead of you? Use MEV Blocker.<br /><br />Want to trade directly on an AMM that doesn&apos;t protect you from MEV? Use MEV Blocker.<br /><br />And more!</>
+    answer: <>You should use MEV Blocker as often as possible!<br /><br />While some DEXs like <a href={CONFIG.url.cowSwap} target="_blank" rel="noopener nofollow">CoW Swap</a> offer MEV protection for your DeFi trades, most DeFi venues and NFT marketplaces do not provide any type of MEV protection.<br /><br />This is where MEV Blocker comes in: any user or dApp can implement it and it protects all types of transactions from MEV.<br /><br />See a chance to mint the next Cryptopunks but don&apos;t want anyone to snatch the opportunity from you? Use MEV Blocker.<br /><br />Want to trade directly on an AMM that doesn&apos;t protect you from MEV? Use MEV Blocker.<br /><br />And more!</>
   },
   {
     question: "How do I install MEV Blocker?",
@@ -44,8 +44,16 @@ export const FAQ_CONTENT: { question: string; answer: string | React.ReactElemen
     answer: <>MEV Blocker facilitates an auction between a network of “searchers” who are given the opportunity to backrun your transactions. In return, they protect you from frontrunning and sandwich attacks - the nasty types of MEV that exploit Ethereum users every day.<br /><br />To participate in the orderflow auction, searchers agree to share 90% of their profits with the wallets they backrun (compared with 0% profit share when not using MEV Blocker). Searchers use the remaining 10% to pay validators to settle the transactions.<br /><br />As long as you have MEV Blocker set as the RPC in your wallet (as if it were another network), you are protected from frontrunning and sandwiching when using any Ethereum dApp. And the profit share from backrunning is deposited automatically into your wallet.</>
   },
   {
+    question: "Which block builders does MEV Blocker submit to?",
+    answer: <>MEV Blocker submits to all major block builders, including Builder0x69, bloXroute, Blocknative, Flashbots, rsync builder, and Beaver Build.</>
+  },
+  {
+    question: "Does this RPC offer revert protection?",
+    answer: <>No, this RPC focuses on fast execution, however, we are offering another end point which offers revert protection.</>
+  },
+  {
     question: "Who made MEV Blocker?",
-    answer: <>MEV Blocker is jointly formulated and maintained by <a href={CONFIG.url.cowProtocol} target="_blank" rel="noopener nofollow">CoW Protocol</a>, <a href={CONFIG.url.agnostic} target="_blank" rel="noopener nofollow">Agnostic Relay</a>, and <a href={CONFIG.url.beaver} target="_blank" rel="noopener nofollow">Beaver Builder</a>. It is open to all searchers and block builders.<br /><br />This collaboration represents our commitment to providing a trusted, neutral product available to all Ethereum users. We invite additional contributors - please get in touch if you&apos;re interested in supporting the project.</>
+    answer: <>MEV Blocker is jointly formulated and maintained by <a href={CONFIG.url.cowProtocol} target="_blank" rel="noopener nofollow">CoW Protocol</a>, <a href={CONFIG.url.agnostic} target="_blank" rel="noopener nofollow">Agnostic Relay</a>, and <a href={CONFIG.url.beaver} target="_blank" rel="noopener nofollow">Beaver Build</a>. It is open to all searchers and block builders.<br /><br />This collaboration represents our commitment to providing a trusted, neutral product available to all Ethereum users. We invite additional contributors - please get in touch if you&apos;re interested in supporting the project.</>
   },
   {
     question: "How can I get in touch?",
