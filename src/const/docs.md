@@ -2,10 +2,10 @@
 
 _n.b. that historical submitted bundles, including those that did not land on-chain, will not only be shared with builders but also archived and presented to the public for transparency_
 
-1. Connect to websocket server located at `wss://ws.mevblocker.io`
+1. Connect to websocket server located at `searchers.mevblocker.io`
 
 ```
-websocat wss://ws.mevblocker.io
+websocat searchers.mevblocker.io
 ```
 
 2. Use `eth_subscribe` method to subscribe to unsigned pending transactions - `mevblocker_partialPendingTransactions`:
