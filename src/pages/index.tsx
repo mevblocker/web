@@ -5,10 +5,10 @@ import { useRouter } from 'next/router'
 import { useState, useCallback, MouseEventHandler, MouseEvent } from 'react'
 import Layout from '@src/components/Layout'
 import { CopyIcon } from '@src/const/styles/global'
-import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem, HeroImage } from '@src/const/styles/pages/index'
+import { Section, SectionContent, SectionWrapper, CardWrapper, CardItem, USPWrapper, USPItem, HeroImage, LogoWrapper, LogoItem } from '@src/const/styles/pages/index'
 import { Button, BigButton } from '@src/components/Button'
 import { Color } from '@src/const/styles/variables'
-import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, BUILT_WITH_LOVE, TESTIMONIALS} from '@src/const/content'
+import { FAQ_CONTENT, USP_CONTENT, RPC_DETAILS, LAUNCH_PARTNERS, BUILT_WITH_LOVE, TESTIMONIALS} from '@src/const/content'
 import { ShareButton } from '@src/components/ShareButton'
 
 import { CopyToClipboard } from 'react-copy-to-clipboard'
@@ -187,6 +187,25 @@ const handleOnCopy = useCallback((title: string) => {
           label={'Share MEV Blocker'}
          />
       
+        </SectionContent>
+
+      </Section>
+    </SectionWrapper>
+
+    {/* Launch Partners */}
+    <SectionWrapper backgroundColor={Color.pink} borderDown>
+      <Section>
+        <SectionContent maxWidth={100} align={'center'}>            
+        <h3>Launch partners</h3>
+          <LogoWrapper>
+            {LAUNCH_PARTNERS.map(({title, logo, link}) => (
+              <LogoItem key={logo}>
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                  <img src={`partners/${logo}`} alt={title} loading="lazy" />
+                </a>
+              </LogoItem>
+            ))}
+          </LogoWrapper>
         </SectionContent>
 
       </Section>

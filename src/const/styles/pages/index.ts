@@ -622,3 +622,64 @@ export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean
     transform: rotate(360deg);
   }
 `
+
+export const LogoWrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 4.2rem auto 0;
+
+  ${Media.mediumDown} {
+    gap: 2.4rem;
+  }
+
+  ${Media.mobile} {
+    flex-flow: column wrap;
+    gap: 4rem;
+  }
+`
+
+export const LogoItem = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: calc(100% / 3);
+  margin: 0 0 7rem;
+  padding: 0 1.4rem;
+  gap: 2.4rem;
+
+  ${Media.mediumDown} {
+    margin: 0 auto;
+  }
+
+  ${Media.mobile} {
+    width: 100%;
+    padding: 0;
+  }
+
+  > a {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > a > img {
+    --width: 24rem;
+    --height: 8rem;
+    width: 100%;
+    height: var(--height);
+    max-width: var(--width);
+    max-height: var(--height);
+    background: transparent;
+    display: block;
+    margin: auto;
+
+    ${Media.mobile} {
+      --width: 21rem;
+      --height: auto;
+    }
+  }
+`

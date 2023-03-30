@@ -129,3 +129,46 @@ export const BUILT_WITH_LOVE: { title: string, logo: string, link: string }[] = 
     link: "https://agnostic-relay.net/",
   },
 ]
+
+export const LAUNCH_PARTNERS: { title: string, logo: string, link: string }[] = [
+  {
+    title: "Arrakis",
+    logo: "arrakis.svg",
+    link: "https://www.arrakis.finance/",
+  },
+  {
+    title: "CoW Swap",
+    logo: "cowswap.svg",
+    link: "https://swap.cow.fi/",
+  },
+  {
+    title: "EigenPhi",
+    logo: "eigenphi.svg",
+    link: "https://eigenphi.io/",
+  },
+  {
+    title: "GnosisDAO",
+    logo: "gnosisdao.svg",
+    link: "https://www.gnosis.io/",
+  },
+  {
+    title: "Karpatkey",
+    logo: "karpatkey.svg",
+    link: "https://www.karpatkey.com/",
+  },
+  {
+    title: "ParaSwap",
+    logo: "paraswap.svg",
+    link: "https://www.paraswap.io/",
+  },
+  {
+    title: "Aura Finance",
+    logo: "aura.svg",
+    link: "https://aura.finance/",
+  },
+  {
+    title: "Balancer",
+    logo: "balancer.svg",
+    link: "https://balancer.fi/",
+  },
+]
