@@ -49,7 +49,7 @@ export const FAQ_CONTENT: { question: string; answer: string | React.ReactElemen
   },
   {
     question: "Does this RPC offer revert protection?",
-    answer: <>No, this RPC focuses on fast execution, however, we are offering another end point which offers revert protection.</>
+    answer: <>No, this RPC focuses on fast execution and provides rebates from backrunning. However,  we offer a separate endpoint that provides revert protection but does not offer rebates. You can install this second endpoint by using https://rpc.mevblocker.io/noreverts.</>
   },
   {
     question: "Who made MEV Blocker?",
