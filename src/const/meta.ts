@@ -1,7 +1,7 @@
 export const CONFIG = {
   title: 'MEV Blocker',
   titleShort: 'MEV Blocker',
-  description: 'MEV Blocker is a free RPC endpoint that protects users from frontrunning and sandwich attacks on a wide range of Ethereum transactions.',
+  description: 'MEV Blocker is a fast and free RPC endpoint that protects users from frontrunning and sandwich attacks on a wide range of Ethereum transactions.',
   descriptionShort: 'Everyday protection from harmful MEV',
   socialShareDescription: "I'm using MEV Blocker to protect myself from frontrunning and sandwich attacks. You should too. Set up the RPC endpoint here:",
   rpc: {
