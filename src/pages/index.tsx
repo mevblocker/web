@@ -192,25 +192,6 @@ const handleOnCopy = useCallback((title: string) => {
       </Section>
     </SectionWrapper>
 
-    {/* Launch Partners */}
-    <SectionWrapper backgroundColor={Color.pink} borderDown>
-      <Section>
-        <SectionContent maxWidth={100} align={'center'}>            
-        <h3>Launch partners</h3>
-          <LogoWrapper>
-            {LAUNCH_PARTNERS.map(({title, logo, link}) => (
-              <LogoItem key={logo}>
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                  <img src={`partners/${logo}`} alt={title} loading="lazy" />
-                </a>
-              </LogoItem>
-            ))}
-          </LogoWrapper>
-        </SectionContent>
-
-      </Section>
-    </SectionWrapper>
-
     {/* Built with love */}
     <SectionWrapper backgroundColor={Color.white} borderDown>
       <Section>
@@ -227,6 +208,25 @@ const handleOnCopy = useCallback((title: string) => {
               </USPItem>
             ))}
           </USPWrapper>
+        </SectionContent>
+
+      </Section>
+    </SectionWrapper>
+
+    {/* Launch Partners */}
+    <SectionWrapper backgroundColor={Color.pink} borderDown>
+      <Section>
+        <SectionContent maxWidth={100} align={'center'}>            
+        <h3>Launch partners</h3>
+          <LogoWrapper>
+            {LAUNCH_PARTNERS.map(({title, logo, link}) => (
+              <LogoItem key={logo}>
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                  <img src={`partners/${logo}`} alt={title} loading="lazy" />
+                </a>
+              </LogoItem>
+            ))}
+          </LogoWrapper>
         </SectionContent>
 
       </Section>
