@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
+import { transparentize } from 'polished';
 
 export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: string, borderDown?: boolean }>`
   --sectionMaxWidth: 64rem;
@@ -152,7 +153,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   > p,
   > small,
   > ul,
-  > ol {
+  > ol,
+  > pre {
     font-size: 2.1rem;
     text-align: left;
     font-weight: ${Font.weightNormal};
@@ -164,6 +166,24 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
       font-size: 1.6rem;
       text-align: center;
     }
+  }
+
+  > pre {
+    border-radius: 9px;
+    padding: 1rem;
+    background: ${transparentize(0.7, Color.white)};
+    border: 0.1rem solid ${Color.white};
+    max-width: 100%;
+  }
+
+  > pre > code {
+    font-size: 1.4rem;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  > p > em {
+    font-weight: bold;
   }
 
   .large-text {
