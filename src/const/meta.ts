@@ -17,6 +17,7 @@ export const CONFIG = {
     home: "/",
     faq: "#faq",
     rpc: "#rpc",
+    docs: "/docs",
     cowSwap: "https://swap.cow.fi",
     cowProtocol: "https://cow.fi",
     beaver: "https://beaverbuild.org/",
