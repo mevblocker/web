@@ -32,8 +32,14 @@ Choose your preferred package manager and run the development server:
 **Open the application:**
 Visit http://localhost:3000 in your browser to see the result.
 
-**Edit the landing page:**
-Start editing the landing page by modifying pages/index.tsx. The page auto-updates as you edit the file.
+## Edit content:
+- Edit general site Config/Meta data -> `src/const/meta.ts`
+- Edit main and footer menu -> `src/const/menu.ts`
+- Index / Landing page -> Start editing the landing page by modifying pages/index.tsx.
+- Remove/Add a Launch partner (Launch partners section on landing page)  -> Add an object to `const LAUNCH_PARTNERS` in `src/const/content.tsx`. Make sure the logo is a SVG in color black (`#000000`).
+- Edit misc content like FAQ items, USPs that are shown on the index / landing page -> `src/const/content.tsx`
+- /docs/ -> Comes from page `src/pages/docs.mdx` and the content is sourced directly from a Markdown file `src/const/docs.md`. Please edit `src/const/docs.md` if you want to edit the content on /docs/
+- Add a new page (e.g. /cookie-policy/) -> Create a `.tsx` file under folder `src/pages/`. You could copy `src/pages/404.tsx` to have a general content page example. Or if the content is going to be Markdown sourced you could copy `src/pages/docs.mdx`.
 
 ---
 
