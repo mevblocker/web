@@ -228,7 +228,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Launch Partners */}
-      <SectionWrapper backgroundColor={Color.pink} borderDown>
+      {/*<SectionWrapper backgroundColor={Color.pink} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={'center'}>
             <h3>Launch partners</h3>
@@ -244,7 +244,7 @@ export default function Home() {
           </SectionContent>
 
         </Section>
-      </SectionWrapper>
+      </SectionWrapper>*/}
 
     </Layout>
   )
