@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import { Color, Font, Media } from '@src/const/styles/variables'
 import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
+import { transparentize } from 'polished';
 
 export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: string, borderDown?: boolean }>`
   --sectionMaxWidth: 64rem;
@@ -152,7 +153,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   > p,
   > small,
   > ul,
-  > ol {
+  > ol,
+  > pre {
     font-size: 2.1rem;
     text-align: left;
     font-weight: ${Font.weightNormal};
@@ -164,6 +166,24 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
       font-size: 1.6rem;
       text-align: center;
     }
+  }
+
+  > pre {
+    border-radius: 9px;
+    padding: 1rem;
+    background: ${transparentize(0.7, Color.white)};
+    border: 0.1rem solid ${Color.white};
+    max-width: 100%;
+  }
+
+  > pre > code {
+    font-size: 1.4rem;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  > p > em {
+    font-weight: bold;
   }
 
   .large-text {
@@ -600,5 +620,66 @@ export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean
 
   > a:hover > img {
     transform: rotate(360deg);
+  }
+`
+
+export const LogoWrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 4.2rem auto 0;
+
+  ${Media.mediumDown} {
+    gap: 2.4rem;
+  }
+
+  ${Media.mobile} {
+    flex-flow: column wrap;
+    gap: 4rem;
+  }
+`
+
+export const LogoItem = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: calc(100% / 3);
+  margin: 0 0 7rem;
+  padding: 0 1.4rem;
+  gap: 2.4rem;
+
+  ${Media.mediumDown} {
+    margin: 0 auto;
+  }
+
+  ${Media.mobile} {
+    width: 100%;
+    padding: 0;
+  }
+
+  > a {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > a > img {
+    --width: 24rem;
+    --height: 8rem;
+    width: 100%;
+    height: var(--height);
+    max-width: var(--width);
+    max-height: var(--height);
+    background: transparent;
+    display: block;
+    margin: auto;
+
+    ${Media.mobile} {
+      --width: 21rem;
+      --height: auto;
+    }
   }
 `
