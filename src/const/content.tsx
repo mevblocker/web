@@ -183,6 +183,13 @@ export const FAQ_CONTENT: {
         backrunning. However, we offer a separate endpoint that provides revert
         protection but does not offer rebates. You can install this second
         endpoint by using <b>https://rpc.mevblocker.io/noreverts</b>
+        No, this RPC focuses on fast execution, however, we are offering another
+        endpoint which offers revert protection.
+        <br />
+        <br />
+        However, we offer a separate endpoint that provides revert protection
+        but does not offer rebates. You can install this second endpoint by
+        using <b>https://rpc.mevblocker.io/noreverts</b>
       </>
     ),
   },
