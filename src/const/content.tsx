@@ -152,10 +152,11 @@ export const FAQ_CONTENT: {
         MEV that exploit Ethereum users every day.
         <br />
         <br />
-        To participate in the orderflow auction, searchers agree to share 90% of
-        their profits with the wallets they backrun (compared with 0% profit
-        share when not using MEV Blocker). Searchers use the remaining 10% to
-        pay validators to settle the transactions.
+        When searchers submit winning bids through the orderflow auction, MEV
+        Blocker sends the full amount of the bid to users and validators at a
+        90/10 split. Validators keep the 10% as a reward, and users pocket the
+        other 90% as profit they&apos;d miss out on if they weren&apos;t using
+        MEV Blocker.
         <br />
         <br />
         As long as you have MEV Blocker set as the RPC in your wallet (as if it
