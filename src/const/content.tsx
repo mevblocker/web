@@ -79,11 +79,6 @@ export const FAQ_CONTENT: {
     question: "What kinds of MEV does MEV Blocker protect from?",
     answer: (
       <>
-        MEV Blocker protects from the most harmful forms of MEV attacks —
-        frontrunning and sandwich attacks — for all types of dApps and Ethereum
-        transactions.
-        <br />
-        <br />
         MEV Blocker also lets you benefit from backrunning. It does this by
         allowing searchers to “bid” in an auction to win the right to backrun
         your trade. When this happens, users of MEV Blocker receive 90% of the
@@ -179,10 +174,6 @@ export const FAQ_CONTENT: {
     question: "Does this RPC offer revert protection?",
     answer: (
       <>
-        No, this RPC focuses on fast execution and provides rebates from
-        backrunning. However, we offer a separate endpoint that provides revert
-        protection but does not offer rebates. You can install this second
-        endpoint by using <b>https://rpc.mevblocker.io/noreverts</b>
         No, this RPC focuses on fast execution, however, we are offering another
         endpoint which offers revert protection.
         <br />
