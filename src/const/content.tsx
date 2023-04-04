@@ -79,14 +79,22 @@ export const FAQ_CONTENT: {
     question: "What kinds of MEV does MEV Blocker protect from?",
     answer: (
       <>
-        MEV Blocker protects from the most harmful forms of MEV attacks — 
-        frontrunning and sandwich attacks — for all types of dApps and Ethereum transactions. <br />
-        <br />
+        MEV blocker protects from most kinds of frontrunning, but especially 
+        from trade sandwiching, which is when a searcher trades just before 
+        and just after your transaction to make a profit.
+      </>
+    ),
+  },
+  {
+    question: "How does MEV Blocker RPC give you a rebate and when?",
+    answer: (
+      <>
         MEV Blocker also lets you benefit from backrunning. It does this by
         allowing searchers to “bid” in an auction to win the right to backrun
         your trade. When this happens, users of MEV Blocker receive 90% of the
         profit their backrunning opportunity creates (compared with 0% when not
-        using MEV Blocker).
+        using MEV Blocker).The rebate is paid to the user that sent the transaction 
+        (tx.origin), immediately in the same block.
         <br />
         <br />
         In return for benefitting from backrunning your trade, these searchers
