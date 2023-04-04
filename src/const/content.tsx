@@ -425,4 +425,19 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       logo: "liminal.svg",
       link: "https://www.lmnl.app/",
     },
+    {
+      title: "Castle",
+      logo: "castle.svg",
+      link: "https://castle.link/",
+    },
+    {
+      title: "Ambire",
+      logo: "ambire.svg",
+      link: "https://www.ambire.com/",
+    },
+    {
+      title: "Bloxroute",
+      logo: "bloxroute.svg",
+      link: "https://bloxroute.com/",
+    },
   ];
