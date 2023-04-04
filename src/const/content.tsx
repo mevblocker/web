@@ -416,11 +416,6 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       link: "https://bitkeep.com/",
     },
     {
-      title: "WalletConnect",
-      logo: "walletconnect.svg",
-      link: "https://walletconnect.com/",
-    },
-    {
       title: "Liminal",
       logo: "liminal.svg",
       link: "https://www.lmnl.app/",
@@ -439,5 +434,10 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       title: "Bloxroute",
       logo: "bloxroute.svg",
       link: "https://bloxroute.com/",
+    },
+    {
+      title: "1Inch",
+      logo: "1inch.svg",
+      link: "https://1inch.io/",
     },
   ];
