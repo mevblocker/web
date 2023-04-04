@@ -28,7 +28,7 @@ Response:
 
 4. Construct a back-run bundle like you would normally for a target transaction from the mempool, but where the first element of the `txs` array in `params` of `eth_sendBundle` should be the hash of the pending target, instead of the full encoded transaction.
 
-\_n.b. that the pending target transaction must be the first transaction in `txs`, and only one target transaction can be included per bundle, otherwise the request will be rejected. It is still possible to submit multiple bundles for the same block, containing different target transactions.\_\_
+_n.b. that the pending target transaction must be the first transaction in `txs`, and only one target transaction can be included per bundle, otherwise the request will be rejected. It is still possible to submit multiple bundles for the same block, containing different target transactions._
 
 5. Send back-run bundle to the same websocket connection using `eth_sendBundle` method.
 
