@@ -5,7 +5,7 @@ _n.b. that historical submitted bundles, including those that did not land on-ch
 1. Connect to websocket server located at `searchers.mevblocker.io`
 
 ```
-websocat searchers.mevblocker.io
+websocat wss://searchers.mevblocker.io
 ```
 
 2. Use `eth_subscribe` method to subscribe to unsigned pending transactions - `mevblocker_partialPendingTransactions`:
@@ -33,8 +33,6 @@ _n.b. that the pending target transaction must be the first transaction in `txs`
 5. Send back-run bundle to the same websocket connection using `eth_sendBundle` method.
 
 _n.b. that `replacementUuid` is supported in this version of `eth_sendBundle`._
-
-_n.b. that `revertingTxHashes` is also supported, however the target tx may not be contained in `revertingTxHashes`._
 
 ```
 {
