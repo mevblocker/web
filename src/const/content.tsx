@@ -345,4 +345,84 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       logo: "balancer.svg",
       link: "https://balancer.fi/",
     },
+    {
+      title: "Keystone",
+      logo: "keystone.svg",
+      link: "https://keyst.one/",
+    },
+    {
+      title: "Swapr",
+      logo: "swapr.svg",
+      link: "https://swapr.eth.limo/",
+    },
+    {
+      title: "StakeDAO",
+      logo: "stakedao.svg",
+      link: "https://stakedao.org/",
+    },
+    {
+      title: "Safe",
+      logo: "safe.svg",
+      link: "https://safe.global/",
+    },
+    {
+      title: "Oasis",
+      logo: "oasis.svg",
+      link: "https://oasis.app/#earn",
+    },
+    {
+      title: "Swarm",
+      logo: "swarm.svg",
+      link: "https://www.ethswarm.org/",
+    },
+    {
+      title: "Onramper",
+      logo: "onramper.svg",
+      link: "https://www.onramper.com/",
+    },
+    {
+      title: "Shapeshift",
+      logo: "shapeshift.svg",
+      link: "https://shapeshift.com/",
+    },
+    {
+      title: "Gearbox",
+      logo: "gearbox.svg",
+      link: "https://gearbox.fi/",
+    },
+    {
+      title: "Gelato",
+      logo: "gelato.svg",
+      link: "https://www.gelato.network/",
+    },
+    {
+      title: "VirtuSwap",
+      logo: "virtuswap.svg",
+      link: "https://virtuswap.io/",
+    },
+    {
+      title: "Builder0x69",
+      logo: "builder0x69.png",
+      link: "https://twitter.com/builder0x69",
+    },
+    {
+      title: "ZeroMev",
+      logo: "zeromev.svg",
+      link: "https://www.zeromev.org/",
+    },
+    {
+      title: "Bitkeep",
+      logo: "bitkeep.svg",
+      link: "https://bitkeep.com/",
+    },
+    {
+      title: "WalletConnect",
+      logo: "walletconnect.svg",
+      link: "https://walletconnect.com/",
+    },
+    {
+      title: "Liminal",
+      logo: "liminal.svg",
+      link: "https://www.lmnl.app/",
+    },
   ];
