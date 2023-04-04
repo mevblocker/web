@@ -79,6 +79,9 @@ export const FAQ_CONTENT: {
     question: "What kinds of MEV does MEV Blocker protect from?",
     answer: (
       <>
+        MEV Blocker protects from the most harmful forms of MEV attacks — 
+        frontrunning and sandwich attacks — for all types of dApps and Ethereum transactions. <br />
+        <br />
         MEV Blocker also lets you benefit from backrunning. It does this by
         allowing searchers to “bid” in an auction to win the right to backrun
         your trade. When this happens, users of MEV Blocker receive 90% of the
@@ -129,7 +132,9 @@ export const FAQ_CONTENT: {
       <>
         To use MEV Blocker, you will need to add the MEV Blocker RPC endpoint to
         your wallet. You can do that easily by following the instructions{" "}
-        <a href={CONFIG.url.rpc}>here</a>.<br />
+        <a href={CONFIG.url.rpc}>here</a>. (Note that once your MEV Blocker is 
+        added to your wallet, you might need to check that it is your selected 
+        network from time to time.)<br />
         <br />
         If your wallet does not support adding custom RPC endpoints, you may
         have to contact your wallet developer to get MEV Blocker included as a
@@ -178,9 +183,9 @@ export const FAQ_CONTENT: {
         endpoint which offers revert protection.
         <br />
         <br />
-        However, we offer a separate endpoint that provides revert protection
-        but does not offer rebates. You can install this second endpoint by
-        using <b>https://rpc.mevblocker.io/noreverts</b>
+        This separate endpoint focuses on providing revert protection first, at 
+        the expense of possibly slower inclusion time. You can use this 
+        second endpoint by using <b>https://rpc.mevblocker.io/noreverts</b> as the url instead.
       </>
     ),
   },
