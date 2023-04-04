@@ -1,11 +1,11 @@
-# How to: send backrun bundles to mevblocker RPC
+# How to send backrun bundles to MEV Blocker RPC
 
 _n.b. that historical submitted bundles, including those that did not land on-chain, will not only be shared with builders but also archived and presented to the public for transparency_
 
 1. Connect to websocket server located at `searchers.mevblocker.io`
 
 ```
-websocat searchers.mevblocker.io
+websocat wss://searchers.mevblocker.io
 ```
 
 2. Use `eth_subscribe` method to subscribe to unsigned pending transactions - `mevblocker_partialPendingTransactions`:
@@ -28,13 +28,11 @@ Response:
 
 4. Construct a back-run bundle like you would normally for a target transaction from the mempool, but where the first element of the `txs` array in `params` of `eth_sendBundle` should be the hash of the pending target, instead of the full encoded transaction.
 
-_n.b. that the pending target transaction must be the first transaction in `txs`, and only one target transaction can be included per bundle, otherwise the request will be rejected. It is still possible to submit multiple bundles for the same block, containing different target transactions.__
+_n.b. that the pending target transaction must be the first transaction in `txs`, and only one target transaction can be included per bundle, otherwise the request will be rejected. It is still possible to submit multiple bundles for the same block, containing different target transactions._
 
 5. Send back-run bundle to the same websocket connection using `eth_sendBundle` method.
 
 _n.b. that `replacementUuid` is supported in this version of `eth_sendBundle`._
-
-_n.b. that `revertingTxHashes` is also supported, however the target tx may not be contained in `revertingTxHashes`._
 
 ```
 {
