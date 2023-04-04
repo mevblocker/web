@@ -1,4 +1,4 @@
-# How to: send backrun bundles to mevblocker RPC
+# How to send backrun bundles to MEV Blocker RPC
 
 _n.b. that historical submitted bundles, including those that did not land on-chain, will not only be shared with builders but also archived and presented to the public for transparency_
 
