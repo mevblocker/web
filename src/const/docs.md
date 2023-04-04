@@ -1,4 +1,4 @@
-# How to: send backrun bundles to mevblocker RPC
+# How to send backrun bundles to MEV Blocker RPC
 
 _n.b. that historical submitted bundles, including those that did not land on-chain, will not only be shared with builders but also archived and presented to the public for transparency_
 
@@ -28,7 +28,7 @@ Response:
 
 4. Construct a back-run bundle like you would normally for a target transaction from the mempool, but where the first element of the `txs` array in `params` of `eth_sendBundle` should be the hash of the pending target, instead of the full encoded transaction.
 
-_n.b. that the pending target transaction must be the first transaction in `txs`, and only one target transaction can be included per bundle, otherwise the request will be rejected. It is still possible to submit multiple bundles for the same block, containing different target transactions.__
+\_n.b. that the pending target transaction must be the first transaction in `txs`, and only one target transaction can be included per bundle, otherwise the request will be rejected. It is still possible to submit multiple bundles for the same block, containing different target transactions.\_\_
 
 5. Send back-run bundle to the same websocket connection using `eth_sendBundle` method.
 
