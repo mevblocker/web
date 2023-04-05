@@ -306,9 +306,9 @@ export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
 export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
   [
     {
-      title: "Arrakis",
-      logo: "arrakis.svg",
-      link: "https://www.arrakis.finance/",
+      title: "GnosisDAO",
+      logo: "gnosisdao.svg",
+      link: "https://www.gnosis.io/",
     },
     {
       title: "CoW Swap",
@@ -316,14 +316,14 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       link: "https://swap.cow.fi/",
     },
     {
-      title: "EigenPhi",
-      logo: "eigenphi.svg",
-      link: "https://eigenphi.io/",
+      title: "Safe",
+      logo: "safe.svg",
+      link: "https://safe.global/",
     },
     {
-      title: "GnosisDAO",
-      logo: "gnosisdao.svg",
-      link: "https://www.gnosis.io/",
+      title: "Balancer",
+      logo: "balancer.svg",
+      link: "https://balancer.fi/",
     },
     {
       title: "Karpatkey",
@@ -336,49 +336,19 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       link: "https://www.paraswap.io/",
     },
     {
-      title: "Aura Finance",
-      logo: "aura.svg",
-      link: "https://aura.finance/",
+      title: "EigenPhi",
+      logo: "eigenphi.svg",
+      link: "https://eigenphi.io/",
     },
     {
-      title: "Balancer",
-      logo: "balancer.svg",
-      link: "https://balancer.fi/",
+      title: "Bloxroute",
+      logo: "bloxroute.svg",
+      link: "https://bloxroute.com/",
     },
     {
-      title: "Keystone",
-      logo: "keystone.svg",
-      link: "https://keyst.one/",
-    },
-    {
-      title: "Swapr",
-      logo: "swapr.svg",
-      link: "https://swapr.eth.limo/",
-    },
-    {
-      title: "StakeDAO",
-      logo: "stakedao.svg",
-      link: "https://stakedao.org/",
-    },
-    {
-      title: "Safe",
-      logo: "safe.svg",
-      link: "https://safe.global/",
-    },
-    {
-      title: "Oasis",
-      logo: "oasis.svg",
-      link: "https://oasis.app/#earn",
-    },
-    {
-      title: "Swarm",
-      logo: "swarm.svg",
-      link: "https://www.ethswarm.org/",
-    },
-    {
-      title: "Onramper",
-      logo: "onramper.svg",
-      link: "https://www.onramper.com/",
+      title: "ZeroMev",
+      logo: "zeromev.svg",
+      link: "https://www.zeromev.org/",
     },
     {
       title: "Shapeshift",
@@ -391,39 +361,29 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       link: "https://gearbox.fi/",
     },
     {
+      title: "Swarm",
+      logo: "swarm.svg",
+      link: "https://www.ethswarm.org/",
+    },
+    {
+      title: "1Inch",
+      logo: "1inch.svg",
+      link: "https://1inch.io/",
+    },
+    {
+      title: "Oasis",
+      logo: "oasis.svg",
+      link: "https://oasis.app/#earn",
+    },
+    {
       title: "Gelato",
       logo: "gelato.svg",
       link: "https://www.gelato.network/",
     },
     {
-      title: "VirtuSwap",
-      logo: "virtuswap.svg",
-      link: "https://virtuswap.io/",
-    },
-    {
-      title: "Builder0x69",
-      logo: "builder0x69.png",
-      link: "https://twitter.com/builder0x69",
-    },
-    {
-      title: "ZeroMev",
-      logo: "zeromev.svg",
-      link: "https://www.zeromev.org/",
-    },
-    {
-      title: "Bitkeep",
-      logo: "bitkeep.svg",
-      link: "https://bitkeep.com/",
-    },
-    {
-      title: "Liminal",
-      logo: "liminal.svg",
-      link: "https://www.lmnl.app/",
-    },
-    {
-      title: "Castle",
-      logo: "castle.svg",
-      link: "https://castle.link/",
+      title: "Keystone",
+      logo: "keystone.svg",
+      link: "https://keyst.one/",
     },
     {
       title: "Ambire",
@@ -431,13 +391,58 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       link: "https://www.ambire.com/",
     },
     {
-      title: "Bloxroute",
-      logo: "bloxroute.svg",
-      link: "https://bloxroute.com/",
+      title: "Castle",
+      logo: "castle.svg",
+      link: "https://castle.link/",
     },
     {
-      title: "1Inch",
-      logo: "1inch.svg",
-      link: "https://1inch.io/",
+      title: "VirtuSwap",
+      logo: "virtuswap.svg",
+      link: "https://virtuswap.io/",
+    },
+    {
+      title: "Liminal",
+      logo: "liminal.svg",
+      link: "https://www.lmnl.app/",
+    },
+    {
+      title: "Onramper",
+      logo: "onramper.svg",
+      link: "https://www.onramper.com/",
+    },
+    {
+      title: "Bitkeep",
+      logo: "bitkeep.svg",
+      link: "https://bitkeep.com/",
+    },
+    {
+      title: "Aura Finance",
+      logo: "aura.svg",
+      link: "https://aura.finance/",
+    },
+    {
+      title: "StakeDAO",
+      logo: "stakedao.svg",
+      link: "https://stakedao.org/",
+    },
+    {
+      title: "Arrakis",
+      logo: "arrakis.svg",
+      link: "https://www.arrakis.finance/",
+    },
+    {
+      title: "Swapr",
+      logo: "swapr.svg",
+      link: "https://swapr.eth.limo/",
+    },
+    {
+      title: “DODO”,
+      logo: “dodo.svg",
+      link: "https://dodoex.io/",
+    },
+    {
+      title: "Builder0x69",
+      logo: "builder0x69.png",
+      link: "https://twitter.com/builder0x69",
     },
   ];
