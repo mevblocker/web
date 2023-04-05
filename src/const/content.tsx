@@ -79,11 +79,22 @@ export const FAQ_CONTENT: {
     question: "What kinds of MEV does MEV Blocker protect from?",
     answer: (
       <>
+        MEV blocker protects from most kinds of frontrunning, but especially
+        from trade sandwiching, which is when a searcher trades just before and
+        just after your transaction to make a profit.
+      </>
+    ),
+  },
+  {
+    question: "How does MEV Blocker RPC give you a rebate and when?",
+    answer: (
+      <>
         MEV Blocker also lets you benefit from backrunning. It does this by
         allowing searchers to “bid” in an auction to win the right to backrun
         your trade. When this happens, users of MEV Blocker receive 90% of the
         profit their backrunning opportunity creates (compared with 0% when not
-        using MEV Blocker).
+        using MEV Blocker).The rebate is paid to the user that sent the
+        transaction (tx.origin), immediately in the same block.
         <br />
         <br />
         In return for benefitting from backrunning your trade, these searchers
@@ -129,7 +140,10 @@ export const FAQ_CONTENT: {
       <>
         To use MEV Blocker, you will need to add the MEV Blocker RPC endpoint to
         your wallet. You can do that easily by following the instructions{" "}
-        <a href={CONFIG.url.rpc}>here</a>.<br />
+        <a href={CONFIG.url.rpc}>here</a>. (Note that once your MEV Blocker is
+        added to your wallet, you might need to check that it is your selected
+        network from time to time.)
+        <br />
         <br />
         If your wallet does not support adding custom RPC endpoints, you may
         have to contact your wallet developer to get MEV Blocker included as a
@@ -178,9 +192,10 @@ export const FAQ_CONTENT: {
         endpoint which offers revert protection.
         <br />
         <br />
-        However, we offer a separate endpoint that provides revert protection
-        but does not offer rebates. You can install this second endpoint by
-        using <b>https://rpc.mevblocker.io/noreverts</b>
+        This separate endpoint focuses on providing revert protection first, at
+        the expense of possibly slower inclusion time. You can use this second
+        endpoint by using <b>https://rpc.mevblocker.io/noreverts</b> as the url
+        instead.
       </>
     ),
   },
@@ -211,6 +226,28 @@ export const FAQ_CONTENT: {
         neutral product available to all Ethereum users. We invite additional
         contributors - please get in touch if you&apos;re interested in
         supporting the project.
+      </>
+    ),
+  },
+  {
+    question: "How do I participate as a searcher?",
+    answer: (
+      <>
+        If you are a searcher that is interested in collaborating with MEV
+        Blocker RPC, please check out the{" "}
+        <a href={CONFIG.url.docs} target="_blank" rel="noopener nofollow">
+          documentation
+        </a>{" "}
+        for searchers and
+        <a
+          href={CONFIG.social.telegram.url}
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          {" "}
+          join the community
+        </a>
+        .
       </>
     ),
   },
@@ -306,9 +343,9 @@ export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
 export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
   [
     {
-      title: "Arrakis",
-      logo: "arrakis.svg",
-      link: "https://www.arrakis.finance/",
+      title: "GnosisDAO",
+      logo: "gnosisdao.svg",
+      link: "https://www.gnosis.io/",
     },
     {
       title: "CoW Swap",
@@ -316,14 +353,14 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       link: "https://swap.cow.fi/",
     },
     {
-      title: "EigenPhi",
-      logo: "eigenphi.svg",
-      link: "https://eigenphi.io/",
+      title: "Safe",
+      logo: "safe.svg",
+      link: "https://safe.global/",
     },
     {
-      title: "GnosisDAO",
-      logo: "gnosisdao.svg",
-      link: "https://www.gnosis.io/",
+      title: "Balancer",
+      logo: "balancer.svg",
+      link: "https://balancer.fi/",
     },
     {
       title: "Karpatkey",
@@ -336,13 +373,128 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       link: "https://www.paraswap.io/",
     },
     {
+      title: "EigenPhi",
+      logo: "eigenphi.svg",
+      link: "https://eigenphi.io/",
+    },
+    {
+      title: "Bloxroute",
+      logo: "bloxroute.svg",
+      link: "https://bloxroute.com/",
+    },
+    {
+      title: "ZeroMev",
+      logo: "zeromev.svg",
+      link: "https://www.zeromev.org/",
+    },
+    {
+      title: "Shapeshift",
+      logo: "shapeshift.svg",
+      link: "https://shapeshift.com/",
+    },
+    {
+      title: "Gearbox",
+      logo: "gearbox.svg",
+      link: "https://gearbox.fi/",
+    },
+    {
+      title: "Swarm",
+      logo: "swarm.svg",
+      link: "https://www.ethswarm.org/",
+    },
+    {
+      title: "1Inch",
+      logo: "1inch.svg",
+      link: "https://1inch.io/",
+    },
+    {
+      title: "Oasis",
+      logo: "oasis.svg",
+      link: "https://oasis.app/#earn",
+    },
+    {
+      title: "Gelato",
+      logo: "gelato.svg",
+      link: "https://www.gelato.network/",
+    },
+    {
+      title: "Keystone",
+      logo: "keystone.svg",
+      link: "https://keyst.one/",
+    },
+    {
+      title: "Ambire",
+      logo: "ambire.svg",
+      link: "https://www.ambire.com/",
+    },
+    {
+      title: "Castle",
+      logo: "castle.svg",
+      link: "https://castle.link/",
+    },
+    {
+      title: "VirtuSwap",
+      logo: "virtuswap.svg",
+      link: "https://virtuswap.io/",
+    },
+    {
+      title: "Liminal",
+      logo: "liminal.svg",
+      link: "https://www.lmnl.app/",
+    },
+    {
+      title: "Onramper",
+      logo: "onramper.svg",
+      link: "https://www.onramper.com/",
+    },
+    {
+      title: "Bitkeep",
+      logo: "bitkeep.svg",
+      link: "https://bitkeep.com/",
+    },
+    {
       title: "Aura Finance",
       logo: "aura.svg",
       link: "https://aura.finance/",
     },
     {
-      title: "Balancer",
-      logo: "balancer.svg",
-      link: "https://balancer.fi/",
+      title: "StakeDAO",
+      logo: "stakedao.svg",
+      link: "https://stakedao.org/",
+    },
+    {
+      title: "Arrakis",
+      logo: "arrakis.svg",
+      link: "https://www.arrakis.finance/",
+    },
+    {
+      title: "Swapr",
+      logo: "swapr.svg",
+      link: "https://swapr.eth.limo/",
+    },
+    {
+      title: "DODO",
+      logo: "dodo.svg",
+      link: "https://dodoex.io/",
+    },
+    {
+      title: "Cypherock",
+      logo: "cypherock.svg",
+      link: "https://www.cypherock.com/",
+    },
+    {
+      title: "Giveth",
+      logo: "giveth.svg",
+      link: "https://www.giveth.io/",
+    },
+    {
+      title: "Notifi",
+      logo: "notifi.svg",
+      link: "https://notifi.network/",
+    },
+    {
+      title: "Builder0x69",
+      logo: "builder0x69.png",
+      link: "https://twitter.com/builder0x69",
     },
   ];
