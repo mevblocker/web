@@ -452,13 +452,23 @@ export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
     },
     {
       title: "DODO",
-      logo: "dodo.svg",
+      logo: "dodo.png",
       link: "https://dodoex.io/",
     },
     {
       title: "Cypherock",
       logo: "cypherock.svg",
       link: "https://www.cypherock.com/",
+    },
+    {
+      title: "Giveth",
+      logo: "giveth.svg",
+      link: "https://www.giveth.io/",
+    },
+    {
+      title: "Notifi",
+      logo: "notifi.svg",
+      link: "https://notifi.network/",
     },
     {
       title: "Builder0x69",
