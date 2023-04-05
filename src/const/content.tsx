@@ -230,6 +230,28 @@ export const FAQ_CONTENT: {
     ),
   },
   {
+    question: "How do I participate as a searcher?",
+    answer: (
+      <>
+        If you are a searcher that is interested in collaborating with MEV
+        Blocker RPC, please check out the{" "}
+        <a href={CONFIG.url.docs} target="_blank" rel="noopener nofollow">
+          documentation
+        </a>{" "}
+        for searchers and
+        <a
+          href={CONFIG.social.telegram.url}
+          target="_blank"
+          rel="noopener nofollow"
+        >
+          {" "}
+          join the community
+        </a>
+        .
+      </>
+    ),
+  },
+  {
     question: "How can I get in touch?",
     answer: (
       <>
@@ -318,7 +340,7 @@ export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
     },
   ];
 
-  export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
+export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
   [
     {
       title: "GnosisDAO",
@@ -476,4 +498,3 @@ export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
       link: "https://twitter.com/builder0x69",
     },
   ];
-
