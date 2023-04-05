@@ -474,7 +474,7 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
     },
     {
       title: "DODO",
-      logo: "dodo.png",
+      logo: "dodo.svg",
       link: "https://dodoex.io/",
     },
     {
