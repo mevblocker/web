@@ -194,7 +194,7 @@ const MenuToggle = styled.button`
   }
 `
 
-const Logo = styled.div<{ menuVisible: boolean }>`
+export const Logo = styled.div<{ menuVisible: boolean }>`
   cursor: pointer;
   font-size: 1.2rem;
   line-height: 1;

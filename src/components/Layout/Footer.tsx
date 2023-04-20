@@ -1,69 +1,118 @@
-import styled from 'styled-components';
-import Link from 'next/link'
-import { Color, Media } from '@src/const/styles/variables'
-import { scrollToClickedElement } from '@src/lib/analytics/events';
+import styled from "styled-components";
+import Link from "next/link";
+import { Color, Media, Font } from "@src/const/styles/variables";
+import { Section } from "@src/const/styles/pages";
+import { Logo } from "./Header";
 
 const Wrapper = styled.footer`
   display: flex;
-  justify-content: flex-end;
-  z-index: 1;
-  width: 100%;
-  padding: 0;
-  position: relative;
-`
-
-const Menu = styled.ol`
-  display: flex;
-  list-style: none;
-  font-size: 1.8rem;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2.4rem;
-  color: inherit;
-  padding: 2.4rem 0;
-  margin: 0;
+  flex-flow: row;
+  flex-direction: row;
+  gap: 4.8rem;
+  padding: 3rem;
   width: 100%;
 
-  ${Media.mobile} {
-    text-align: center;
-    flex-flow: column wrap;
-    gap: 3.2rem;
-    margin: 2.4rem;
+  ${Media.mediumDown} {
+    justify-content: space-around;
   }
 
-  > li > a {
+  ${Media.mobile} {
+    flex-flow: column wrap;
+  }
+`;
+
+const MenuWrapper = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  color: ${Color.text2};
+  font-size: ${Font.sizeDefault};
+  line-height: 1;
+
+  ${Media.mobile} {
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  > b {
+    display: block;
+    font-size: 1.6rem;
+    color: ${Color.text1};
+    margin: 0 0 3rem;
+
+    ${Media.mobile} {
+      text-align: center;
+      font-size: 1.9rem;
+    }
+  }
+`;
+
+const Menu = styled.ol``;
+
+const CustomLink = styled.li`
+  padding: 1rem 0;
+  display: block;
+
+  > a {
     font-size: inherit;
     color: inherit;
     text-decoration: none;
     line-height: 1.2;
-
-    &:hover {
-      text-decoration: underline;
-      color: ${Color.text1};
-
-      ${Media.mobile} {
-        color: ${Color.text1};
-      {
-    }
+    color: ${Color.text1};
   }
-`
+`;
+
+const Copyright = styled.div`
+  text-align: right;
+  margin-left: auto;
+
+  > div {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+
+  ${Media.mobile} {
+    text-align: center;
+    margin-left: initial;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+`;
 
 export default function Footer({ siteConfig, menu }) {
-  const { titleShort } = siteConfig
-  const currentYear = new Date().getFullYear()
+  const { titleShort } = siteConfig;
+  const currentYear = new Date().getFullYear();
 
   return (
-    <Wrapper>
-      <Menu>
-        {menu.length > 0 && <>{menu.map(({ id, title, url, target, onClick }) => (
-          <li key={id}>
-            <Link href={url} target={target} onClick={onClick}>{title}</Link>
-          </li>
-        ))}</>}
-        <li>©{titleShort} {currentYear}</li>
-      </Menu>
+    <Section>
+      <Wrapper>
+        {menu.map(({ label, links }, index) => (
+          <MenuWrapper key={index}>
+            <b>{label}</b>
+            <Menu>
+              {links.map(({ url, target, onClick, title }, index) => (
+                <CustomLink key={index}>
+                  <Link href={url} target={target} onClick={onClick}>
+                    {title}
+                  </Link>
+                </CustomLink>
+              ))}
+            </Menu>
+          </MenuWrapper>
+        ))}
 
-    </Wrapper >
-  )
+        <Copyright>
+          <Link href={siteConfig.url.home}>
+            <Logo menuVisible={true}>
+              <img src={"mevblocker-logo.svg"} alt="MEVBlocker.io" />
+            </Logo>
+          </Link>
+          <div>
+            ©{titleShort} {currentYear}
+          </div>
+        </Copyright>
+      </Wrapper>
+    </Section>
+  );
 }
