@@ -18,7 +18,7 @@ export const footerMenu = [
     label: 'About', links: [      
       {id: 0, title: 'Terms and Conditions', url: 'https://swap.cow.fi/#/terms-and-conditions', type: 'external' },
       {id: 1, title: 'Privacy Policy', url: 'https://swap.cow.fi/#/privacy-policy', type: 'external' },
-      {id: 2, title: 'Cookie Policy', url: 'https://swap.cow.fi/#/cookie-policy', type: 'external' },
+      {id: 2, title: 'Cookie Policy', url: `${CONFIG.url.cookiePolicy}`},
     ]
   },
 ]

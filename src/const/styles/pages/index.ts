@@ -1,9 +1,13 @@
-import styled, {css} from 'styled-components';
-import { Color, Font, Media } from '@src/const/styles/variables'
-import {Wrapper as TextLinkWrapper} from '@src/components/TextLink'
-import { transparentize } from 'polished';
+import styled, { css } from "styled-components";
+import { Color, Font, Media } from "@src/const/styles/variables";
+import { Wrapper as TextLinkWrapper } from "@src/components/TextLink";
+import { transparentize } from "polished";
 
-export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: string, borderDown?: boolean }>`
+export const SectionWrapper = styled.div<{
+  fixed?: boolean;
+  backgroundColor?: string;
+  borderDown?: boolean;
+}>`
   --sectionMaxWidth: 64rem;
   display: flex;
   flex-flow: row wrap;
@@ -11,32 +15,39 @@ export const SectionWrapper = styled.div<{ fixed?: boolean, backgroundColor?: st
   margin: 0 auto;
   padding: 5.6rem 0;
   width: 100%;
-  background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : 'transparent'};
-  border-bottom: ${({ borderDown }) => borderDown ? `0.1rem solid ${Color.black}` : 'none'};
-  
+  background: ${({ backgroundColor }) =>
+    backgroundColor ? backgroundColor : "transparent"};
+  border-bottom: ${({ borderDown }) =>
+    borderDown ? `0.1rem solid ${Color.black}` : "none"};
+
   ${TextLinkWrapper} {
     width: 100%;
     text-align: center;
     margin: 4.2rem auto;
     font-size: 1.8rem;
-
   }
-`
+`;
 
-export const Section = styled.section<{columns?: number, bgColor?: string, imageMaxHeight?: number, imageMaxWidth?: number }>`
+export const Section = styled.section<{
+  columns?: number;
+  bgColor?: string;
+  imageMaxHeight?: number;
+  imageMaxWidth?: number;
+}>`
   display: grid;
   align-items: center;
   align-content: center;
   justify-items: center;
   justify-content: center;
-  grid-template-columns: ${({ columns }) => columns ? `repeat(${columns}, 1fr)` : '1fr'};
+  grid-template-columns: ${({ columns }) =>
+    columns ? `repeat(${columns}, 1fr)` : "1fr"};
   gap: 5.6rem 0;
   width: 100%;
   max-width: 130rem;
   margin: 0 auto;
   min-height: 50vh;
   flex-flow: row wrap;
-  background: ${({ bgColor }) => bgColor ? bgColor : 'transparent'};
+  background: ${({ bgColor }) => (bgColor ? bgColor : "transparent")};
 
   ${Media.mediumDown} {
     display: flex;
@@ -56,25 +67,26 @@ export const Section = styled.section<{columns?: number, bgColor?: string, image
     max-width: 100%;
     max-height: 100%;
   }
-`
+`;
 
 export const Anchor = styled.span`
   display: block;
   position: relative;
   top: -9rem;
   visibility: hidden;
-`
+`;
 
-export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
+export const SectionContent = styled.div<{ maxWidth?: number; align?: string }>`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth ? `${maxWidth}rem` : 'var(--sectionMaxWidth)'};
+  max-width: ${({ maxWidth }) =>
+    maxWidth ? `${maxWidth}rem` : "var(--sectionMaxWidth)"};
   height: auto;
   padding: 0 2.4rem;
   margin: 9rem auto;
   justify-content: center;
-  align-items: ${({ align }) => align === 'center' ? 'center' : 'flex-start'};
+  align-items: ${({ align }) => (align === "center" ? "center" : "flex-start")};
 
   ${Media.mediumDown} {
     max-width: 100%;
@@ -82,6 +94,27 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     padding: 0 2.4rem 0;
     margin: 4rem auto 0;
     align-items: center;
+  }
+
+  table {
+    border-spacing: 1px;
+    font-size: 16px;
+    line-height: 1.5;
+
+    th,
+    td {
+      min-width: 200px;
+      text-align: left !important;
+      padding: 6px 12px;
+
+      &:not(:first-child) {
+        text-align: center;
+      }
+    }
+
+    th {
+      padding: 16px 12px;
+    }
   }
 
   > hr {
@@ -99,7 +132,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   > h3,
   > h4,
   > h5 {
-    text-align: ${({ align }) => align === 'center' ? 'center' : 'left'};
+    text-align: ${({ align }) => (align === "center" ? "center" : "left")};
     font-size: 6rem;
     line-height: 1.1;
     color: ${Color.text1};
@@ -137,6 +170,8 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
   > h3 {
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
+    font-size: 3rem;
+    line-height: 1.5;
 
     ${Media.mobile} {
       font-size: 4rem;
@@ -246,7 +281,7 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     }
 
     &::after {
-      content: '+';
+      content: "+";
       display: flex;
       align-items: center;
       text-align: center;
@@ -274,10 +309,10 @@ export const SectionContent = styled.div<{maxWidth?: number, align?: string}>`
     border-bottom: 0.2rem solid transparent;
   }
 
-  details[open] > summary::after{
-    content: '−';
+  details[open] > summary::after {
+    content: "−";
   }
-`
+`;
 
 export const Content = styled.main`
   margin: 0 auto;
@@ -301,7 +336,7 @@ export const Content = styled.main`
     color: ${Color.text1};
     line-height: 1.4;
   }
-`
+`;
 
 export const HeroImage = styled.div`
   --size: 60rem;
@@ -311,7 +346,7 @@ export const HeroImage = styled.div`
   height: var(--size);
   max-width: 45vw;
 
-  ${Media.desktopDown}  {
+  ${Media.desktopDown} {
     --size: 50rem;
   }
 
@@ -342,9 +377,9 @@ export const HeroImage = styled.div`
     bottom: 58%;
     height: 22rem;
     width: auto;
-    animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 2s forwards cubic-bezier(0.62, 0.16, 0.13, 1.01);
 
-    ${Media.desktopDown}  {
+    ${Media.desktopDown} {
       height: 17rem;
       bottom: 63%;
     }
@@ -360,9 +395,9 @@ export const HeroImage = styled.div`
     bottom: 56%;
     height: 20rem;
     width: auto;
-    animation: moveIn 2s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 2s forwards cubic-bezier(0.62, 0.16, 0.13, 1.01);
 
-    ${Media.desktopDown}  {
+    ${Media.desktopDown} {
       bottom: 67%;
       left: 21%;
       height: 14rem;
@@ -379,7 +414,7 @@ export const HeroImage = styled.div`
     bottom: 60%;
     height: 5rem;
     width: auto;
-    animation: moveIn 4s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 4s forwards cubic-bezier(0.62, 0.16, 0.13, 1.01);
 
     ${Media.mobile} {
       height: 2.5rem;
@@ -393,7 +428,7 @@ export const HeroImage = styled.div`
     bottom: 72%;
     height: 10rem;
     width: auto;
-    animation: moveIn 4s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 4s forwards cubic-bezier(0.62, 0.16, 0.13, 1.01);
 
     ${Media.mediumDown} {
       height: 4rem;
@@ -410,7 +445,7 @@ export const HeroImage = styled.div`
     bottom: 77%;
     height: 5rem;
     width: auto;
-    animation: moveIn 1.5s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 1.5s forwards cubic-bezier(0.62, 0.16, 0.13, 1.01);
 
     ${Media.mobile} {
       height: 2.5rem;
@@ -424,7 +459,7 @@ export const HeroImage = styled.div`
     bottom: 50%;
     height: 5rem;
     width: auto;
-    animation: moveIn 3s forwards cubic-bezier(.62,.16,.13,1.01);
+    animation: moveIn 3s forwards cubic-bezier(0.62, 0.16, 0.13, 1.01);
 
     ${Media.desktopDown} {
       bottom: 59%;
@@ -445,44 +480,51 @@ export const HeroImage = styled.div`
       transform: translateY(0) rotate(0);
     }
   }
-`
+`;
 
-export const CardWrapper = styled.div<{count?: number, cardRotate?: boolean}>`
+export const CardWrapper = styled.div<{ count?: number; cardRotate?: boolean }>`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   display: grid;
-  grid-template-columns: ${({ count }) => count ? `repeat(${count}, 1fr)` : 'unset'};
+  grid-template-columns: ${({ count }) =>
+    count ? `repeat(${count}, 1fr)` : "unset"};
   gap: 2.4rem;
   align-items: stretch;
   width: 100%;
 
-  ${({ cardRotate }) => cardRotate && css`
-    gap: 3.8rem; 
+  ${({ cardRotate }) =>
+    cardRotate &&
+    css`
+      gap: 3.8rem;
 
-    > div:nth-child(3n) {
-      transform: rotate(-3deg);
-    }
-    > div:nth-child(2n + 1) {
-      transform: rotate(3deg);
-    }
-  `}
+      > div:nth-child(3n) {
+        transform: rotate(-3deg);
+      }
+      > div:nth-child(2n + 1) {
+        transform: rotate(3deg);
+      }
+    `}
 
   ${Media.mediumDown} {
     display: flex;
     flex-flow: column wrap;
   }
-`
+`;
 
-export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number }>`
-  font-size: ${({ fontSize }) => fontSize ? `${fontSize}rem` : '1.6rem'};
+export const CardItem = styled.div<{
+  backgroundColor?: string;
+  fontSize?: number;
+}>`
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}rem` : "1.6rem")};
   line-height: 1.1;
   display: flex;
   flex-flow: column wrap;
   align-items: stretch;
   border: 0.2rem solid ${Color.black};
   box-shadow: 0.3rem 0.3rem 0 ${Color.black};
-  background: ${({ backgroundColor }) => backgroundColor ? backgroundColor : Color.white};
+  background: ${({ backgroundColor }) =>
+    backgroundColor ? backgroundColor : Color.white};
   border-radius: 0.5rem;
   margin: 0 auto;
   padding: 1.7rem 1.4rem;
@@ -552,7 +594,7 @@ export const CardItem = styled.div<{ backgroundColor?: string, fontSize?: number
     align-items: center;
     gap: 0.5rem;
   }
-`
+`;
 
 export const USPWrapper = styled.div`
   display: flex;
@@ -568,9 +610,12 @@ export const USPWrapper = styled.div`
     flex-flow: column wrap;
     gap: 8rem;
   }
-`
+`;
 
-export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean}>`
+export const USPItem = styled.div<{
+  imageBorder?: boolean;
+  borderRadius?: boolean;
+}>`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -611,9 +656,11 @@ export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean
     height: var(--size);
     max-width: var(--size);
     max-height: var(--size);
-    border-radius: ${({ borderRadius = true }) => borderRadius ? 'var(--size)' : 'none'};
+    border-radius: ${({ borderRadius = true }) =>
+      borderRadius ? "var(--size)" : "none"};
     background: transparent;
-    border: ${({ imageBorder = false }) => imageBorder ? `0.1rem solid ${Color.black}` : 'none'};
+    border: ${({ imageBorder = false }) =>
+      imageBorder ? `0.1rem solid ${Color.black}` : "none"};
     display: block;
     transition: transform 2s ease-in-out;
   }
@@ -621,7 +668,7 @@ export const USPItem = styled.div<{imageBorder?: boolean, borderRadius?: boolean
   > a:hover > img {
     transform: rotate(360deg);
   }
-`
+`;
 
 export const LogoWrapper = styled.div`
   display: flex;
@@ -638,7 +685,7 @@ export const LogoWrapper = styled.div`
     flex-flow: column wrap;
     gap: 4rem;
   }
-`
+`;
 
 export const LogoItem = styled.div`
   display: flex;
@@ -682,4 +729,4 @@ export const LogoItem = styled.div`
       --height: auto;
     }
   }
-`
+`;
