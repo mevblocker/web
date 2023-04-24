@@ -5,14 +5,14 @@ import {
   SectionWrapper,
 } from "@src/const/styles/pages/index";
 import { Color } from "@src/const/styles/variables";
-import CookiePolicy from "@src/markdown/cookie-policy.md";
+import PrivacyPolicy from "@src/markdown/privacy-policy.md";
 
-export default function CookiePolicyPage() {
+export default function PrivacyPolicyPage() {
   return (
-    <Layout pageTitle="Cookie Policy">
+    <Layout pageTitle="Privacy Policy">
       <SectionWrapper backgroundColor={Color.pink}>
         <Section>
-          <SectionContent maxWidth={90}>{CookiePolicy({})}</SectionContent>
+          <SectionContent maxWidth={90}>{PrivacyPolicy({})}</SectionContent>
         </Section>
       </SectionWrapper>
     </Layout>
