@@ -117,4 +117,7 @@ If you do not accept changes which are made to this Cookie Policy, or take any m
 
 ### 9. APPENDIX
 
-<div>random This **word** is bold. This <div>word</div> is italic.</div>
+| Name of cookie  | Purpose(s) of cookie           | Storage period of cookie |
+| --------------- | ------------------------------ | ------------------------ |
+| \_ga            | Cookie set by Google Analytics | 1 year from set/update   |
+| \_ga_JV2Q6SXRNR | Cookie set by Google Analytics | 1 year from set/update   |
