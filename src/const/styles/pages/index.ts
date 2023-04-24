@@ -97,14 +97,21 @@ export const SectionContent = styled.div<{ maxWidth?: number; align?: string }>`
   }
 
   table {
+    width: 100%;
     border-spacing: 1px;
     font-size: 16px;
     line-height: 1.5;
+    position: relative;
+
+    ${Media.mobile} {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      max-width: 100%;
+    }
 
     th,
     td {
-      min-width: 200px;
-      text-align: left !important;
       padding: 6px 12px;
 
       &:not(:first-child) {
@@ -114,6 +121,17 @@ export const SectionContent = styled.div<{ maxWidth?: number; align?: string }>`
 
     th {
       padding: 16px 12px;
+    }
+
+    > thead > tr {
+      background: ${transparentize(0.2, Color.text1)};
+      color: ${Color.white};
+    }
+
+    > tbody > tr {
+      &:nth-child(even) {
+        background: ${transparentize(0.95, Color.text1)};
+      }
     }
   }
 
