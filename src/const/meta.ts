@@ -26,6 +26,7 @@ export const CONFIG = {
     agnostic: "https://agnostic-relay.net/",
     cookiePolicy: "/cookie-policy",
     privacyPolicy: "/privacy-policy",
+    termsAndConditions: "/terms-and-conditions",
   },
   social: {
     telegram: { label: "Telegram", url: "https://t.me/+yonLSGoFPRI0YTFk" },
