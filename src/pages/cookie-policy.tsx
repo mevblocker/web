@@ -12,7 +12,9 @@ export default function CookiePolicyPage() {
     <Layout pageTitle="Cookie Policy">
       <SectionWrapper backgroundColor={Color.pink}>
         <Section>
-          <SectionContent maxWidth={90}>{CookiePolicy({})}</SectionContent>
+          <SectionContent isMarkupPage={true} alignMobile="left" maxWidth={90}>
+            {CookiePolicy({})}
+          </SectionContent>
         </Section>
       </SectionWrapper>
     </Layout>

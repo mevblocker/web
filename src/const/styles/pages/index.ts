@@ -76,7 +76,12 @@ export const Anchor = styled.span`
   visibility: hidden;
 `;
 
-export const SectionContent = styled.div<{ maxWidth?: number; align?: string }>`
+export const SectionContent = styled.div<{
+  maxWidth?: number;
+  align?: string;
+  alignMobile?: string;
+  isMarkupPage?: boolean;
+}>`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
@@ -93,19 +98,38 @@ export const SectionContent = styled.div<{ maxWidth?: number; align?: string }>`
     height: auto;
     padding: 0 2.4rem 0;
     margin: 4rem auto 0;
-    align-items: center;
+
+    align-items: ${({ alignMobile }) =>
+      alignMobile === "left" ? "flex-start" : "center"};
   }
 
   table {
+    width: 100%;
     border-spacing: 1px;
     font-size: 16px;
     line-height: 1.5;
+    position: relative;
+
+    ${Media.mobile} {
+      ${({ isMarkupPage }) =>
+        isMarkupPage &&
+        `
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+          max-width: 100%;
+      `}
+    }
 
     th,
     td {
-      min-width: 200px;
-      text-align: left !important;
-      padding: 6px 12px;
+      ${Media.mobile} {
+        ${({ isMarkupPage }) =>
+          isMarkupPage &&
+          `
+        padding: 6px 12px;
+      `}
+      }
 
       &:not(:first-child) {
         text-align: center;
@@ -115,6 +139,21 @@ export const SectionContent = styled.div<{ maxWidth?: number; align?: string }>`
     th {
       padding: 16px 12px;
     }
+
+    ${({ isMarkupPage }) =>
+      isMarkupPage &&
+      `
+      > thead > tr {
+        background: ${transparentize(0.2, Color.text1)};
+        color: ${Color.white};
+      }
+  
+      > tbody > tr {
+        &:nth-child(even) {
+          background: ${transparentize(0.95, Color.text1)};
+        }
+      }
+    `}
   }
 
   > hr {
@@ -157,7 +196,8 @@ export const SectionContent = styled.div<{ maxWidth?: number; align?: string }>`
     margin: 0 0 2.4rem;
 
     ${Media.mediumDown} {
-      text-align: center;
+      text-align: ${({ alignMobile }) =>
+        alignMobile === "left" ? "left" : "center"};
     }
 
     ${Media.mobile} {
@@ -226,7 +266,8 @@ export const SectionContent = styled.div<{ maxWidth?: number; align?: string }>`
 
     ${Media.mobile} {
       font-size: 1.6rem;
-      text-align: center;
+      text-align: ${({ alignMobile }) =>
+        alignMobile === "left" ? "left" : "center"};
     }
   }
 
