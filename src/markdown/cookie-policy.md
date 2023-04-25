@@ -2,7 +2,7 @@
 
 #### Last Updated: April 2023
 
-As further described in the Privacy Policy, certain statistical information is available to us via our internet service provider as well as As further described in the Privacy Policy, certain statistical information is available to us via our internet service provider as well as through the use of special tracking technologies. Such information tells us about the pages you are clicking on or the hardware you are using, but not your name, age, address or anything we can use to identify you personally.
+As further described in the Privacy Policy, certain statistical information is available to us via our internet service provider as well as through the use of special tracking technologies. Such information tells us about the pages you are clicking on or the hardware you are using, but not your name, age, address or anything we can use to identify you personally.
 
 This Cookie Policy sets out some further detail on how and why we use these technologies on our website or websites we may host on behalf of clients. The terms "Nomev", "we", "us", and "our" include Nomev Labs, Lda and affiliates. The terms “you” and “your” include our clients, business partners and users of this website. By using our website, you consent to storage and access to cookies and other technologies on your device, in accordance with this Cookie Policy.
 
@@ -50,7 +50,7 @@ Device Identifiers. A device identifier is a unique label that can be used to id
 
 This information may include:
 
-- the IP and logical address of the server you are using (but the last digits are anonymized so we cannot identify you);
+- the IP and logical address of the server you are using (but the last digits are anonymized so we cannot identify you)
 - the top level domain name from which you access the internet (for example .ie, .com, etc);
 - the type of browser you are using;
 - the date and time you access our website;
