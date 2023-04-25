@@ -12,7 +12,9 @@ export default function PrivacyPolicyPage() {
     <Layout pageTitle="Privacy Policy">
       <SectionWrapper backgroundColor={Color.pink}>
         <Section>
-          <SectionContent maxWidth={90}>{PrivacyPolicy({})}</SectionContent>
+          <SectionContent isMarkupPage={true} alignMobile="left" maxWidth={90}>
+            {PrivacyPolicy({})}
+          </SectionContent>
         </Section>
       </SectionWrapper>
     </Layout>

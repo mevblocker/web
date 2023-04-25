@@ -178,7 +178,6 @@ export const SectionContent = styled.div<{
 
       ${Media.mobile} {
         font-size: 1.6rem;
-        text-align: center;
       }
     }
   }

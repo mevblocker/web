@@ -1,6 +1,6 @@
 # Privacy Policy
 
-#### Last Updated: April 2022
+#### Last Updated: April 2023
 
 This Policy sets out what Personal Data we collect, how we process it and how long we retain it. This Policy applies to all of our processing activities where we act as a data controller or where we act as data controller on behalf of clients. In this policy, “we”, “us” and “our” refers to Nomev Labs, Lda and affiliates. For more information about us, see the “Our Details” section at the end of this policy.
 
@@ -26,14 +26,14 @@ In most cases ultimate decisions to (i) transact on the blockchain using your wa
 
 We may collect and process Personal Data about your use of our website or websites we host on behalf of clients. This data may include:
 
-- The browser types and versions used;
-- The operating system used by the accessing system;
-- The website from which an accessing system reaches the website (so-called referrers);
-- Behaviour: subpage, duration, and revisit;
-- The date and time of access to the website, The Internet protocol address (“IP address”);
-- The Internet service provider of the accessing system;
-- session by device; and
-- Any other similar data and information that may be used in the event of attacks on our information technology systems.
+1. The browser types and versions used;
+2. The operating system used by the accessing system;
+3. The website from which an accessing system reaches the website (so-called referrers);
+4. Behaviour: subpage, duration, and revisit;
+5. The date and time of access to the website, The Internet protocol address (“IP address”);
+6. The Internet service provider of the accessing system;
+7. session by device; and
+8. Any other similar data and information that may be used in the event of attacks on our information technology systems.
 
 This data may be processed in order to deliver the content of our website or websites we host on behalf of clients correctly, to optimise the content of our website or websites we host on behalf of clients to ensure the long-term viability of our information technology systems and website technology, and to provide law enforcement authorities with the information necessary for criminal prosecution in case of a cyber-attack. The legal basis for this processing is the legitimate business interests, namely monitoring and improving our website or websites we host on behalf of clients and the proper protection against risks.
 
@@ -217,6 +217,7 @@ If you wish to raise a complaint on how we have handled your personal data, you 
 **Right to complain with a relevant supervisory authority**
 
 If we have not responded to you within a reasonable time or if you feel that your complaint has not been resolved to your satisfaction, you are entitled to make a complaint to the Data Protection Commissioner under the Data Protection Act.
+
 You may do so in the EU member state of your habitual residence, your place of work or the place of the alleged infringement. In Portugal, the supervisory authority is the:
 
 CNPD - Comissão Nacional de Proteção de Dados  
