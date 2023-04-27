@@ -1,9 +1,11 @@
 export const CONFIG = {
-  title: 'MEV Blocker',
-  titleShort: 'MEV Blocker',
-  description: 'MEV Blocker is a fast and free RPC endpoint that protects users from frontrunning and sandwich attacks on a wide range of Ethereum transactions.',
-  descriptionShort: 'Everyday protection from harmful MEV',
-  socialShareDescription: "I'm using MEV Blocker to protect myself from frontrunning and sandwich attacks. You should too. Set up the RPC endpoint here:",
+  title: "MEV Blocker",
+  titleShort: "MEV Blocker",
+  description:
+    "MEV Blocker is a fast and free RPC endpoint that protects users from frontrunning and sandwich attacks on a wide range of Ethereum transactions.",
+  descriptionShort: "Everyday protection from harmful MEV",
+  socialShareDescription:
+    "I'm using MEV Blocker to protect myself from frontrunning and sandwich attacks. You should too. Set up the RPC endpoint here:",
   rpc: {
     url: "https://rpc.mevblocker.io",
     chainId: 1,
@@ -22,6 +24,8 @@ export const CONFIG = {
     cowProtocol: "https://cow.fi",
     beaver: "https://beaverbuild.org/",
     agnostic: "https://agnostic-relay.net/",
+    cookiePolicy: "/cookie-policy",
+    privacyPolicy: "/privacy-policy",
   },
   social: {
     telegram: { label: "Telegram", url: "https://t.me/+yonLSGoFPRI0YTFk" },
