@@ -8,6 +8,7 @@ import { Defaults, Color, Font, Media } from '@src/const/styles/variables'
 import useMediaQuery from '@src/lib/hooks/useMediaQuery';
 import { InView } from 'react-intersection-observer'
 import { scrollToClickedElement } from '@src/lib/analytics/events';
+import { Logo } from '../common/Logo';
 
 const mobileHeaderHeight = `7rem`;
 
@@ -191,23 +192,6 @@ const MenuToggle = styled.button`
     background: url('menu.svg') no-repeat center/contain;
     width: 90%;
     height: 90%;
-  }
-`
-
-export const Logo = styled.div<{ menuVisible: boolean }>`
-  cursor: pointer;
-  font-size: 1.2rem;
-  line-height: 1;
-  font-weight: ${Font.weightBold};
-  color: ${({ menuVisible }) => menuVisible ? Color.text1 : Color.text1};
-  z-index: 15;
-  height: 4rem;
-  width: 20rem;
-
-  > img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 `
 
