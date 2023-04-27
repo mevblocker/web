@@ -38,14 +38,8 @@ export const footerMenu = [
   {
     label: "About",
     links: [
-      {
-        id: 0,
-        title: "Terms and Conditions",
-        url: "https://swap.cow.fi/#/terms-and-conditions",
-        type: "external",
-      },
-      { id: 1, title: "Privacy Policy", url: `${CONFIG.url.privacyPolicy}` },
-      { id: 2, title: "Cookie Policy", url: `${CONFIG.url.cookiePolicy}` },
+      { id: 1, title: "Privacy Policy", url: `${CONFIG.url.privacyPolicy}`, target: '_blank' },
+      { id: 2, title: "Cookie Policy", url: `${CONFIG.url.cookiePolicy}`, target: '_blank' },
     ],
   },
 ];

@@ -180,7 +180,7 @@ export const FAQ_CONTENT: {
     answer: (
       <>
         MEV Blocker submits to all major block builders, including Builder0x69,
-        bloXroute, Blocknative, Flashbots, rsync builder, and Beaver Build.
+        bloXroute, Blocknative, Flashbots, rsync builder, Titan Builder, Eth Builder, Payload and Beaver Build.
       </>
     ),
   },
@@ -196,6 +196,36 @@ export const FAQ_CONTENT: {
         the expense of possibly slower inclusion time. You can use this second
         endpoint by using <b>https://rpc.mevblocker.io/noreverts</b> as the url
         instead.
+      </>
+    ),
+  },
+  {
+    question: "Does this RPC offer a secure & private RPC endpoint?",
+    answer: (
+      <>
+        Yes! if you want your transactions to be completely private, and you don´t care
+        about the refund, you need to connect to the following endpoint: <b>https://rpc.mevblocker.io/norefunds</b> as the url
+        instead.
+        <br />
+        <br />
+        This endpoint focuses on privacy for users that want to perform transactions and it will not share TX data 
+        over WS. It prevents transactions failures (same as /noreverts).
+        <br />
+        <br />
+        Note: This endpoint is intended for sophisticated users who can unstuck transaction themselves.
+      </>
+    ),
+  },
+  {
+    question: "While using MEV Blocker RPC, is it safe to ignore slippage control??",
+    answer: (
+      <>
+        NO, you should ALWAYS set slippage control to have multiple protections in place.
+        <br />
+        <br />
+        Goal of RPC is to prevent 99% of sandwiches but no existing solution can provide 
+        full 100% protection. Due to reorgs/forked blocks 0.1% of transactions might become 
+        publicly available before on-chain confirmation.
       </>
     ),
   },
@@ -491,6 +521,11 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       title: "Notifi",
       logo: "notifi.svg",
       link: "https://notifi.network/",
+    },
+    {
+      title: "Titan Builder",
+      logo: "Titan.svg",
+      link: "https://www.titanbuilder.xyz/",
     },
     {
       title: "Builder0x69",
