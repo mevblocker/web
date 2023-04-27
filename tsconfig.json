@@ -32,7 +32,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx" 
-  ],
+, "src/pages/cookie-policy.tsx"  ],
   "exclude": [
     "node_modules"
   ],

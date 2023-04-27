@@ -22,6 +22,7 @@ export const CONFIG = {
     cowProtocol: "https://cow.fi",
     beaver: "https://beaverbuild.org/",
     agnostic: "https://agnostic-relay.net/",
+    cookiePolicy: "/cookie-policy"
   },
   social: {
     telegram: { label: "Telegram", url: "https://t.me/+yonLSGoFPRI0YTFk" },
