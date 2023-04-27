@@ -166,6 +166,22 @@ export const SectionContent = styled.div<{
     opacity: 0.3;
   }
 
+  > blockquote {
+    margin: 0;
+    margin-bottom: 4rem;
+
+    > p {
+      font-size: 2.1rem;
+      line-height: 1.6;
+      font-weight: 600;
+      color: rgb(174, 44, 0);
+
+      ${Media.mobile} {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
   > h1,
   > h2,
   > h3,
@@ -219,7 +235,7 @@ export const SectionContent = styled.div<{
   > h4 {
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 1.5;
 
     ${Media.mobile} {
