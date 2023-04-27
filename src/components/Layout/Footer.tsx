@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { Color, Media, Font } from "@src/const/styles/variables";
 import { Section } from "@src/const/styles/pages";
-import { Logo } from "./Header";
+import { Logo } from "../common/Logo";
 
 const Wrapper = styled.footer`
   display: flex;
