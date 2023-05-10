@@ -180,7 +180,7 @@ export const FAQ_CONTENT: {
     answer: (
       <>
         MEV Blocker submits to all major block builders, including Builder0x69,
-        bloXroute, Blocknative, Flashbots, rsync builder, Titan Builder, Eth Builder, Payload and Beaver Build.
+        bloXroute, Blocknative, Flashbots, rsync builder, Titan Builder, Eth Builder, Payload, Eden and Beaver Build.
       </>
     ),
   },
