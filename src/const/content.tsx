@@ -408,11 +408,6 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       link: "https://eigenphi.io/",
     },
     {
-      title: "Bloxroute",
-      logo: "bloxroute.svg",
-      link: "https://bloxroute.com/",
-    },
-    {
       title: "ZeroMev",
       logo: "zeromev.svg",
       link: "https://www.zeromev.org/",
