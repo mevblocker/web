@@ -8,7 +8,7 @@
 
 **Please read these Terms carefully before using the Interface. By using the Interface, you confirm that you accept these Terms and agree to comply with them. If you do not agree, you must not use the Interface. If you think that there is an error in these Terms, please contact us at legal@nomev.io**
 
-**TERMS AND CONDITIONS (“TERMS”)**
+## TERMS AND CONDITIONS (“TERMS”)
 
 #### 1. WHAT IS COW AND HOW TO CONTACT COW DAO
 
