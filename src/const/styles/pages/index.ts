@@ -226,9 +226,10 @@ export const SectionContent = styled.div<{
   > h3 {
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
+    font-size: 3rem;
 
     ${Media.mobile} {
-      font-size: 4rem;
+      font-size: 2.2rem;
     }
   }
 
