@@ -180,7 +180,7 @@ export const FAQ_CONTENT: {
     answer: (
       <>
         MEV Blocker submits to all major block builders, including Builder0x69,
-        bloXroute, Blocknative, Flashbots, rsync builder, Titan Builder, Eth Builder, Payload and Beaver Build.
+        f1b, Flashbots, rsync builder, Titan Builder, Gambit labs and Beaver Build.
       </>
     ),
   },
@@ -406,11 +406,6 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       title: "EigenPhi",
       logo: "eigenphi.svg",
       link: "https://eigenphi.io/",
-    },
-    {
-      title: "Bloxroute",
-      logo: "bloxroute.svg",
-      link: "https://bloxroute.com/",
     },
     {
       title: "ZeroMev",
