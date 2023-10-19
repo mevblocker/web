@@ -38,8 +38,14 @@ export const footerMenu = [
   {
     label: "About",
     links: [
-      { id: 1, title: "Privacy Policy", url: `${CONFIG.url.privacyPolicy}`, target: '_blank' },
-      { id: 2, title: "Cookie Policy", url: `${CONFIG.url.cookiePolicy}`, target: '_blank' },
+      { id: 1, title: "Privacy Policy", url: `${CONFIG.url.privacyPolicy}`, target: '_blank' },      
+      {
+        id: 2,
+        title: "Terms and Conditions",
+        url: `${CONFIG.url.termsAndConditions}`, 
+        target: '_blank'
+      },
+      { id: 3, title: "Cookie Policy", url: `${CONFIG.url.cookiePolicy}`, target: '_blank' },
     ],
   },
 ];
