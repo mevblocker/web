@@ -22,21 +22,18 @@ export function WalletProvider({ children }: PropsWithChildren) {
     ]
   )
   
-  const { connectors, wallets } = getDefaultWallets({
+  const { connectors } = getDefaultWallets({
     appName: CONFIG.title,
     projectId: CONFIG.walletConnectProjectId,
     chains,
   });
-
-  // const viemClient = createPublicClient({
-  //   chain: mainnet,
-  //   transport: http(),
-  // });
+  
 
   const wagmiConfig = createConfig({
     autoConnect: true,
     publicClient,
-    webSocketPublicClient
+    webSocketPublicClient,
+    connectors
   })
 
   return (
