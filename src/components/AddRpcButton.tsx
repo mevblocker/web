@@ -46,11 +46,14 @@ function getErrorMessage(error: any): { errorMessage: string | null, isUserRejec
   let actualError = error
 
   // viem wraps the actual error, we need to get the actual error (not their wrapper)
+
   if (error.details && typeof error.details === 'string') {
     try {
       actualError = JSON.parse(error.details)  
-    } catch (error) {
-      console.error('Error parsing error.details', error) 
+    } catch {
+      if (error.details === 'Missing or invalid. request() method: wallet_addEthereumChain') {
+        return ERROR_NETWORK_ADDING_UNSUPPORTED
+      }
     }
   }
   
@@ -97,8 +100,6 @@ export function AddRpcButton() {
   const [addRpcPromise, setAddRpcPromise] = useState<Promise<boolean> | null>(null)
 
   const handleError = useCallback((error) => {
-    console.error('[AddRpcButton] Error adding RPC to Wallet', error)
-
     const { errorMessage: message, isError, isUserRejection } = getErrorMessage(error)
     isError && sendToAnalytics('error_add_rpc')
     isUserRejection && sendToAnalytics('rejected_by_user_adding_rpc')
