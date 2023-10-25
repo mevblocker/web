@@ -43,8 +43,19 @@ const ERROR_NETWORK_ADDING_UNSUPPORTED = { errorMessage: `Oh no! 😢 It looks l
 const ERROR_NETWORK_ALREADY_ADDED = { errorMessage: `Your wallet has a pending request to add the network. Please review your wallet.`, isUserRejection: false, isError: true }
 
 function getErrorMessage(error: any): { errorMessage: string | null, isUserRejection: boolean, isError: boolean } {
+  let actualError = error
 
-  if (error?.code === 4001) {
+  // viem wraps the actual error, we need to get the actual error (not their wrapper)
+  if (error.details && typeof error.details === 'string') {
+    try {
+      actualError = JSON.parse(error.details)  
+    } catch (error) {
+      console.error('Error parsing error.details', error) 
+    }
+  }
+  
+  const errorCode = actualError?.code
+  if (errorCode === 4001) {
     return ERROR_USER_REJECTED
   }
 
@@ -54,19 +65,19 @@ function getErrorMessage(error: any): { errorMessage: string | null, isUserRejec
   // }
   // -----------------
 
-  const message = error?.message
-  if (error?.code === -32002 && message?.includes('already pending')) {
+  const message = error?.details.message || error?.message
+  if (errorCode === -32002 && message?.includes('already pending')) {
     return ERROR_NETWORK_ALREADY_ADDED
   }
 
-  if (error?.code === -32000 && (
+  if (errorCode === -32000 && (
     message?.includes('May not specify default') || // i.e. IOS Metamask (over Wallet Connect)
     message?.includes('Chain ID already exists. Received')) // i.e. Im token
   ) {
     return ERROR_NETWORK_ADDING_UNSUPPORTED
   }
 
-  if (error?.code === -32602 && message?.includes('May not specify default')){
+  if (errorCode === -32602 && message?.includes('May not specify default')){
     // Metakas IOS don't allow you to replace your RPC Endpoint
     // https://community.metamask.io/t/allow-to-add-switch-between-ethereum-networks-using-api/23595
     return ERROR_NETWORK_ADDING_UNSUPPORTED
