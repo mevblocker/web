@@ -30,7 +30,6 @@ export function useAddRpcEndpoint(): UseAddRpcEndpointResult {
       blockExplorerUrl: blockExplorerUrls,
     } = CONFIG.rpc;
     
-    console.log('[useAddRpcEndpoint] Add', rpcUrl)
     return walletClient.request({
       method: "wallet_addEthereumChain",
       params: [
