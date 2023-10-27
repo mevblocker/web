@@ -91,7 +91,7 @@ function getErrorMessage(error: any): { errorMessage: string | null, isUserRejec
 
 export function AddRpcButton() {
   const { addRpcEndpoint } = useAddRpcEndpoint()
-  const { isConnected, connect } = useConnect();
+  const { isConnected, connect } = useConnect()
   const { data: walletClient } = useWalletClient()
   const [{ state, errorMessage, addOnceConnected }, setState] = useState<AddToWalletState>(DEFAULT_STATE)
   const isAdding = state === 'adding'
