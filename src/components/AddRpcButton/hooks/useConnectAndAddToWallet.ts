@@ -6,14 +6,14 @@ import { handleRpcError } from "@src/utils/handleRpcError";
 import { useAddRpcWithTimeout } from "./useAddRpcWithTimeout";
 import { AddToWalletState } from "..";
 
-const DEFAULT_STATE: AddToWalletState = { state: 'unknown', autoconnect: false }
-const ADDING_STATE: AddToWalletState = { state: 'adding', autoconnect: false }
-const ADDED_STATE: AddToWalletState = { state: 'added', autoconnect: false }
-const CONNECTING_STATE: AddToWalletState = { state: 'connecting', autoconnect: true }
+const DEFAULT_STATE: AddToWalletState = { state: 'unknown', autoConnect: false }
+const ADDING_STATE: AddToWalletState = { state: 'adding', autoConnect: false }
+const ADDED_STATE: AddToWalletState = { state: 'added', autoConnect: false }
+const CONNECTING_STATE: AddToWalletState = { state: 'connecting', autoConnect: true }
 
 export interface UseConnectAndAddToWalletPros {
   addWalletState: AddToWalletState,
-  connectAndAddToWallet: () => void,
+  connectAndAddToWallet: (() => void) | null,
 }
 
 export function useConnectAndAddToWallet(): UseConnectAndAddToWalletPros {
@@ -21,17 +21,19 @@ export function useConnectAndAddToWallet(): UseConnectAndAddToWalletPros {
   const { data: walletClient } = useWalletClient()
   const [addWalletState, setState] = useState<AddToWalletState>(DEFAULT_STATE)  
   const [addingPromise, setAddRpcPromise] = useState<Promise<boolean> | null>(null)
-  const { state, autoconnect } = addWalletState
+  const { state, autoConnect } = addWalletState
 
   // Handle RPC errors
   const handleError = useCallback((error) => {
+    console.error(`[connectAndAddToWallet] handleError`, error)
+
     const { errorMessage: message, isError, isUserRejection } = handleRpcError(error)
     isError && sendToAnalytics('error_add_rpc')
     isUserRejection && sendToAnalytics('rejected_by_user_adding_rpc')
 
     if (isError || isUserRejection) {
       // Display the error
-      setState({ state: 'error', errorMessage: message, autoconnect: false })          
+      setState({ state: 'error', errorMessage: message, autoConnect: false })          
     } else {
       // Not an error: i.e The user is connecting
       setState(DEFAULT_STATE)
@@ -45,46 +47,60 @@ export function useConnectAndAddToWallet(): UseConnectAndAddToWalletPros {
     isAdding: state === 'adding',
     addingPromise,
     onAdding (newAddRpcPromise) {
+      console.debug('[connectAndAddToWallet] Adding RPC...')
       setAddRpcPromise(newAddRpcPromise)
-      console.log('[AddRpcButton] Add to wallet')
       sendToAnalytics('click_to_add_rpc')
       setState(ADDING_STATE)
     },
     onAdded() {
+      console.debug('[connectAndAddToWallet] 🎉 RPC has been added!')
       sendToAnalytics('added_rpc_successfully')
       setState(ADDED_STATE)
       setAddRpcPromise(null)
     },
     onTimeout(errorMessage, newState, event) {
+      console.debug(`[connectAndAddToWallet] Event: ${event}. New State: ${newState}. Message`, errorMessage)
       sendToAnalytics(event)
       setState({ 
         state: newState,
         errorMessage,
-        autoconnect
+        autoConnect
       })
     },
+    walletClient,
     handleError
   })   
 
+
   // Connect and auto-add the RPC endpoint
+  const allowToConnectAndAddToWallet = !isConnected || walletClient // allow to connectAndAddToWallet if not connected, or if the client is ready
   const connectAndAddToWallet = useCallback(() => {
+    if (!allowToConnectAndAddToWallet) {
+      return
+    }
+    
     if (!isConnected) {
-      setState(CONNECTING_STATE) // Set state connecting + autoconnect once connected
-      connect().catch(handleError) 
+      console.debug('[useConnectAndAddToWallet] Connecting...')
+      setState(CONNECTING_STATE) // Set state connecting + autoConnect once connected
+      connect()
+        .then(() => console.debug('[useConnectAndAddToWallet] 🔌 Connected!'))
+        .catch(handleError)
+      
     } else {
+      console.debug('[useConnectAndAddToWallet] Already connected. Adding RPC endpoint...')
       addToWallet()
     }
-  }, [isConnected, handleError, connect, addToWallet])
+  }, [allowToConnectAndAddToWallet, isConnected, handleError, connect, addToWallet])
 
   // Auto-connect (once we have )
   useEffect(() => {
-    if (walletClient && autoconnect) {
+    if (isConnected && walletClient && autoConnect) {      
       addToWallet()
     }
-  }, [autoconnect, addToWallet, walletClient])
+  }, [isConnected, walletClient, autoConnect, addToWallet])
 
   return {
-    connectAndAddToWallet,
+    connectAndAddToWallet: allowToConnectAndAddToWallet ? connectAndAddToWallet : undefined,
     addWalletState
   }
 }

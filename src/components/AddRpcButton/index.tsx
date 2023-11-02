@@ -10,7 +10,7 @@ export type AddToWalletStateValues = 'unknown' | 'adding' | 'added' | 'error' | 
 export interface AddToWalletState {
   state: AddToWalletStateValues,
   errorMessage?: string,
-  autoconnect: boolean
+  autoConnect: boolean
 }
 
 const Message = styled.p<{ state: AddToWalletStateValues }>`
@@ -28,9 +28,11 @@ export function AddRpcButton() {
   const { addWalletState, connectAndAddToWallet } = useConnectAndAddToWallet()  
   const { errorMessage, state } = addWalletState
 
+  // Get the label and enable state of button
   const isAdding = state === 'adding'
   const isConnecting = state === 'connecting'
-  const isLoading = isAdding || isConnecting
+  const disabledButton = isConnecting || isAdding || !connectAndAddToWallet  
+  const buttonLabel = isConnecting ? 'Connecting Wallet...' : isAdding ? "Adding to Wallet..." : "Add to Wallet"
 
   return (
     <>
@@ -43,8 +45,8 @@ export function AddRpcButton() {
         <>
           <BigButton 
             onClick={connectAndAddToWallet} 
-            label={isConnecting ? 'Connecting Wallet...' : isAdding ? "Adding to Wallet..." : "Add to Wallet"} 
-            disabled={isLoading} 
+            label={buttonLabel} 
+            disabled={disabledButton} 
           />
           {errorMessage && (
             <Message state={state}>{errorMessage}</Message>

@@ -29,6 +29,7 @@ export function useAddRpcEndpoint(walletClient: WalletClient | undefined): UseAd
       blockExplorerUrl: blockExplorerUrls,
     } = CONFIG.rpc;
     
+    console.debug('[addRpcEndpoint] Do RPC call "wallet_addEthereumChain" with URL:', rpcUrl)
     return walletClient.request({
       method: "wallet_addEthereumChain",
       params: [

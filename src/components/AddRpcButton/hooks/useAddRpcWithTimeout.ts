@@ -10,9 +10,9 @@ const TIMEOUT_TIME = 90000 // 1.5min
 
 interface UseAddToWalletProps {
   isAdding: boolean
-  walletClient?: WalletClient
   onAdding: (promise: Promise<boolean>) => void
   onAdded: () => void
+  walletClient: WalletClient | null
   addingPromise: Promise<boolean> | null
   handleError: (error: any) => void
   onTimeout: (errorMessage: string, newState: AddToWalletStateValues, event: AddRpcUrlActionType) => void
