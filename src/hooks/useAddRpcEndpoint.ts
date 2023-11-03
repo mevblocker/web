@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { CONFIG } from "@src/const/meta";
 import { useConnect } from "./useConnect";
 import { useWalletClient } from "wagmi";
+import { WalletClient } from "viem";
 
 
 export const NotConnectedError = new Error('No connected to any provider')
@@ -11,10 +12,8 @@ export interface UseAddRpcEndpointResult {
   addRpcEndpoint: () => Promise<boolean>, 
 }
 
-export function useAddRpcEndpoint(): UseAddRpcEndpointResult {
+export function useAddRpcEndpoint(walletClient: WalletClient | undefined): UseAddRpcEndpointResult {
   const { isConnected } = useConnect();
-
-  const { data: walletClient } = useWalletClient()
 
   const addRpcEndpoint = useCallback(async () => {
     if (!walletClient || !isConnected) {
@@ -30,6 +29,7 @@ export function useAddRpcEndpoint(): UseAddRpcEndpointResult {
       blockExplorerUrl: blockExplorerUrls,
     } = CONFIG.rpc;
     
+    console.debug('[addRpcEndpoint] Do RPC call "wallet_addEthereumChain" with URL:', rpcUrl)
     return walletClient.request({
       method: "wallet_addEthereumChain",
       params: [

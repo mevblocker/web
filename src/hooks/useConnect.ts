@@ -22,14 +22,14 @@ export function useConnect() {
     
     // Shows connect modal if there's no injected wallet
     if (!hasInjectedProvider) {
-      console.log('[useConnect] No injected connector. Using connect modal')
+      console.debug('[useConnect] No injected connector. Using connect modal')
       openConnectModal()
       return undefined      
     }
 
 
     // Connects with injected wallet (if available)
-    console.log('[useConnect] Connect using injected wallet')
+    console.debug('[useConnect] Connect using injected wallet')
     return connectAsync({
       connector: injectedConnector
     })
