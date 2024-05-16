@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from 'next'
-import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { useState, useCallback, MouseEventHandler, MouseEvent } from 'react'
 import Layout from '@src/components/Layout'
@@ -15,6 +14,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { copyToClipboardAction, expandFaqQuestion, scrollToAction } from '@src/lib/analytics/events'
 import { AddRpcButton } from '@src/components/AddRpcButton'
 import { CONFIG } from '@src/const/meta'
+import '../appzi'
+
 
 const DATA_CACHE_TIME_SECONDS = 5 * 60 // Cache 5min
 
