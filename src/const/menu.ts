@@ -25,7 +25,7 @@ export const footerMenu = [
   {
     label: "Support",
     links: [
-      { id: 0, title: "Documentation", url: `/${CONFIG.url.docs}` },
+      { id: 0, title: "Documentation", url: CONFIG.url.docs },
       {
         id: 1,
         title: "Questions & Support",
