@@ -1,0 +1,42 @@
+{
+  "name": "mevblocker",
+  "version": "1.4.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.3.0",
+    "@rainbow-me/rainbowkit": "^1.1.3",
+    "@types/node": "18.15.7",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "next": "13.2.4",
+    "polished": "^4.2.2",
+    "react": "18.2.0",
+    "react-appzi": "^1.0.4",
+    "react-confetti": "^6.1.0",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "18.2.0",
+    "react-ga4": "1.4.1",
+    "react-intersection-observer": "^9.4.3",
+    "react-web-share": "^2.0.2",
+    "remark-gfm": "^3.0.1",
+    "sass": "^1.60.0",
+    "styled-components": "^5.3.9",
+    "typescript": "5.0.2",
+    "viem": "^1.16.6",
+    "wagmi": "^1.2"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26",
+    "react-copy-to-clipboard": "^5.1.0"
+  }
+}
