@@ -1,14 +1,14 @@
-import styled, { css } from "styled-components";
-import { Color, Font, Media } from "@src/const/styles/variables";
-import { Wrapper as TextLinkWrapper } from "@src/components/TextLink";
-import { transparentize } from "polished";
+import styled, { css } from "styled-components"
+import { Color, Font, Media } from "@src/const/styles/variables"
+import { Wrapper as TextLinkWrapper } from "@src/components/TextLink"
+import { darken, transparentize } from "polished"
 
 export const SectionWrapper = styled.div<{
-  fixed?: boolean;
-  backgroundColor?: string;
-  borderDown?: boolean;
+  fixed?: boolean
+  backgroundColor?: string
+  borderDown?: boolean
 }>`
-  --sectionMaxWidth: 64rem;
+  --sectionMaxWidth: 84rem;
   display: flex;
   flex-flow: row wrap;
   position: relative;
@@ -26,13 +26,13 @@ export const SectionWrapper = styled.div<{
     margin: 4.2rem auto;
     font-size: 1.8rem;
   }
-`;
+`
 
 export const Section = styled.section<{
-  columns?: number;
-  bgColor?: string;
-  imageMaxHeight?: number;
-  imageMaxWidth?: number;
+  columns?: number
+  bgColor?: string
+  imageMaxHeight?: number
+  imageMaxWidth?: number
 }>`
   display: grid;
   align-items: center;
@@ -67,20 +67,20 @@ export const Section = styled.section<{
     max-width: 100%;
     max-height: 100%;
   }
-`;
+`
 
 export const Anchor = styled.span`
   display: block;
   position: relative;
   top: -9rem;
   visibility: hidden;
-`;
+`
 
 export const SectionContent = styled.div<{
-  maxWidth?: number;
-  align?: string;
-  alignMobile?: string;
-  isMarkupPage?: boolean;
+  maxWidth?: number
+  align?: string
+  alignMobile?: string
+  isMarkupPage?: boolean
 }>`
   display: flex;
   flex-flow: column nowrap;
@@ -188,7 +188,7 @@ export const SectionContent = styled.div<{
   > h4,
   > h5 {
     text-align: ${({ align }) => (align === "center" ? "center" : "left")};
-    font-size: 6rem;
+    font-size: 5.2rem;
     line-height: 1.1;
     color: ${Color.text1};
     font-weight: ${Font.weightBold};
@@ -379,7 +379,7 @@ export const SectionContent = styled.div<{
   details[open] > summary::after {
     content: "−";
   }
-`;
+`
 
 export const Content = styled.main`
   margin: 0 auto;
@@ -403,7 +403,7 @@ export const Content = styled.main`
     color: ${Color.text1};
     line-height: 1.4;
   }
-`;
+`
 
 export const HeroImage = styled.div`
   --size: 60rem;
@@ -547,7 +547,7 @@ export const HeroImage = styled.div`
       transform: translateY(0) rotate(0);
     }
   }
-`;
+`
 
 export const CardWrapper = styled.div<{ count?: number; cardRotate?: boolean }>`
   display: flex;
@@ -577,11 +577,11 @@ export const CardWrapper = styled.div<{ count?: number; cardRotate?: boolean }>`
     display: flex;
     flex-flow: column wrap;
   }
-`;
+`
 
 export const CardItem = styled.div<{
-  backgroundColor?: string;
-  fontSize?: number;
+  backgroundColor?: string
+  fontSize?: number
 }>`
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}rem` : "1.6rem")};
   line-height: 1.1;
@@ -661,7 +661,7 @@ export const CardItem = styled.div<{
     align-items: center;
     gap: 0.5rem;
   }
-`;
+`
 
 export const USPWrapper = styled.div`
   display: flex;
@@ -677,11 +677,11 @@ export const USPWrapper = styled.div`
     flex-flow: column wrap;
     gap: 8rem;
   }
-`;
+`
 
 export const USPItem = styled.div<{
-  imageBorder?: boolean;
-  borderRadius?: boolean;
+  imageBorder?: boolean
+  borderRadius?: boolean
 }>`
   display: flex;
   flex-flow: column wrap;
@@ -735,7 +735,7 @@ export const USPItem = styled.div<{
   > a:hover > img {
     transform: rotate(360deg);
   }
-`;
+`
 
 export const LogoWrapper = styled.div`
   display: flex;
@@ -752,7 +752,7 @@ export const LogoWrapper = styled.div`
     flex-flow: column wrap;
     gap: 4rem;
   }
-`;
+`
 
 export const LogoItem = styled.div`
   display: flex;
@@ -796,4 +796,159 @@ export const LogoItem = styled.div`
       --height: auto;
     }
   }
-`;
+`
+
+export const MetricsCard = styled.div`
+  background-color: #fee7cf;
+  border-radius: 1.2rem;
+  padding: 2.4rem;
+  margin: 2.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  border: 0.1rem solid ${Color.black};
+
+  ${Media.mobile} {
+    margin: 1.6rem 0;
+    padding: 1.6rem;
+  }
+`
+
+export const MetricsItem = styled.div`
+  text-align: center;
+
+  h2 {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin: 0 0 0.4rem 0;
+    color: ${Color.darkBlue};
+    font-family: ${Font.default};
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin: 0;
+    color: ${Color.darkBlue};
+    opacity: 0.8;
+  }
+
+  ${Media.mobile} {
+    h2 {
+      font-size: 2.4rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+`
+
+export const MetricsLink = styled.a`
+  display: block;
+  text-align: center;
+  color: ${Color.darkBlue};
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1.2rem;
+  border-top: 0.1rem solid ${transparentize(0.8, Color.black)};
+  padding-top: 1.2rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`
+
+export const EndpointsTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  background: ${Color.white};
+  border-radius: 1.2rem;
+  overflow: hidden;
+  border: 0.1rem solid ${Color.black};
+
+  th,
+  td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 0.1rem solid ${transparentize(0.8, Color.black)};
+  }
+
+  th {
+    background-color: ${transparentize(0.95, Color.black)};
+    font-weight: 600;
+    color: ${Color.black};
+  }
+
+  td {
+    color: ${Color.text1};
+
+    &.protected,
+    &.max-protection,
+    &.refund {
+      background-color: ${Color.green};
+      color: ${darken(0.7, Color.green)};
+      font-weight: 600;
+    }
+
+    &.no-rebate {
+      background-color: ${Color.white};
+      color: ${Color.orange};
+      font-weight: 600;
+    }
+
+    &.not-protected {
+      background-color: ${Color.orange};
+      color: ${darken(0.7, Color.orange)};
+      font-weight: 600;
+    }
+  }
+
+  td:first-child {
+    font-weight: 600;
+    color: ${Color.black};
+    background-color: ${transparentize(0.95, Color.black)};
+  }
+
+  ${Media.mobile} {
+    display: block;
+
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      border: 0.1rem solid ${transparentize(0.8, Color.black)};
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 0.8rem;
+    }
+
+    td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+      padding-bottom: 0.5rem;
+    }
+
+    td:before {
+      content: attr(data-label) ": ";
+      position: absolute;
+      left: 6px;
+      width: 45%;
+      font-weight: 600;
+      color: ${Color.darkBlue};
+    }
+  }
+`
