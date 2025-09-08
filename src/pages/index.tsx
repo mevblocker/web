@@ -141,33 +141,27 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Metrics section */}
-      <SectionWrapper backgroundColor={Color.blue} borderDown>
-        <Section>
-          <SectionContent maxWidth={100} align={"center"}>
-            <MetricsCard>
-              <MetricsItem>
-                <h2>$208B+</h2>
-                <p>volume protected from MEV, across 46M+ transactions</p>
-              </MetricsItem>
-              <MetricsItem>
-                <h2>4.6K+</h2>
-                <p>ETH rebated to users</p>
-              </MetricsItem>
-              <MetricsItem>
-                <h2>$26</h2>
-                <p>USD value of median rebate</p>
-              </MetricsItem>
-              <MetricsLink
-                href="https://dune.com/cowprotocol/mev-blocker?utm_source=cow.fi&utm_medium=web&utm_content=mev-blocker-metrics-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View all metrics on DUNE ↗
-              </MetricsLink>
-            </MetricsCard>
-          </SectionContent>
-        </Section>
-      </SectionWrapper>
+      <MetricsCard>
+        <MetricsItem>
+          <h2>$219B+</h2>
+          <p>volume protected from MEV, across 62M+ transactions</p>
+        </MetricsItem>
+        <MetricsItem>
+          <h2>5.5K+</h2>
+          <p>ETH rebated to users</p>
+        </MetricsItem>
+        <MetricsItem>
+          <h2>$26</h2>
+          <p>USD value of median rebate</p>
+        </MetricsItem>
+        <MetricsLink
+          href="https://dune.com/cowprotocol/mev-blocker?utm_source=cow.fi&utm_medium=web&utm_content=mev-blocker-metrics-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View all metrics on DUNE ↗
+        </MetricsLink>
+      </MetricsCard>
 
       {/* Features section */}
       <SectionWrapper backgroundColor={Color.yellow} borderDown>
@@ -239,13 +233,14 @@ export default function Home() {
                 {copied && <p className={"copied"}>Copied to clipboard!</p>}
               </CardItem>
             </CardWrapper>
+          </SectionContent>
+        </Section>
+      </SectionWrapper>
 
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-
+      {/* Endpoints section */}
+      <SectionWrapper backgroundColor={Color.white} borderDown>
+        <Section>
+          <SectionContent maxWidth={100} align={"center"}>
             <h4>Multiple endpoints for multiple protection types</h4>
             <h5>
               Advanced MEV Blocker users can select from a variety of endpoints

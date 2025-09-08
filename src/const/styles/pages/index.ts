@@ -793,64 +793,63 @@ export const LogoItem = styled.div`
 
     ${Media.mobile} {
       --width: 21rem;
-      --height: auto;
     }
   }
 `
 
 export const MetricsCard = styled.div`
   background-color: #fee7cf;
-  border-radius: 1.2rem;
-  padding: 2.4rem;
-  margin: 2.4rem 0;
+  border-radius: 0;
+  padding: 5.4rem 0;
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  border: 0.1rem solid ${Color.black};
+  flex-flow: row wrap;
+  gap: 0 10rem;
+  border-bottom: 0.1rem solid ${Color.black};
+  justify-content: center;
+
+  width: 100%;
 
   ${Media.mobile} {
-    margin: 1.6rem 0;
-    padding: 1.6rem;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 4rem;
   }
 `
 
 export const MetricsItem = styled.div`
   text-align: center;
+  max-width: 24rem;
 
   h2 {
-    font-size: 3.2rem;
+    font-size: 5.2rem;
     font-weight: bold;
-    margin: 0 0 0.4rem 0;
+    margin: 0 0 1rem 0;
     color: ${Color.darkBlue};
     font-family: ${Font.default};
   }
 
   p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
     margin: 0;
     color: ${Color.darkBlue};
     opacity: 0.8;
   }
 
   ${Media.mobile} {
-    h2 {
-      font-size: 2.4rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
   }
 `
 
 export const MetricsLink = styled.a`
+  width: 100%;
   display: block;
   text-align: center;
   color: ${Color.darkBlue};
   text-decoration: none;
   font-size: 1.4rem;
   font-weight: 600;
-  margin-top: 1.2rem;
+  margin-top: 4rem;
   border-top: 0.1rem solid ${transparentize(0.8, Color.black)};
   padding-top: 1.2rem;
 
