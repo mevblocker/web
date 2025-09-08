@@ -1,8 +1,8 @@
-import { CONFIG } from "@src/const/meta";
+import { CONFIG } from "@src/const/meta"
 
 export const USP_CONTENT: {
-  title: string;
-  image: string;
+  title: string
+  image: string
 }[] = [
   {
     title:
@@ -18,24 +18,25 @@ export const USP_CONTENT: {
       "A fast, free, censorship-resistant solution open to all searchers and builders",
     image: "usp_3.svg",
   },
-];
+]
 
 export const FAQ_CONTENT: {
-  question: string;
-  answer: string | React.ReactElement;
+  question: string
+  answer: string | React.ReactElement
 }[] = [
   {
     question: "What is MEV?",
     answer: (
       <>
-        MEV (Maximal Extractable Value) occurs when bots exploit your transactions for profit. 
-        Common types include frontrunning (copying your trade ahead of you) and sandwich attacks 
-        (trading before and after your transaction to extract value). MEV has extracted over $1.43 
-        billion from Ethereum users across trading, DeFi, and NFT transactions.
+        MEV (Maximal Extractable Value) occurs when bots exploit your
+        transactions for profit. Common types include frontrunning (copying your
+        trade ahead of you) and sandwich attacks (trading before and after your
+        transaction to extract value). MEV has extracted over $1.43 billion from
+        Ethereum users across trading, DeFi, and NFT transactions.
         <br />
         <br />
-        MEV Blocker protects you from these attacks while ensuring you get rebated when your 
-        transactions create backrunning opportunities.
+        MEV Blocker protects you from these attacks while ensuring you get
+        rebated when your transactions create backrunning opportunities.
       </>
     ),
   },
@@ -171,14 +172,17 @@ export const FAQ_CONTENT: {
     answer: (
       <>
         We offer 5 different endpoints for different needs:
-        <br />• <b>/fast</b> (default) - Best for most users, offers protection and rebates
-        <br />• <b>/noreverts</b> - Adds transaction revert protection  
+        <br />• <b>/fast</b> (default) - Best for most users, offers protection
+        and rebates
+        <br />• <b>/noreverts</b> - Adds transaction revert protection
         <br />• <b>/fullprivacy</b> - Maximum privacy, no rebates
-        <br />• <b>/maxbackruns</b> - Optimized for maximum backrun opportunities
+        <br />• <b>/maxbackruns</b> - Optimized for maximum backrun
+        opportunities
         <br />• <b>/nochecks</b> - No validation, maximum protection
-        <br /><br />
-        MEV Blocker submits to all major block builders including Flashbots, Titan Builder, 
-        Builder0x69, bloXroute, Beaver Build, and others.
+        <br />
+        <br />
+        MEV Blocker submits to all major block builders including Flashbots,
+        Titan Builder, Builder0x69, bloXroute, Beaver Build, and others.
       </>
     ),
   },
@@ -186,13 +190,14 @@ export const FAQ_CONTENT: {
     question: "Does this RPC offer revert protection?",
     answer: (
       <>
-        Yes! The <b>/noreverts</b>, <b>/fullprivacy</b>, and <b>/maxbackruns</b> endpoints 
-        all offer transaction revert protection. The default <b>/fast</b> endpoint focuses 
-        on speed and does not protect against reverts.
+        Yes! The <b>/noreverts</b>, <b>/fullprivacy</b>, and <b>/maxbackruns</b>{" "}
+        endpoints all offer transaction revert protection. The default{" "}
+        <b>/fast</b> endpoint focuses on speed and does not protect against
+        reverts.
         <br />
         <br />
-        Use <b>https://rpc.mevblocker.io/noreverts</b> if you want both MEV protection 
-        and revert protection with rebates.
+        Use <b>https://rpc.mevblocker.io/noreverts</b> if you want both MEV
+        protection and revert protection with rebates.
       </>
     ),
   },
@@ -200,29 +205,34 @@ export const FAQ_CONTENT: {
     question: "Does this RPC offer a secure & private RPC endpoint?",
     answer: (
       <>
-        Yes! Use <b>https://rpc.mevblocker.io/fullprivacy</b> for maximum privacy protection. 
-        This endpoint provides the highest level of transaction privacy and MEV protection, 
-        but does not offer rebates.
+        Yes! Use <b>https://rpc.mevblocker.io/fullprivacy</b> for maximum
+        privacy protection. This endpoint provides the highest level of
+        transaction privacy and MEV protection, but does not offer rebates.
         <br />
         <br />
-        The <b>/fullprivacy</b> endpoint prevents transaction data sharing and offers 
-        revert protection, making it ideal for high-value or sensitive transactions.
+        The <b>/fullprivacy</b> endpoint prevents transaction data sharing and
+        offers revert protection, making it ideal for high-value or sensitive
+        transactions.
         <br />
         <br />
-        Note: This endpoint is intended for sophisticated users who prioritize privacy over rebates.
+        Note: This endpoint is intended for sophisticated users who prioritize
+        privacy over rebates.
       </>
     ),
   },
   {
-    question: "While using MEV Blocker RPC, is it safe to ignore slippage control??",
+    question:
+      "While using MEV Blocker RPC, is it safe to ignore slippage control??",
     answer: (
       <>
-        NO, you should ALWAYS set slippage control to have multiple protections in place.
+        NO, you should ALWAYS set slippage control to have multiple protections
+        in place.
         <br />
         <br />
-        Goal of RPC is to prevent 99% of sandwiches but no existing solution can provide 
-        full 100% protection. Due to reorgs/forked blocks 0.1% of transactions might become 
-        publicly available before on-chain confirmation.
+        Goal of RPC is to prevent 99% of sandwiches but no existing solution can
+        provide full 100% protection. Due to reorgs/forked blocks 0.1% of
+        transactions might become publicly available before on-chain
+        confirmation.
       </>
     ),
   },
@@ -295,7 +305,7 @@ export const FAQ_CONTENT: {
       </>
     ),
   },
-];
+]
 
 export const RPC_DETAILS: { title: string; value: string | number }[] = [
   {
@@ -318,51 +328,51 @@ export const RPC_DETAILS: { title: string; value: string | number }[] = [
     title: "Block Explorer URL",
     value: CONFIG.rpc.blockExplorerUrl,
   },
-];
+]
 
-export const ENDPOINTS_TABLE: { 
-  endpoint: string; 
-  frontrunning: { text: string; className: string };
-  backrunning: { text: string; className: string };
-  txRevert: { text: string; className: string };
-  description: string;
+export const ENDPOINTS_TABLE: {
+  endpoint: string
+  frontrunning: { text: string; className: string }
+  backrunning: { text: string; className: string }
+  txRevert: { text: string; className: string }
+  description: string
 }[] = [
   {
     endpoint: "/fast (default)",
     frontrunning: { text: "Protected", className: "protected" },
     backrunning: { text: "Refund", className: "refund" },
     txRevert: { text: "Not protected", className: "not-protected" },
-    description: "Fast execution with MEV protection and rebates"
+    description: "Fast execution with MEV protection and rebates",
   },
   {
     endpoint: "/noreverts",
     frontrunning: { text: "Protected", className: "protected" },
     backrunning: { text: "Refund", className: "refund" },
     txRevert: { text: "Protected", className: "protected" },
-    description: "Protection plus revert protection"
+    description: "Protection plus revert protection",
   },
   {
     endpoint: "/fullprivacy",
     frontrunning: { text: "Max protection", className: "max-protection" },
     backrunning: { text: "No rebate", className: "no-rebate" },
     txRevert: { text: "Protected", className: "protected" },
-    description: "Maximum privacy, no transaction sharing"
+    description: "Maximum privacy, no transaction sharing",
   },
   {
     endpoint: "/maxbackruns",
     frontrunning: { text: "Protected", className: "protected" },
     backrunning: { text: "Refund", className: "refund" },
     txRevert: { text: "Protected", className: "protected" },
-    description: "Optimized for maximum backrun opportunities"
+    description: "Optimized for maximum backrun opportunities",
   },
   {
     endpoint: "/nochecks",
     frontrunning: { text: "Max protection", className: "max-protection" },
     backrunning: { text: "No rebate", className: "no-rebate" },
     txRevert: { text: "Not protected", className: "not-protected" },
-    description: "No validation checks, maximum protection"
-  }
-];
+    description: "No validation checks, maximum protection",
+  },
+]
 
 export const TESTIMONIALS: { content: string; author: string }[] = [
   {
@@ -390,7 +400,7 @@ export const TESTIMONIALS: { content: string; author: string }[] = [
     content: "I used MEV Blocker and I instantly went up a tax bracket",
     author: "Anon",
   },
-];
+]
 
 export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
   [
@@ -409,7 +419,7 @@ export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
       logo: "agnostic.svg",
       link: "https://agnostic-relay.net/",
     },
-  ];
+  ]
 
 export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
   [
@@ -458,4 +468,4 @@ export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
       logo: "logo-blocknative.svg",
       link: "https://www.blocknative.com/",
     },
-  ];
+  ]

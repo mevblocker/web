@@ -226,16 +226,17 @@ export const SectionContent = styled.div<{
   > h3 {
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
+    font-size: 3rem;
 
     ${Media.mobile} {
-      font-size: 4rem;
+      font-size: 2.2rem;
     }
   }
 
   > h4 {
     margin: 0 0 3.2rem;
     font-weight: ${Font.weightBold};
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 1.5;
 
     ${Media.mobile} {
@@ -268,6 +269,15 @@ export const SectionContent = styled.div<{
       text-align: ${({ alignMobile }) =>
         alignMobile === "left" ? "left" : "center"};
     }
+  }
+
+  > ol > li > ol {
+    padding: 2rem;
+  }
+
+  > ul > li,
+  > ol > li {
+    margin-bottom: 2rem;
   }
 
   > pre {
