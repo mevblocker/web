@@ -1,8 +1,8 @@
-import { CONFIG } from "@src/const/meta";
+import { CONFIG } from "@src/const/meta"
 
 export const USP_CONTENT: {
-  title: string;
-  image: string;
+  title: string
+  image: string
 }[] = [
   {
     title:
@@ -18,33 +18,25 @@ export const USP_CONTENT: {
       "A fast, free, censorship-resistant solution open to all searchers and builders",
     image: "usp_3.svg",
   },
-];
+]
 
 export const FAQ_CONTENT: {
-  question: string;
-  answer: string | React.ReactElement;
+  question: string
+  answer: string | React.ReactElement
 }[] = [
   {
     question: "What is MEV?",
     answer: (
       <>
-        MEV or “maximal extractable value” is a method used by savvy actors
-        (known as “searchers”) to exploit your transactions at your expense.{" "}
+        MEV (Maximal Extractable Value) occurs when bots exploit your
+        transactions for profit. Common types include frontrunning (copying your
+        trade ahead of you) and sandwich attacks (trading before and after your
+        transaction to extract value). MEV has extracted over $1.43 billion from
+        Ethereum users across trading, DeFi, and NFT transactions.
         <br />
         <br />
-        Any time you make a transaction that carries value, searchers can
-        “frontrun” it by submitting the exact same transaction before you and
-        keeping the profits for themselves. After getting frontrun, you can also
-        get “backrun”, which is where the searcher cleans up any price slippage
-        your trade caused, again keeping the profits for themselves. Both a
-        frontrun and a backrun together are known as a “sandwich attack” — the
-        worst type of MEV.
-        <br />
-        <br />
-        MEV gives you a worse price for your transactions and can cause you to
-        lose out on hundreds or even thousands of dollars. MEV Blocker is an
-        easy solution - an RPC endpoint that protects all types of transactions
-        from MEV.
+        MEV Blocker protects you from these attacks while ensuring you get
+        rebated when your transactions create backrunning opportunities.
       </>
     ),
   },
@@ -176,11 +168,21 @@ export const FAQ_CONTENT: {
     ),
   },
   {
-    question: "Which block builders does MEV Blocker submit to?",
+    question: "Which endpoints should I use?",
     answer: (
       <>
-        MEV Blocker submits to all major block builders, including Builder0x69,
-        f1b, Flashbots, rsync builder, Titan Builder, Gambit labs and Beaver Build.
+        We offer 5 different endpoints for different needs:
+        <br />• <b>/fast</b> (default) - Best for most users, offers protection
+        and rebates
+        <br />• <b>/noreverts</b> - Adds transaction revert protection
+        <br />• <b>/fullprivacy</b> - Maximum privacy, no rebates
+        <br />• <b>/maxbackruns</b> - Optimized for maximum backrun
+        opportunities
+        <br />• <b>/nochecks</b> - No validation, maximum protection
+        <br />
+        <br />
+        MEV Blocker submits to all major block builders including Flashbots,
+        Titan Builder, Builder0x69, bloXroute, Beaver Build, and others.
       </>
     ),
   },
@@ -188,14 +190,14 @@ export const FAQ_CONTENT: {
     question: "Does this RPC offer revert protection?",
     answer: (
       <>
-        No, this RPC focuses on fast execution, however, we are offering another
-        endpoint which offers revert protection.
+        Yes! The <b>/noreverts</b>, <b>/fullprivacy</b>, and <b>/maxbackruns</b>{" "}
+        endpoints all offer transaction revert protection. The default{" "}
+        <b>/fast</b> endpoint focuses on speed and does not protect against
+        reverts.
         <br />
         <br />
-        This separate endpoint focuses on providing revert protection first, at
-        the expense of possibly slower inclusion time. You can use this second
-        endpoint by using <b>https://rpc.mevblocker.io/noreverts</b> as the url
-        instead.
+        Use <b>https://rpc.mevblocker.io/noreverts</b> if you want both MEV
+        protection and revert protection with rebates.
       </>
     ),
   },
@@ -203,29 +205,34 @@ export const FAQ_CONTENT: {
     question: "Does this RPC offer a secure & private RPC endpoint?",
     answer: (
       <>
-        Yes! if you want your transactions to be completely private, and you don´t care
-        about the refund, you need to connect to the following endpoint: <b>https://rpc.mevblocker.io/norefunds</b> as the url
-        instead.
+        Yes! Use <b>https://rpc.mevblocker.io/fullprivacy</b> for maximum
+        privacy protection. This endpoint provides the highest level of
+        transaction privacy and MEV protection, but does not offer rebates.
         <br />
         <br />
-        This endpoint focuses on privacy for users that want to perform transactions and it will not share TX data 
-        over WS. It prevents transactions failures (same as /noreverts).
+        The <b>/fullprivacy</b> endpoint prevents transaction data sharing and
+        offers revert protection, making it ideal for high-value or sensitive
+        transactions.
         <br />
         <br />
-        Note: This endpoint is intended for sophisticated users who can unstuck transaction themselves.
+        Note: This endpoint is intended for sophisticated users who prioritize
+        privacy over rebates.
       </>
     ),
   },
   {
-    question: "While using MEV Blocker RPC, is it safe to ignore slippage control??",
+    question:
+      "While using MEV Blocker RPC, is it safe to ignore slippage control??",
     answer: (
       <>
-        NO, you should ALWAYS set slippage control to have multiple protections in place.
+        NO, you should ALWAYS set slippage control to have multiple protections
+        in place.
         <br />
         <br />
-        Goal of RPC is to prevent 99% of sandwiches but no existing solution can provide 
-        full 100% protection. Due to reorgs/forked blocks 0.1% of transactions might become 
-        publicly available before on-chain confirmation.
+        Goal of RPC is to prevent 99% of sandwiches but no existing solution can
+        provide full 100% protection. Due to reorgs/forked blocks 0.1% of
+        transactions might become publicly available before on-chain
+        confirmation.
       </>
     ),
   },
@@ -298,7 +305,7 @@ export const FAQ_CONTENT: {
       </>
     ),
   },
-];
+]
 
 export const RPC_DETAILS: { title: string; value: string | number }[] = [
   {
@@ -321,7 +328,51 @@ export const RPC_DETAILS: { title: string; value: string | number }[] = [
     title: "Block Explorer URL",
     value: CONFIG.rpc.blockExplorerUrl,
   },
-];
+]
+
+export const ENDPOINTS_TABLE: {
+  endpoint: string
+  frontrunning: { text: string; className: string }
+  backrunning: { text: string; className: string }
+  txRevert: { text: string; className: string }
+  description: string
+}[] = [
+  {
+    endpoint: "/fast (default)",
+    frontrunning: { text: "Protected", className: "protected" },
+    backrunning: { text: "Refund", className: "refund" },
+    txRevert: { text: "Not protected", className: "not-protected" },
+    description: "Fast execution with MEV protection and rebates",
+  },
+  {
+    endpoint: "/noreverts",
+    frontrunning: { text: "Protected", className: "protected" },
+    backrunning: { text: "Refund", className: "refund" },
+    txRevert: { text: "Protected", className: "protected" },
+    description: "Protection plus revert protection",
+  },
+  {
+    endpoint: "/fullprivacy",
+    frontrunning: { text: "Max protection", className: "max-protection" },
+    backrunning: { text: "No rebate", className: "no-rebate" },
+    txRevert: { text: "Protected", className: "protected" },
+    description: "Maximum privacy, no transaction sharing",
+  },
+  {
+    endpoint: "/maxbackruns",
+    frontrunning: { text: "Protected", className: "protected" },
+    backrunning: { text: "Refund", className: "refund" },
+    txRevert: { text: "Protected", className: "protected" },
+    description: "Optimized for maximum backrun opportunities",
+  },
+  {
+    endpoint: "/nochecks",
+    frontrunning: { text: "Max protection", className: "max-protection" },
+    backrunning: { text: "No rebate", className: "no-rebate" },
+    txRevert: { text: "Not protected", className: "not-protected" },
+    description: "No validation checks, maximum protection",
+  },
+]
 
 export const TESTIMONIALS: { content: string; author: string }[] = [
   {
@@ -349,7 +400,7 @@ export const TESTIMONIALS: { content: string; author: string }[] = [
     content: "I used MEV Blocker and I instantly went up a tax bracket",
     author: "Anon",
   },
-];
+]
 
 export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
   [
@@ -368,163 +419,53 @@ export const BUILT_WITH_LOVE: { title: string; logo: string; link: string }[] =
       logo: "agnostic.svg",
       link: "https://agnostic-relay.net/",
     },
-  ];
+  ]
 
 export const LAUNCH_PARTNERS: { title: string; logo: string; link: string }[] =
   [
     {
-      title: "GnosisDAO",
-      logo: "gnosisdao.svg",
-      link: "https://www.gnosis.io/",
+      title: "Uniswap",
+      logo: "logo-uniswap.svg",
+      link: "https://uniswap.org/",
+    },
+    {
+      title: "Rabby",
+      logo: "logo-rabby.svg",
+      link: "https://rabby.io/",
+    },
+    {
+      title: "Crypto.com",
+      logo: "logo-crypto-com.svg",
+      link: "https://crypto.com/",
     },
     {
       title: "CoW Swap",
-      logo: "cowswap.svg",
+      logo: "logo-cowswap.svg",
       link: "https://swap.cow.fi/",
     },
     {
       title: "Safe",
-      logo: "safe.svg",
+      logo: "logo-safe.svg",
       link: "https://safe.global/",
     },
     {
-      title: "Balancer",
-      logo: "balancer.svg",
-      link: "https://balancer.fi/",
-    },
-    {
       title: "Karpatkey",
-      logo: "karpatkey.svg",
+      logo: "logo-karpatkey.svg",
       link: "https://www.karpatkey.com/",
     },
     {
-      title: "ParaSwap",
-      logo: "paraswap.svg",
-      link: "https://www.paraswap.io/",
-    },
-    {
-      title: "EigenPhi",
-      logo: "eigenphi.svg",
-      link: "https://eigenphi.io/",
-    },
-    {
-      title: "ZeroMev",
-      logo: "zeromev.svg",
-      link: "https://www.zeromev.org/",
-    },
-    {
-      title: "Shapeshift",
-      logo: "shapeshift.svg",
-      link: "https://shapeshift.com/",
-    },
-    {
-      title: "Gearbox",
-      logo: "gearbox.svg",
-      link: "https://gearbox.fi/",
-    },
-    {
-      title: "Swarm",
-      logo: "swarm.svg",
-      link: "https://www.ethswarm.org/",
-    },
-    {
-      title: "1Inch",
-      logo: "1inch.svg",
-      link: "https://1inch.io/",
-    },
-    {
-      title: "Oasis",
-      logo: "oasis.svg",
-      link: "https://oasis.app/#earn",
-    },
-    {
-      title: "Gelato",
-      logo: "gelato.svg",
-      link: "https://www.gelato.network/",
-    },
-    {
-      title: "Keystone",
-      logo: "keystone.svg",
-      link: "https://keyst.one/",
+      title: "KeepKey",
+      logo: "logo-keepkey.svg",
+      link: "https://www.keepkey.com/",
     },
     {
       title: "Ambire",
-      logo: "ambire.svg",
+      logo: "logo-ambire.svg",
       link: "https://www.ambire.com/",
     },
     {
-      title: "Castle",
-      logo: "castle.svg",
-      link: "https://castle.link/",
+      title: "Blocknative",
+      logo: "logo-blocknative.svg",
+      link: "https://www.blocknative.com/",
     },
-    {
-      title: "VirtuSwap",
-      logo: "virtuswap.svg",
-      link: "https://virtuswap.io/",
-    },
-    {
-      title: "Liminal",
-      logo: "liminal.svg",
-      link: "https://www.lmnl.app/",
-    },
-    {
-      title: "Onramper",
-      logo: "onramper.svg",
-      link: "https://www.onramper.com/",
-    },
-    {
-      title: "Bitkeep",
-      logo: "bitkeep.svg",
-      link: "https://bitkeep.com/",
-    },
-    {
-      title: "Aura Finance",
-      logo: "aura.svg",
-      link: "https://aura.finance/",
-    },
-    {
-      title: "StakeDAO",
-      logo: "stakedao.svg",
-      link: "https://stakedao.org/",
-    },
-    {
-      title: "Arrakis",
-      logo: "arrakis.svg",
-      link: "https://www.arrakis.finance/",
-    },
-    {
-      title: "Swapr",
-      logo: "swapr.svg",
-      link: "https://swapr.eth.limo/",
-    },
-    {
-      title: "DODO",
-      logo: "dodo.svg",
-      link: "https://dodoex.io/",
-    },
-    {
-      title: "Cypherock",
-      logo: "cypherock.svg",
-      link: "https://www.cypherock.com/",
-    },
-    {
-      title: "Giveth",
-      logo: "giveth.svg",
-      link: "https://www.giveth.io/",
-    },
-    {
-      title: "Notifi",
-      logo: "notifi.svg",
-      link: "https://notifi.network/",
-    },
-    {
-      title: "Titan Builder",
-      logo: "Titan.svg",
-      link: "https://www.titanbuilder.xyz/",
-    },
-    {
-      title: "Builder0x69",
-      logo: "builder0x69.png",
-      link: "https://twitter.com/builder0x69",
-    },
-  ];
+  ]

@@ -13,6 +13,7 @@ export const Color = {
   yellow: '#FFD338',
   pink: '#FFC9F0',
   blue: '#48BDFF',
+  darkBlue: '#1E3A8A',
   border: transparentize(0.75, '#979797'),
   borderGradient: `linear-gradient(to bottom, ${transparentize(0.75, '#979797')}, ${transparentize(1, '#979797')})`,
   background1: '#ffffff',
