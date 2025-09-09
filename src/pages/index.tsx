@@ -241,7 +241,7 @@ export default function Home() {
       <SectionWrapper backgroundColor={Color.white} borderDown>
         <Section>
           <SectionContent maxWidth={100} align={"center"}>
-            <h4>Multiple endpoints for multiple protection types</h4>
+            <h3>Multiple endpoints for multiple protection types</h3>
             <h5>
               Advanced MEV Blocker users can select from a variety of endpoints
               to suit their specific needs
