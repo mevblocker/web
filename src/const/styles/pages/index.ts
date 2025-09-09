@@ -857,10 +857,10 @@ export const MetricsLink = styled.a`
   text-align: center;
   color: ${Color.darkBlue};
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
   margin-top: 4rem;
-  border-top: 0.1rem solid ${transparentize(0.8, Color.black)};
+  border: none;
   padding-top: 1.2rem;
 
   &:hover {
@@ -870,7 +870,6 @@ export const MetricsLink = styled.a`
 
 export const EndpointsTable = styled.table`
   width: 100%;
-  border-collapse: collapse;
   margin: 0;
   background: ${Color.white};
   border-radius: 1.2rem;
@@ -920,8 +919,19 @@ export const EndpointsTable = styled.table`
     background-color: ${transparentize(0.95, Color.black)};
   }
 
+  tr:last-child {
+    td:first-child {
+      border-bottom-left-radius: 1.2rem;
+    }
+
+    td:last-child {
+      border-bottom-right-radius: 1.2rem;
+    }
+  }
+
   ${Media.mobile} {
     display: block;
+    border: 0;
 
     thead,
     tbody,
