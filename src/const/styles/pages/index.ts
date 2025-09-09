@@ -920,12 +920,23 @@ export const EndpointsTable = styled.table`
   }
 
   tr:last-child {
+    td {
+      border-bottom: 0;
+    }
     td:first-child {
       border-bottom-left-radius: 1.2rem;
+
+      ${Media.mobile} {
+        border-bottom-left-radius: 0;
+      }
     }
 
     td:last-child {
       border-bottom-right-radius: 1.2rem;
+
+      ${Media.mobile} {
+        border-bottom-right-radius: 0;
+      }
     }
   }
 
