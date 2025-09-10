@@ -1,6 +1,6 @@
 // next.config.mjs
-import remarkGfm from "remark-gfm";
-import createMDX from "@next/mdx";
+import remarkGfm from "remark-gfm"
+import createMDX from "@next/mdx"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -13,7 +13,17 @@ const nextConfig = {
     defaultLocale: "en",
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-};
+  async redirects() {
+    return [
+      {
+        source: "/docs",
+        destination:
+          "https://docs.cow.fi/mevblocker?utm_source=cow.fi&utm_medium=web&utm_content=mev-blocker-docs-link",
+        permanent: false,
+      },
+    ]
+  },
+}
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -21,6 +31,6 @@ const withMDX = createMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [],
   },
-});
+})
 
-export default withMDX(nextConfig);
+export default withMDX(nextConfig)
