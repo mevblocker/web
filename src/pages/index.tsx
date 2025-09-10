@@ -361,17 +361,7 @@ export default function Home() {
           <SectionContent align={"center"}>
             <a id="faq" className={"anchor"} />
             <h3>FAQ</h3>
-            <p className={"centered-text"}>
-              Curious if you&apos;ve been the victim of an MEV attack? Use{" "}
-              <a
-                href="https://mevscanner.io"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MEV Scanner
-              </a>{" "}
-              to find out
-            </p>
+
             <div className={"section_FAQ"}>
               {FAQ_CONTENT.map(({ question, answer }, index) => (
                 <details key={index}>
