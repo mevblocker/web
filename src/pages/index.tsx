@@ -155,7 +155,7 @@ export default function Home() {
           <p>USD value of median rebate</p>
         </MetricsItem>
         <MetricsLink
-          href="https://dune.com/cowprotocol/mev-blocker?utm_source=cow.fi&utm_medium=web&utm_content=mev-blocker-metrics-link"
+          href="https://dune.com/cowprotocol/mev-blocker?utm_source=mevblocker.io&utm_medium=web&utm_content=mev-blocker-metrics-link"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -288,7 +288,7 @@ export default function Home() {
               To learn more about each of the endpoints MEV Blocker has to
               offer,{" "}
               <a
-                href="https://docs.cow.fi/mevblocker?utm_source=cow.fi&utm_medium=web&utm_content=mev-blocker-docs-link"
+                href="https://docs.mevblocker.io?utm_source=mevblocker.io&utm_medium=web&utm_content=mev-blocker-docs-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
