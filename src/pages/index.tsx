@@ -155,7 +155,7 @@ export default function Home() {
           <p>USD value of median rebate</p>
         </MetricsItem>
         <MetricsLink
-          href="https://dune.com/cowprotocol/mev-blocker?utm_source=mevblocker.io&utm_medium=web&utm_content=mev-blocker-metrics-link"
+          href="https://dune.com/cowprotocol/mev-blocker?utm_source=cow.fi&utm_medium=web&utm_content=mev-blocker-metrics-link"
           target="_blank"
           rel="noopener noreferrer"
         >
