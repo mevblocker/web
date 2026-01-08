@@ -18,7 +18,7 @@ const nextConfig = {
       {
         source: "/docs",
         destination:
-          "https://docs.cow.fi/mevblocker?utm_source=cow.fi&utm_medium=web&utm_content=mev-blocker-docs-link",
+          "https://docs.mevblocker.io?utm_source=mevblocker.io&utm_medium=web&utm_content=mev-blocker-docs-link",
         permanent: false,
       },
     ]

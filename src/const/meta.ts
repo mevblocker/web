@@ -20,7 +20,7 @@ export const CONFIG = {
     home: "/",
     faq: "#faq",
     rpc: "#rpc",
-    docs: "https://docs.cow.fi/mevblocker?utm_source=cow.fi&utm_medium=web&utm_content=mev-blocker-docs-link",
+    docs: "https://docs.mevblocker.io?utm_source=mevblocker.io&utm_medium=web&utm_content=mev-blocker-docs-link",
     cowSwap: "https://swap.cow.fi",
     cowProtocol: "https://cow.fi",
     beaver: "https://beaverbuild.org/",
